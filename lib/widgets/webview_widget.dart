@@ -1,12 +1,10 @@
-
 import 'package:fl_clash/common/proxy.dart';
 import 'package:fl_clash/models/models.dart';
 import 'package:fl_clash/providers/state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// 由于依赖冲突问题，我们创建一个模拟的WebView组件
-// 实际项目中可以使用webview_flutter或其他兼容的包
 class WebViewWidget extends ConsumerStatefulWidget {
   final String initialUrl;
   final Function(String)? onPageStarted;
@@ -32,6 +30,7 @@ class _WebViewWidgetState extends ConsumerState<WebViewWidget> {
   late String _loadingUrl;
   bool _isLoading = false;
   final TextEditingController _urlController = TextEditingController();
+  InAppWebViewController? _webViewController;
 
   @override
   void initState() {
@@ -55,50 +54,30 @@ class _WebViewWidgetState extends ConsumerState<WebViewWidget> {
 
     setState(() {
       _loadingUrl = formattedUrl;
-      _isLoading = true;
     });
 
-    // 模拟页面加载
-    widget.onPageStarted?.call(formattedUrl);
-    widget.onUrlChanged?.call(formattedUrl);
-
-    Future.delayed(const Duration(seconds: 1), () {
-      if (mounted) {
-        setState(() {
-          _currentUrl = formattedUrl;
-          _isLoading = false;
-        });
-        widget.onPageFinished?.call(formattedUrl);
-      }
-    });
+    if (_webViewController != null) {
+      _webViewController!.loadUrl(urlRequest: URLRequest(url: Uri.parse(formattedUrl)));
+      widget.onUrlChanged?.call(formattedUrl);
+    }
   }
 
   void _goBack() {
-    // 模拟后退功能
-    print('WebView: Go back from $_currentUrl');
+    if (_webViewController != null) {
+      _webViewController!.goBack();
+    }
   }
 
   void _goForward() {
-    // 模拟前进功能
-    print('WebView: Go forward from $_currentUrl');
+    if (_webViewController != null) {
+      _webViewController!.goForward();
+    }
   }
 
   void _refresh() {
-    setState(() {
-      _isLoading = true;
-    });
-
-    // 模拟刷新
-    widget.onPageStarted?.call(_currentUrl);
-
-    Future.delayed(const Duration(seconds: 1), () {
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
-        widget.onPageFinished?.call(_currentUrl);
-      }
-    });
+    if (_webViewController != null) {
+      _webViewController!.reload();
+    }
   }
 
   // 获取当前代理状态
@@ -169,41 +148,49 @@ class _WebViewWidgetState extends ConsumerState<WebViewWidget> {
           ),
         ),
         Expanded(
-          child: Container(
-            color: Colors.white,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'WebView模拟组件',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  '当前页面: $_currentUrl',
-                  style: const TextStyle(fontSize: 16),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  '代理状态: ${isProxyEnabled ? '已启用' : '已禁用'}',
-                  style: const TextStyle(fontSize: 16),
-                ),
-                if (isProxyEnabled) 
-                  Text(
-                    '代理端口: $proxyPort',
-                    style: const TextStyle(fontSize: 14),
-                  ),
-                const SizedBox(height: 32),
-                ElevatedButton(
-                  onPressed: () => _loadUrl('https://www.google.com'),
-                  child: const Text('加载Google'),
-                ),
-                const SizedBox(height: 16),
-                ElevatedButton(
-                  onPressed: () => _loadUrl('https://www.github.com'),
-                  child: const Text('加载GitHub'),
-                ),
-              ],
+          child: InAppWebView(
+            initialUrlRequest: URLRequest(url: Uri.parse(widget.initialUrl)),
+            onWebViewCreated: (controller) {
+              _webViewController = controller;
+            },
+            onLoadStart: (controller, url) {
+              setState(() {
+                _loadingUrl = url.toString();
+                _isLoading = true;
+              });
+              widget.onPageStarted?.call(url.toString());
+              widget.onUrlChanged?.call(url.toString());
+            },
+            onLoadStop: (controller, url) async {
+              setState(() {
+                _currentUrl = url.toString();
+                _isLoading = false;
+              });
+              widget.onPageFinished?.call(url.toString());
+              
+              // 更新地址栏URL
+              _urlController.text = url.toString();
+            },
+            onLoadError: (controller, url, code, message) {
+              setState(() {
+                _isLoading = false;
+              });
+              print('WebView error: $message');
+            },
+            onProgressChanged: (controller, progress) {
+              // 可以添加进度条显示
+            },
+            initialOptions: InAppWebViewGroupOptions(
+              android: AndroidInAppWebViewOptions(
+                useHybridComposition: true,
+              ),
+              ios: IOSInAppWebViewOptions(
+                allowsInlineMediaPlayback: true,
+              ),
+              crossPlatform: InAppWebViewOptions(
+                useShouldOverrideUrlLoading: true,
+                mediaPlaybackRequiresUserGesture: false,
+              ),
             ),
           ),
         ),
