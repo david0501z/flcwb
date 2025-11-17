@@ -81,7 +81,7 @@ class MessageManagerState extends State<MessageManager> {
         widget.child,
         ValueListenableBuilder(
           valueListenable: _messagesNotifier,
-          builder: (_, messages, _) {
+          builder: (context, messages, child) {
             return Container(
               margin: EdgeInsets.only(
                 top: kToolbarHeight + 12,

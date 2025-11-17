@@ -136,10 +136,10 @@ class _EditProfileViewState extends State<EditProfileView> {
     final editorPage = EditorPage(
       title: title,
       content: rawText!,
-      onSave: (context, _, content) {
+      onSave: (context, controller, content) {
         _handleSaveEdit(context, content);
       },
-      onPop: (context, _, content) async {
+      onPop: (context, controller, content) async {
         if (content == rawText) {
           return true;
         }
@@ -269,7 +269,7 @@ class _EditProfileViewState extends State<EditProfileView> {
       ],
       ValueListenableBuilder<FileInfo?>(
         valueListenable: fileInfoNotifier,
-        builder: (_, fileInfo, _) {
+        builder: (context, fileInfo, child) {
           return FadeThroughBox(
             alignment: Alignment.centerLeft,
             child: fileInfo == null
@@ -328,10 +328,10 @@ class _EditProfileViewState extends State<EditProfileView> {
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: ListView.separated(
               padding: kMaterialListPadding.copyWith(bottom: 72),
-              itemBuilder: (_, index) {
+              itemBuilder: (context, index) {
                 return items[index];
               },
-              separatorBuilder: (_, _) {
+              separatorBuilder: (context, index) {
                 return const SizedBox(height: 24);
               },
               itemCount: items.length,

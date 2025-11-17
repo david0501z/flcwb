@@ -134,7 +134,7 @@ class _PaletteState extends State<Palette> {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: widget.controller,
-      builder: (_, _, _) {
+      builder: (context, value, child) {
         return GestureDetector(
           dragStartBehavior: DragStartBehavior.down,
           onVerticalDragDown: (DragDownDetails details) =>
@@ -302,8 +302,8 @@ class _TrackPainter extends CustomPainter {
 
     final Rect rectCircle = Rect.fromCenter(
       center: center,
-      width: shortestRectSide - thickness,
-      height: shortestRectSide - thickness,
+      width: math.max(shortestRectSide - thickness, 0),
+      height: math.max(shortestRectSide - thickness, 0),
     );
 
     for (int i = 0; i < ticks; i++) {

@@ -56,7 +56,7 @@ class ProxiesSetting extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               final proxiesType = ref.watch(
                 proxiesStyleSettingProvider.select((state) => state.type),
               );
@@ -95,7 +95,7 @@ class ProxiesSetting extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               final sortType = ref.watch(
                 proxiesStyleSettingProvider.select((state) => state.sortType),
               );
@@ -134,7 +134,7 @@ class ProxiesSetting extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               final cardType = ref.watch(
                 proxiesStyleSettingProvider.select((state) => state.cardType),
               );
@@ -170,7 +170,7 @@ class ProxiesSetting extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               final layout = ref.watch(
                 proxiesStyleSettingProvider.select((state) => state.layout),
               );
@@ -206,7 +206,7 @@ class ProxiesSetting extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               final iconStyle = ref.watch(
                 proxiesStyleSettingProvider.select((state) => state.iconStyle),
               );

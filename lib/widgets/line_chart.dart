@@ -61,10 +61,10 @@ class _LineChartState extends State<LineChart>
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (_, container) {
+      builder: (context, container) {
         return AnimatedBuilder(
           animation: _controller.view,
-          builder: (_, _) {
+          builder: (context, child) {
             return CustomPaint(
               painter: LineChartPainter(
                 prevPoints: prevPoints,

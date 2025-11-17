@@ -100,7 +100,7 @@ class TrackerInfoItem extends ConsumerWidget {
         children: [
           Flexible(
             child: ListView.separated(
-              separatorBuilder: (_, _) => SizedBox(width: 6),
+              separatorBuilder: (context, index) => SizedBox(width: 6),
               padding: EdgeInsets.zero,
               scrollDirection: Axis.horizontal,
               itemCount: trackerInfo.chains.length,

@@ -38,7 +38,7 @@ class ResourcesView extends StatelessWidget {
     return CommonScaffold(
       title: appLocalizations.resources,
       body: ListView.separated(
-        itemBuilder: (_, index) {
+        itemBuilder: (context, index) {
           final geoItem = geoItems[index];
           return GeoDataListItem(geoItem: geoItem);
         },
@@ -103,7 +103,7 @@ class _GeoDataListItemState extends State<GeoDataListItem> {
 
   Widget _buildSubtitle() {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (context, ref, child) {
         final url = ref.watch(
           patchClashConfigProvider.select(
             (state) => state.geoXUrl.toJson()[geoItem.key],
@@ -118,7 +118,7 @@ class _GeoDataListItemState extends State<GeoDataListItem> {
             const SizedBox(height: 6),
             FutureBuilder<FileInfo>(
               future: _getGeoFileLastModified(geoItem.fileName),
-              builder: (_, snapshot) {
+              builder: (context, snapshot) {
                 final height = globalState.measure.bodyMediumHeight;
                 return SizedBox(
                   height: height,
@@ -152,7 +152,7 @@ class _GeoDataListItemState extends State<GeoDataListItem> {
                     SizedBox(
                       child: ValueListenableBuilder(
                         valueListenable: isUpdating,
-                        builder: (_, isUpdating, _) {
+                        builder: (context, isUpdating, child) {
                           return isUpdating
                               ? SizedBox(
                                   height: 30,

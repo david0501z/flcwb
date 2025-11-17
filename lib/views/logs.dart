@@ -44,7 +44,7 @@ class _LogsViewState extends ConsumerState<LogsView> {
     return [
       ValueListenableBuilder(
         valueListenable: _logsStateNotifier,
-        builder: (_, state, _) {
+        builder: (context, state, child) {
           return IconButton(
             style: state.autoScrollToEnd
                 ? IconButton.styleFrom(

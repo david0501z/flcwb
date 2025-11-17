@@ -561,20 +561,20 @@ class AppController {
   }
 
   Future<void> _connectCore() async {
-    _ref.read(coreStatusProvider.notifier).value = CoreStatus.connecting;
+    _ref.read(coreStatusProviderProvider.notifier).update(CoreStatus.connecting);
     final result = await Future.wait([
       coreController.preload(),
       if (!globalState.isService) Future.delayed(Duration(milliseconds: 300)),
     ]);
     final String message = result[0];
     if (message.isNotEmpty) {
-      _ref.read(coreStatusProvider.notifier).value = CoreStatus.disconnected;
+      _ref.read(coreStatusProviderProvider.notifier).update(CoreStatus.disconnected);
       if (context.mounted) {
         context.showNotifier(message);
       }
       return;
     }
-    _ref.read(coreStatusProvider.notifier).value = CoreStatus.connected;
+    _ref.read(coreStatusProviderProvider.notifier).update(CoreStatus.connected);
   }
 
   Future<void> _initStatus() async {
@@ -775,7 +775,7 @@ class AppController {
   }
 
   void handleCoreDisconnected() {
-    _ref.read(coreStatusProvider.notifier).value = CoreStatus.disconnected;
+    _ref.read(coreStatusProviderProvider.notifier).update(CoreStatus.disconnected);
   }
 
   Future<List<Package>> getPackages() async {

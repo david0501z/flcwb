@@ -35,7 +35,7 @@ class _ScriptsViewState extends ConsumerState<ScriptsView> {
 
   Widget _buildContent() {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (context, ref, child) {
         final vm2 = ref.watch(
           scriptStateProvider.select(
             (state) => VM2(a: state.currentId, b: state.scripts),
@@ -59,7 +59,7 @@ class _ScriptsViewState extends ConsumerState<ScriptsView> {
           child: ListView.builder(
             padding: kMaterialListPadding.copyWith(bottom: 16 + 64),
             itemCount: scripts.length,
-            itemBuilder: (_, index) {
+            itemBuilder: (context, index) {
               final script = scripts[index];
               return Container(
                 padding: kTabLabelPadding,
@@ -115,7 +115,7 @@ class _ScriptsViewState extends ConsumerState<ScriptsView> {
   }
 
   Future<void> _handleEditorSave(
-    BuildContext _,
+    BuildContext context,
     String title,
     String content, {
     Script? script,
@@ -170,7 +170,7 @@ class _ScriptsViewState extends ConsumerState<ScriptsView> {
   }
 
   Future<bool> _handleEditorPop(
-    BuildContext _,
+    BuildContext context,
     String title,
     String content,
     String raw, {

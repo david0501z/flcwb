@@ -221,7 +221,7 @@ class FakeIpFilterItem extends StatelessWidget {
         blur: false,
         title: appLocalizations.fakeipFilter,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final fakeIpFilter = ref.watch(
               patchClashConfigProvider.select(
                 (state) => state.dns.fakeIpFilter,
@@ -259,7 +259,7 @@ class DefaultNameserverItem extends StatelessWidget {
         blur: false,
         title: appLocalizations.defaultNameserver,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final defaultNameserver = ref.watch(
               patchClashConfigProvider.select(
                 (state) => state.dns.defaultNameserver,
@@ -298,7 +298,7 @@ class NameserverItem extends StatelessWidget {
         title: appLocalizations.nameserver,
         blur: false,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final nameserver = ref.watch(
               patchClashConfigProvider.select((state) => state.dns.nameserver),
             );
@@ -380,7 +380,7 @@ class NameserverPolicyItem extends StatelessWidget {
         blur: false,
         title: appLocalizations.nameserverPolicy,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final nameserverPolicy = ref.watch(
               patchClashConfigProvider.select(
                 (state) => state.dns.nameserverPolicy,
@@ -418,7 +418,7 @@ class ProxyServerNameserverItem extends StatelessWidget {
         blur: false,
         title: appLocalizations.proxyNameserver,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final proxyServerNameserver = ref.watch(
               patchClashConfigProvider.select(
                 (state) => state.dns.proxyServerNameserver,
@@ -457,7 +457,7 @@ class FallbackItem extends StatelessWidget {
         blur: false,
         title: appLocalizations.fallback,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final fallback = ref.watch(
               patchClashConfigProvider.select((state) => state.dns.fallback),
             );
@@ -554,7 +554,7 @@ class GeositeItem extends StatelessWidget {
         blur: false,
         title: 'Geosite',
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final geosite = ref.watch(
               patchClashConfigProvider.select(
                 (state) => state.dns.fallbackFilter.geosite,
@@ -592,7 +592,7 @@ class IpcidrItem extends StatelessWidget {
         blur: false,
         title: appLocalizations.ipcidr,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final ipcidr = ref.watch(
               patchClashConfigProvider.select(
                 (state) => state.dns.fallbackFilter.ipcidr,
@@ -630,7 +630,7 @@ class DomainItem extends StatelessWidget {
         blur: false,
         title: appLocalizations.domain,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final domain = ref.watch(
               patchClashConfigProvider.select(
                 (state) => state.dns.fallbackFilter.domain,

@@ -3,6 +3,7 @@ import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/models/models.dart';
 import 'package:fl_clash/state.dart';
 import 'package:flutter/services.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'generated/app.g.dart';
@@ -70,9 +71,6 @@ class Providers extends _$Providers with AnyNotifierMixin {
   }
 
   void setProvider(ExternalProvider? provider) {
-    if (!ref.mounted) {
-      return;
-    }
     if (provider == null) return;
     final index = value.indexWhere((item) => item.name == provider.name);
     if (index == -1) return;
@@ -199,22 +197,22 @@ class SideWidth extends _$SideWidth with AutoDisposeNotifierMixin {
 }
 
 @riverpod
-double viewWidth(Ref ref) {
+double viewWidth(ViewWidthRef ref) {
   return ref.watch(viewSizeProvider).width;
 }
 
 @riverpod
-ViewMode viewMode(Ref ref) {
+ViewMode viewMode(ViewModeRef ref) {
   return utils.getViewMode(ref.watch(viewWidthProvider));
 }
 
 @riverpod
-bool isMobileView(Ref ref) {
+bool isMobileView(IsMobileViewRef ref) {
   return ref.watch(viewModeProvider) == ViewMode.mobile;
 }
 
 @riverpod
-double viewHeight(Ref ref) {
+double viewHeight(ViewHeightRef ref) {
   return ref.watch(viewSizeProvider).height;
 }
 
@@ -393,16 +391,20 @@ class ProfileOverrideState extends _$ProfileOverrideState
   }
 }
 
-@Riverpod(name: 'coreStatusProvider')
-class _CoreStatus extends _$CoreStatus with AutoDisposeNotifierMixin {
+@riverpod
+class CoreStatusProvider extends _$CoreStatusProvider {
   @override
   CoreStatus build() {
+    ref.onDispose(() {
+      // Clean up if needed
+    });
     return globalState.appState.coreStatus;
   }
-
-  @override
-  onUpdate(value) {
-    globalState.appState = globalState.appState.copyWith(coreStatus: value);
+  
+  void update(CoreStatus status) {
+    state = status;
+    // Also update the global state
+    globalState.appState = globalState.appState.copyWith(coreStatus: status);
   }
 }
 

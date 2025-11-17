@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/providers/config.dart';
@@ -16,7 +18,7 @@ class OutboundMode extends StatelessWidget {
     return SizedBox(
       height: height,
       child: Consumer(
-        builder: (_, ref, _) {
+        builder: (context, ref, child) {
           final mode = ref.watch(
             patchClashConfigProvider.select((state) => state.mode),
           );
@@ -99,7 +101,7 @@ class OutboundModeV2 extends StatelessWidget {
       child: CommonCard(
         padding: EdgeInsets.zero,
         child: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final mode = ref.watch(
               patchClashConfigProvider.select((state) => state.mode),
             );
@@ -126,7 +128,7 @@ class OutboundModeV2 extends StatelessWidget {
                                   clipBehavior: Clip.antiAlias,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(),
-                                  height: height - 8.ap - 24,
+                                  height: math.max(height - 8.ap - 24, 0),
                                   padding: EdgeInsets.all(4),
                                   child: Text(
                                     Intl.message(item.name),

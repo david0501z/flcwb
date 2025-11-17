@@ -35,14 +35,14 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
   Widget _buildIsEdit(_IsEditWidgetBuilder builder) {
     return ValueListenableBuilder(
       valueListenable: _isEditNotifier,
-      builder: (_, isEdit, _) {
+      builder: (context, isEdit, child) {
         return builder(isEdit);
       },
     );
   }
 
   Future<void> _handleConnection() async {
-    final coreStatus = ref.read(coreStatusProvider);
+    final coreStatus = ref.read(coreStatusProviderProvider);
     if (coreStatus == CoreStatus.connecting) {
       return;
     }
@@ -60,8 +60,8 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
     return [
       if (!isEdit)
         Consumer(
-          builder: (_, ref, _) {
-            final coreStatus = ref.watch(coreStatusProvider);
+          builder: (context, ref, child) {
+            final coreStatus = ref.watch(coreStatusProviderProvider);
             return Tooltip(
               message: appLocalizations.coreStatus,
               child: FadeScaleBox(
@@ -177,10 +177,10 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
 
   void _showAddWidgetsModal() {
     showSheet(
-      builder: (_, type) {
+      builder: (context, type) {
         return ValueListenableBuilder(
           valueListenable: _addedWidgetsNotifier,
-          builder: (_, value, _) {
+          builder: (context, value, child) {
             return AdaptiveSheetScaffold(
               type: type,
               body: _AddDashboardWidgetModal(

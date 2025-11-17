@@ -87,7 +87,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
     return [
       ValueListenableBuilder(
         valueListenable: _requestsStateNotifier,
-        builder: (_, state, _) {
+        builder: (context, state, child) {
           return IconButton(
             style: state.autoScrollToEnd
                 ? IconButton.styleFrom(
@@ -157,7 +157,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                   shrinkWrap: true,
                   physics: NextClampingScrollPhysics(),
                   controller: _scrollController,
-                  itemBuilder: (_, index) {
+                  itemBuilder: (context, index) {
                     return items[index];
                   },
                   itemExtentBuilder: (index, _) {

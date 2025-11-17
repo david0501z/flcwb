@@ -39,10 +39,10 @@ class HotKeyView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: HotAction.values.length,
-      itemBuilder: (_, index) {
+      itemBuilder: (context, index) {
         final hotAction = HotAction.values[index];
         return Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final hotKeyAction = ref.watch(getHotKeyActionProvider(hotAction));
             return ListItem(
               title: Text(IntlExt.actionMessage(hotAction.name)),
@@ -153,7 +153,7 @@ class _HotKeyRecorderState extends State<HotKeyRecorder> {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKeyEvent: (_, _) {
+      onKeyEvent: (node, event) {
         return KeyEventResult.handled;
       },
       autofocus: true,
@@ -176,7 +176,7 @@ class _HotKeyRecorderState extends State<HotKeyRecorder> {
         ],
         child: ValueListenableBuilder(
           valueListenable: hotKeyActionNotifier,
-          builder: (_, hotKeyAction, _) {
+          builder: (context, hotKeyAction, child) {
             final key = hotKeyAction.key;
             final modifiers = hotKeyAction.modifiers;
             return SizedBox(

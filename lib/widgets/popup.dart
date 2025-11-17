@@ -150,7 +150,7 @@ class _CommonPopupBoxState extends State<CommonPopupBox> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (_, _) {
+      builder: (context, constraints) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (_isOpen) {
             _updateOffset();

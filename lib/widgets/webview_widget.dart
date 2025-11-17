@@ -57,7 +57,7 @@ class _WebViewWidgetState extends ConsumerState<WebViewWidget> {
     });
 
     if (_webViewController != null) {
-      _webViewController!.loadUrl(urlRequest: URLRequest(url: Uri.parse(formattedUrl)));
+      _webViewController!.loadUrl(urlRequest: URLRequest(url: WebUri(formattedUrl)));
       widget.onUrlChanged?.call(formattedUrl);
     }
   }
@@ -149,7 +149,7 @@ class _WebViewWidgetState extends ConsumerState<WebViewWidget> {
         ),
         Expanded(
           child: InAppWebView(
-            initialUrlRequest: URLRequest(url: Uri.parse(widget.initialUrl)),
+            initialUrlRequest: URLRequest(url: WebUri(widget.initialUrl)),
             onWebViewCreated: (controller) {
               _webViewController = controller;
             },

@@ -134,7 +134,7 @@ class AppSidebarContainer extends ConsumerWidget {
 
   Widget _buildLoading() {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (context, ref, child) {
         final loading = ref.watch(loadingProvider);
         final isMobileView = ref.watch(isMobileViewProvider);
         return loading && !isMobileView

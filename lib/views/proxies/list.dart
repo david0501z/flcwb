@@ -285,7 +285,7 @@ class _ProxiesListViewState extends State<ProxiesListView> {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (context, ref, child) {
         final state = ref.watch(proxiesListStateProvider);
         ref.watch(themeSettingProvider.select((state) => state.textScale));
         if (state.groups.isEmpty) {
@@ -314,22 +314,22 @@ class _ProxiesListViewState extends State<ProxiesListView> {
                     key: proxiesListStoreKey,
                     padding: const EdgeInsets.all(16),
                     controller: _controller,
-                    itemExtentBuilder: (index, _) {
+                    itemExtentBuilder: (index, item) {
                       return itemsOffset[index];
                     },
                     itemCount: items.length,
-                    itemBuilder: (_, index) {
+                    itemBuilder: (context, index) {
                       return items[index];
                     },
                   ),
                 ),
               ),
               LayoutBuilder(
-                builder: (_, container) {
+                builder: (context, container) {
                   containerHeight = container.maxHeight;
                   return ValueListenableBuilder(
                     valueListenable: _headerStateNotifier,
-                    builder: (_, headerState, _) {
+                    builder: (context, headerState, child) {
                       if (headerState == null) {
                         return SizedBox();
                       }
@@ -442,7 +442,7 @@ class _ListHeaderState extends State<ListHeader> {
         );
         return switch (iconStyle) {
           ProxiesIconStyle.standard => LayoutBuilder(
-            builder: (_, constraints) {
+            builder: (context, constraints) {
               return Container(
                 margin: const EdgeInsets.only(right: 16),
                 child: AspectRatio(
@@ -469,7 +469,7 @@ class _ListHeaderState extends State<ListHeader> {
           ProxiesIconStyle.icon => Container(
             margin: const EdgeInsets.only(right: 16),
             child: LayoutBuilder(
-              builder: (_, constraints) {
+              builder: (context, constraints) {
                 return CommonTargetIcon(
                   src: icon,
                   size: constraints.maxHeight - 8,
@@ -520,7 +520,7 @@ class _ListHeaderState extends State<ListHeader> {
                               Flexible(
                                 flex: 1,
                                 child: Consumer(
-                                  builder: (_, ref, _) {
+                                  builder: (context, ref, child) {
                                     final proxyName = ref
                                         .watch(
                                           getSelectedProxyNameProvider(

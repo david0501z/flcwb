@@ -59,7 +59,7 @@ class TrafficUsage extends StatelessWidget {
         ),
         onPressed: () {},
         child: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final totalTraffic = ref.watch(totalTrafficProvider);
             final upTotalTrafficValue = totalTraffic.up;
             final downTotalTrafficValue = totalTraffic.down;
@@ -95,7 +95,7 @@ class TrafficUsage extends StatelessWidget {
                           SizedBox(width: 8),
                           Flexible(
                             child: LayoutBuilder(
-                              builder: (_, container) {
+                              builder: (context, container) {
                                 final uploadText = Text(
                                   maxLines: 1,
                                   appLocalizations.upload,

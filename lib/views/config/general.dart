@@ -211,7 +211,7 @@ class HostsItem extends StatelessWidget {
         blur: false,
         title: 'Hosts',
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final hosts = ref.watch(
               patchClashConfigProvider.select((state) => state.hosts),
             );

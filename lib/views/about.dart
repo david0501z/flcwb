@@ -116,7 +116,7 @@ class AboutView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Consumer(
-              builder: (_, ref, _) {
+              builder: (context, ref, child) {
                 return _DeveloperModeDetector(
                   child: Wrap(
                     spacing: 16,

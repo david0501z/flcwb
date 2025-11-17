@@ -1,18 +1,12 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-mixin AutoDisposeNotifierMixin<T> on AnyNotifier<T, T> {
+mixin AutoDisposeNotifierMixin<T> {
   set value(T value) {
-    if (ref.mounted) {
-      state = value;
-    } else {
-      onUpdate(value);
-    }
+    onUpdate(value);
   }
 
-  @override
-  bool updateShouldNotify(previous, next) {
-    final res = super.updateShouldNotify(previous, next);
+  bool updateShouldNotify(T previous, T next) {
+    final res = previous != next;
     if (res) {
       onUpdate(next);
     }
@@ -22,20 +16,15 @@ mixin AutoDisposeNotifierMixin<T> on AnyNotifier<T, T> {
   void onUpdate(T value) {}
 }
 
-mixin AnyNotifierMixin<T> on AnyNotifier<T, T> {
+mixin AnyNotifierMixin<T> {
   T get value;
 
   set value(T value) {
-    if (ref.mounted) {
-      state = value;
-    } else {
-      onUpdate(value);
-    }
+    onUpdate(value);
   }
 
-  @override
-  bool updateShouldNotify(previous, next) {
-    final res = super.updateShouldNotify(previous, next);
+  bool updateShouldNotify(T previous, T next) {
+    final res = previous != next;
     if (res) {
       onUpdate(next);
     }
