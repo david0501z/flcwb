@@ -85,12 +85,16 @@ jobs:
         run: flutter pub get
 
       - name: Setup
-        if: true
+        if: false
         run: dart setup.dart ${{ matrix.platform }} ${{ matrix.arch && format('--arch {0}', matrix.arch) }} ${{ env.IS_STABLE == 'true' && '--env stable' || '' }}
 
       - name: build
-        if: false
-        run: flutter build apk --debug --verbose
+        if: true
+        run: |
+          #flutter build apk --debug --verbose
+          cd android
+          ./gradlew clean
+          ./gradlew assembleRelease
         
       - name: Upload
         uses: actions/upload-artifact@v4
