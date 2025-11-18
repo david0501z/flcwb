@@ -88,11 +88,11 @@ jobs:
           dart run build_runner build --delete-conflicting-outputs
 
       - name: Setup
-        if: false
+        if: true
         run: dart setup.dart ${{ matrix.platform }} ${{ matrix.arch && format('--arch {0}', matrix.arch) }} ${{ env.IS_STABLE == 'true' && '--env stable' || '' }}
 
       - name: build
-        if: true
+        if: false
         run: |
           flutter build apk --debug --verbose
           #cd android
@@ -109,6 +109,7 @@ jobs:
   changelog:
     runs-on: ubuntu-latest
     needs: [ build ]
+    if: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -173,6 +174,7 @@ jobs:
     permissions: write-all
     needs: [ build ]
     runs-on: ubuntu-latest
+    if: false
     services:
       telegram-bot-api:
         image: aiogram/telegram-bot-api:latest
