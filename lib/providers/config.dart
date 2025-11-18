@@ -4,7 +4,7 @@ import 'package:fl_clash/state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'config.g.dart';
+part 'generated/config.g.dart';
 
 @riverpod
 class AppSetting extends _$AppSetting {
