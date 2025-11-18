@@ -156,9 +156,9 @@ class AppController {
       final currentProfileId = _ref.read(currentProfileIdProvider.notifier);
       if (profiles.isNotEmpty) {
         final updateId = profiles.first.id;
-        currentProfileId.value = updateId;
+        currentProfileId.state = updateId;
       } else {
-        currentProfileId.value = null;
+        currentProfileId.state = null;
         updateStatus(false);
       }
     }
