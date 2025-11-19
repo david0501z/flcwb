@@ -19,6 +19,12 @@ class Navigation {
             const DashboardView(key: GlobalObjectKey(PageLabel.dashboard)),
       ),
       NavigationItem(
+        icon: Icon(Icons.language),
+        label: PageLabel.browser,
+        builder: (_) =>
+            const BrowserView(key: GlobalObjectKey(PageLabel.browser)),
+      ),
+      NavigationItem(
         icon: const Icon(Icons.article),
         label: PageLabel.proxies,
         builder: (_) =>

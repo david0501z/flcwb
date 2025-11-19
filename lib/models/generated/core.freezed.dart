@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,3892 +9,2946 @@ part of '../core.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+SetupParams _$SetupParamsFromJson(Map<String, dynamic> json) {
+  return _SetupParams.fromJson(json);
+}
 
 /// @nodoc
 mixin _$SetupParams {
+  @JsonKey(name: 'selected-map')
+  Map<String, String> get selectedMap => throw _privateConstructorUsedError;
+  @JsonKey(name: 'test-url')
+  String get testUrl => throw _privateConstructorUsedError;
 
-@JsonKey(name: 'selected-map') Map<String, String> get selectedMap;@JsonKey(name: 'test-url') String get testUrl;
-/// Create a copy of SetupParams
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SetupParamsCopyWith<SetupParams> get copyWith => _$SetupParamsCopyWithImpl<SetupParams>(this as SetupParams, _$identity);
-
-  /// Serializes this SetupParams to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SetupParams&&const DeepCollectionEquality().equals(other.selectedMap, selectedMap)&&(identical(other.testUrl, testUrl) || other.testUrl == testUrl));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(selectedMap),testUrl);
-
-@override
-String toString() {
-  return 'SetupParams(selectedMap: $selectedMap, testUrl: $testUrl)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SetupParamsCopyWith<SetupParams> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SetupParamsCopyWith<$Res>  {
-  factory $SetupParamsCopyWith(SetupParams value, $Res Function(SetupParams) _then) = _$SetupParamsCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: 'selected-map') Map<String, String> selectedMap,@JsonKey(name: 'test-url') String testUrl
-});
-
-
-
-
+abstract class $SetupParamsCopyWith<$Res> {
+  factory $SetupParamsCopyWith(
+          SetupParams value, $Res Function(SetupParams) then) =
+      _$SetupParamsCopyWithImpl<$Res, SetupParams>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'selected-map') Map<String, String> selectedMap,
+      @JsonKey(name: 'test-url') String testUrl});
 }
+
 /// @nodoc
-class _$SetupParamsCopyWithImpl<$Res>
+class _$SetupParamsCopyWithImpl<$Res, $Val extends SetupParams>
     implements $SetupParamsCopyWith<$Res> {
-  _$SetupParamsCopyWithImpl(this._self, this._then);
+  _$SetupParamsCopyWithImpl(this._value, this._then);
 
-  final SetupParams _self;
-  final $Res Function(SetupParams) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of SetupParams
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? selectedMap = null,Object? testUrl = null,}) {
-  return _then(_self.copyWith(
-selectedMap: null == selectedMap ? _self.selectedMap : selectedMap // ignore: cast_nullable_to_non_nullable
-as Map<String, String>,testUrl: null == testUrl ? _self.testUrl : testUrl // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedMap = null,
+    Object? testUrl = null,
+  }) {
+    return _then(_value.copyWith(
+      selectedMap: null == selectedMap
+          ? _value.selectedMap
+          : selectedMap // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+      testUrl: null == testUrl
+          ? _value.testUrl
+          : testUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$SetupParamsImplCopyWith<$Res>
+    implements $SetupParamsCopyWith<$Res> {
+  factory _$$SetupParamsImplCopyWith(
+          _$SetupParamsImpl value, $Res Function(_$SetupParamsImpl) then) =
+      __$$SetupParamsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'selected-map') Map<String, String> selectedMap,
+      @JsonKey(name: 'test-url') String testUrl});
 }
 
+/// @nodoc
+class __$$SetupParamsImplCopyWithImpl<$Res>
+    extends _$SetupParamsCopyWithImpl<$Res, _$SetupParamsImpl>
+    implements _$$SetupParamsImplCopyWith<$Res> {
+  __$$SetupParamsImplCopyWithImpl(
+      _$SetupParamsImpl _value, $Res Function(_$SetupParamsImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [SetupParams].
-extension SetupParamsPatterns on SetupParams {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SetupParams value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _SetupParams() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SetupParams value)  $default,){
-final _that = this;
-switch (_that) {
-case _SetupParams():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SetupParams value)?  $default,){
-final _that = this;
-switch (_that) {
-case _SetupParams() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'selected-map')  Map<String, String> selectedMap, @JsonKey(name: 'test-url')  String testUrl)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _SetupParams() when $default != null:
-return $default(_that.selectedMap,_that.testUrl);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'selected-map')  Map<String, String> selectedMap, @JsonKey(name: 'test-url')  String testUrl)  $default,) {final _that = this;
-switch (_that) {
-case _SetupParams():
-return $default(_that.selectedMap,_that.testUrl);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'selected-map')  Map<String, String> selectedMap, @JsonKey(name: 'test-url')  String testUrl)?  $default,) {final _that = this;
-switch (_that) {
-case _SetupParams() when $default != null:
-return $default(_that.selectedMap,_that.testUrl);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedMap = null,
+    Object? testUrl = null,
+  }) {
+    return _then(_$SetupParamsImpl(
+      selectedMap: null == selectedMap
+          ? _value._selectedMap
+          : selectedMap // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+      testUrl: null == testUrl
+          ? _value.testUrl
+          : testUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$SetupParamsImpl implements _SetupParams {
+  const _$SetupParamsImpl(
+      {@JsonKey(name: 'selected-map')
+      required final Map<String, String> selectedMap,
+      @JsonKey(name: 'test-url') required this.testUrl})
+      : _selectedMap = selectedMap;
 
-class _SetupParams implements SetupParams {
-  const _SetupParams({@JsonKey(name: 'selected-map') required final  Map<String, String> selectedMap, @JsonKey(name: 'test-url') required this.testUrl}): _selectedMap = selectedMap;
-  factory _SetupParams.fromJson(Map<String, dynamic> json) => _$SetupParamsFromJson(json);
+  factory _$SetupParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SetupParamsImplFromJson(json);
 
- final  Map<String, String> _selectedMap;
-@override@JsonKey(name: 'selected-map') Map<String, String> get selectedMap {
-  if (_selectedMap is EqualUnmodifiableMapView) return _selectedMap;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_selectedMap);
+  final Map<String, String> _selectedMap;
+  @override
+  @JsonKey(name: 'selected-map')
+  Map<String, String> get selectedMap {
+    if (_selectedMap is EqualUnmodifiableMapView) return _selectedMap;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_selectedMap);
+  }
+
+  @override
+  @JsonKey(name: 'test-url')
+  final String testUrl;
+
+  @override
+  String toString() {
+    return 'SetupParams(selectedMap: $selectedMap, testUrl: $testUrl)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetupParamsImpl &&
+            const DeepCollectionEquality()
+                .equals(other._selectedMap, _selectedMap) &&
+            (identical(other.testUrl, testUrl) || other.testUrl == testUrl));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_selectedMap), testUrl);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetupParamsImplCopyWith<_$SetupParamsImpl> get copyWith =>
+      __$$SetupParamsImplCopyWithImpl<_$SetupParamsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SetupParamsImplToJson(
+      this,
+    );
+  }
 }
 
-@override@JsonKey(name: 'test-url') final  String testUrl;
+abstract class _SetupParams implements SetupParams {
+  const factory _SetupParams(
+          {@JsonKey(name: 'selected-map')
+          required final Map<String, String> selectedMap,
+          @JsonKey(name: 'test-url') required final String testUrl}) =
+      _$SetupParamsImpl;
 
-/// Create a copy of SetupParams
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$SetupParamsCopyWith<_SetupParams> get copyWith => __$SetupParamsCopyWithImpl<_SetupParams>(this, _$identity);
+  factory _SetupParams.fromJson(Map<String, dynamic> json) =
+      _$SetupParamsImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$SetupParamsToJson(this, );
+  @override
+  @JsonKey(name: 'selected-map')
+  Map<String, String> get selectedMap;
+  @override
+  @JsonKey(name: 'test-url')
+  String get testUrl;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetupParamsImplCopyWith<_$SetupParamsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SetupParams&&const DeepCollectionEquality().equals(other._selectedMap, _selectedMap)&&(identical(other.testUrl, testUrl) || other.testUrl == testUrl));
+UpdateParams _$UpdateParamsFromJson(Map<String, dynamic> json) {
+  return _UpdateParams.fromJson(json);
 }
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_selectedMap),testUrl);
-
-@override
-String toString() {
-  return 'SetupParams(selectedMap: $selectedMap, testUrl: $testUrl)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$SetupParamsCopyWith<$Res> implements $SetupParamsCopyWith<$Res> {
-  factory _$SetupParamsCopyWith(_SetupParams value, $Res Function(_SetupParams) _then) = __$SetupParamsCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(name: 'selected-map') Map<String, String> selectedMap,@JsonKey(name: 'test-url') String testUrl
-});
-
-
-
-
-}
-/// @nodoc
-class __$SetupParamsCopyWithImpl<$Res>
-    implements _$SetupParamsCopyWith<$Res> {
-  __$SetupParamsCopyWithImpl(this._self, this._then);
-
-  final _SetupParams _self;
-  final $Res Function(_SetupParams) _then;
-
-/// Create a copy of SetupParams
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? selectedMap = null,Object? testUrl = null,}) {
-  return _then(_SetupParams(
-selectedMap: null == selectedMap ? _self._selectedMap : selectedMap // ignore: cast_nullable_to_non_nullable
-as Map<String, String>,testUrl: null == testUrl ? _self.testUrl : testUrl // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$UpdateParams {
+  Tun get tun => throw _privateConstructorUsedError;
+  @JsonKey(name: 'mixed-port')
+  int get mixedPort => throw _privateConstructorUsedError;
+  @JsonKey(name: 'allow-lan')
+  bool get allowLan => throw _privateConstructorUsedError;
+  @JsonKey(name: 'find-process-mode')
+  FindProcessMode get findProcessMode => throw _privateConstructorUsedError;
+  Mode get mode => throw _privateConstructorUsedError;
+  @JsonKey(name: 'log-level')
+  LogLevel get logLevel => throw _privateConstructorUsedError;
+  bool get ipv6 => throw _privateConstructorUsedError;
+  @JsonKey(name: 'tcp-concurrent')
+  bool get tcpConcurrent => throw _privateConstructorUsedError;
+  @JsonKey(name: 'external-controller')
+  ExternalControllerStatus get externalController =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'unified-delay')
+  bool get unifiedDelay => throw _privateConstructorUsedError;
 
- Tun get tun;@JsonKey(name: 'mixed-port') int get mixedPort;@JsonKey(name: 'allow-lan') bool get allowLan;@JsonKey(name: 'find-process-mode') FindProcessMode get findProcessMode; Mode get mode;@JsonKey(name: 'log-level') LogLevel get logLevel; bool get ipv6;@JsonKey(name: 'tcp-concurrent') bool get tcpConcurrent;@JsonKey(name: 'external-controller') ExternalControllerStatus get externalController;@JsonKey(name: 'unified-delay') bool get unifiedDelay;
-/// Create a copy of UpdateParams
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UpdateParamsCopyWith<UpdateParams> get copyWith => _$UpdateParamsCopyWithImpl<UpdateParams>(this as UpdateParams, _$identity);
-
-  /// Serializes this UpdateParams to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateParams&&(identical(other.tun, tun) || other.tun == tun)&&(identical(other.mixedPort, mixedPort) || other.mixedPort == mixedPort)&&(identical(other.allowLan, allowLan) || other.allowLan == allowLan)&&(identical(other.findProcessMode, findProcessMode) || other.findProcessMode == findProcessMode)&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.logLevel, logLevel) || other.logLevel == logLevel)&&(identical(other.ipv6, ipv6) || other.ipv6 == ipv6)&&(identical(other.tcpConcurrent, tcpConcurrent) || other.tcpConcurrent == tcpConcurrent)&&(identical(other.externalController, externalController) || other.externalController == externalController)&&(identical(other.unifiedDelay, unifiedDelay) || other.unifiedDelay == unifiedDelay));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,tun,mixedPort,allowLan,findProcessMode,mode,logLevel,ipv6,tcpConcurrent,externalController,unifiedDelay);
-
-@override
-String toString() {
-  return 'UpdateParams(tun: $tun, mixedPort: $mixedPort, allowLan: $allowLan, findProcessMode: $findProcessMode, mode: $mode, logLevel: $logLevel, ipv6: $ipv6, tcpConcurrent: $tcpConcurrent, externalController: $externalController, unifiedDelay: $unifiedDelay)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UpdateParamsCopyWith<UpdateParams> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UpdateParamsCopyWith<$Res>  {
-  factory $UpdateParamsCopyWith(UpdateParams value, $Res Function(UpdateParams) _then) = _$UpdateParamsCopyWithImpl;
-@useResult
-$Res call({
- Tun tun,@JsonKey(name: 'mixed-port') int mixedPort,@JsonKey(name: 'allow-lan') bool allowLan,@JsonKey(name: 'find-process-mode') FindProcessMode findProcessMode, Mode mode,@JsonKey(name: 'log-level') LogLevel logLevel, bool ipv6,@JsonKey(name: 'tcp-concurrent') bool tcpConcurrent,@JsonKey(name: 'external-controller') ExternalControllerStatus externalController,@JsonKey(name: 'unified-delay') bool unifiedDelay
-});
+abstract class $UpdateParamsCopyWith<$Res> {
+  factory $UpdateParamsCopyWith(
+          UpdateParams value, $Res Function(UpdateParams) then) =
+      _$UpdateParamsCopyWithImpl<$Res, UpdateParams>;
+  @useResult
+  $Res call(
+      {Tun tun,
+      @JsonKey(name: 'mixed-port') int mixedPort,
+      @JsonKey(name: 'allow-lan') bool allowLan,
+      @JsonKey(name: 'find-process-mode') FindProcessMode findProcessMode,
+      Mode mode,
+      @JsonKey(name: 'log-level') LogLevel logLevel,
+      bool ipv6,
+      @JsonKey(name: 'tcp-concurrent') bool tcpConcurrent,
+      @JsonKey(name: 'external-controller')
+      ExternalControllerStatus externalController,
+      @JsonKey(name: 'unified-delay') bool unifiedDelay});
 
-
-$TunCopyWith<$Res> get tun;
-
+  $TunCopyWith<$Res> get tun;
 }
+
 /// @nodoc
-class _$UpdateParamsCopyWithImpl<$Res>
+class _$UpdateParamsCopyWithImpl<$Res, $Val extends UpdateParams>
     implements $UpdateParamsCopyWith<$Res> {
-  _$UpdateParamsCopyWithImpl(this._self, this._then);
+  _$UpdateParamsCopyWithImpl(this._value, this._then);
 
-  final UpdateParams _self;
-  final $Res Function(UpdateParams) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of UpdateParams
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? tun = null,Object? mixedPort = null,Object? allowLan = null,Object? findProcessMode = null,Object? mode = null,Object? logLevel = null,Object? ipv6 = null,Object? tcpConcurrent = null,Object? externalController = null,Object? unifiedDelay = null,}) {
-  return _then(_self.copyWith(
-tun: null == tun ? _self.tun : tun // ignore: cast_nullable_to_non_nullable
-as Tun,mixedPort: null == mixedPort ? _self.mixedPort : mixedPort // ignore: cast_nullable_to_non_nullable
-as int,allowLan: null == allowLan ? _self.allowLan : allowLan // ignore: cast_nullable_to_non_nullable
-as bool,findProcessMode: null == findProcessMode ? _self.findProcessMode : findProcessMode // ignore: cast_nullable_to_non_nullable
-as FindProcessMode,mode: null == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
-as Mode,logLevel: null == logLevel ? _self.logLevel : logLevel // ignore: cast_nullable_to_non_nullable
-as LogLevel,ipv6: null == ipv6 ? _self.ipv6 : ipv6 // ignore: cast_nullable_to_non_nullable
-as bool,tcpConcurrent: null == tcpConcurrent ? _self.tcpConcurrent : tcpConcurrent // ignore: cast_nullable_to_non_nullable
-as bool,externalController: null == externalController ? _self.externalController : externalController // ignore: cast_nullable_to_non_nullable
-as ExternalControllerStatus,unifiedDelay: null == unifiedDelay ? _self.unifiedDelay : unifiedDelay // ignore: cast_nullable_to_non_nullable
-as bool,
-  ));
-}
-/// Create a copy of UpdateParams
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$TunCopyWith<$Res> get tun {
-  
-  return $TunCopyWith<$Res>(_self.tun, (value) {
-    return _then(_self.copyWith(tun: value));
-  });
-}
-}
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tun = null,
+    Object? mixedPort = null,
+    Object? allowLan = null,
+    Object? findProcessMode = null,
+    Object? mode = null,
+    Object? logLevel = null,
+    Object? ipv6 = null,
+    Object? tcpConcurrent = null,
+    Object? externalController = null,
+    Object? unifiedDelay = null,
+  }) {
+    return _then(_value.copyWith(
+      tun: null == tun
+          ? _value.tun
+          : tun // ignore: cast_nullable_to_non_nullable
+              as Tun,
+      mixedPort: null == mixedPort
+          ? _value.mixedPort
+          : mixedPort // ignore: cast_nullable_to_non_nullable
+              as int,
+      allowLan: null == allowLan
+          ? _value.allowLan
+          : allowLan // ignore: cast_nullable_to_non_nullable
+              as bool,
+      findProcessMode: null == findProcessMode
+          ? _value.findProcessMode
+          : findProcessMode // ignore: cast_nullable_to_non_nullable
+              as FindProcessMode,
+      mode: null == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as Mode,
+      logLevel: null == logLevel
+          ? _value.logLevel
+          : logLevel // ignore: cast_nullable_to_non_nullable
+              as LogLevel,
+      ipv6: null == ipv6
+          ? _value.ipv6
+          : ipv6 // ignore: cast_nullable_to_non_nullable
+              as bool,
+      tcpConcurrent: null == tcpConcurrent
+          ? _value.tcpConcurrent
+          : tcpConcurrent // ignore: cast_nullable_to_non_nullable
+              as bool,
+      externalController: null == externalController
+          ? _value.externalController
+          : externalController // ignore: cast_nullable_to_non_nullable
+              as ExternalControllerStatus,
+      unifiedDelay: null == unifiedDelay
+          ? _value.unifiedDelay
+          : unifiedDelay // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [UpdateParams].
-extension UpdateParamsPatterns on UpdateParams {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UpdateParams value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _UpdateParams() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UpdateParams value)  $default,){
-final _that = this;
-switch (_that) {
-case _UpdateParams():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UpdateParams value)?  $default,){
-final _that = this;
-switch (_that) {
-case _UpdateParams() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Tun tun, @JsonKey(name: 'mixed-port')  int mixedPort, @JsonKey(name: 'allow-lan')  bool allowLan, @JsonKey(name: 'find-process-mode')  FindProcessMode findProcessMode,  Mode mode, @JsonKey(name: 'log-level')  LogLevel logLevel,  bool ipv6, @JsonKey(name: 'tcp-concurrent')  bool tcpConcurrent, @JsonKey(name: 'external-controller')  ExternalControllerStatus externalController, @JsonKey(name: 'unified-delay')  bool unifiedDelay)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _UpdateParams() when $default != null:
-return $default(_that.tun,_that.mixedPort,_that.allowLan,_that.findProcessMode,_that.mode,_that.logLevel,_that.ipv6,_that.tcpConcurrent,_that.externalController,_that.unifiedDelay);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Tun tun, @JsonKey(name: 'mixed-port')  int mixedPort, @JsonKey(name: 'allow-lan')  bool allowLan, @JsonKey(name: 'find-process-mode')  FindProcessMode findProcessMode,  Mode mode, @JsonKey(name: 'log-level')  LogLevel logLevel,  bool ipv6, @JsonKey(name: 'tcp-concurrent')  bool tcpConcurrent, @JsonKey(name: 'external-controller')  ExternalControllerStatus externalController, @JsonKey(name: 'unified-delay')  bool unifiedDelay)  $default,) {final _that = this;
-switch (_that) {
-case _UpdateParams():
-return $default(_that.tun,_that.mixedPort,_that.allowLan,_that.findProcessMode,_that.mode,_that.logLevel,_that.ipv6,_that.tcpConcurrent,_that.externalController,_that.unifiedDelay);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Tun tun, @JsonKey(name: 'mixed-port')  int mixedPort, @JsonKey(name: 'allow-lan')  bool allowLan, @JsonKey(name: 'find-process-mode')  FindProcessMode findProcessMode,  Mode mode, @JsonKey(name: 'log-level')  LogLevel logLevel,  bool ipv6, @JsonKey(name: 'tcp-concurrent')  bool tcpConcurrent, @JsonKey(name: 'external-controller')  ExternalControllerStatus externalController, @JsonKey(name: 'unified-delay')  bool unifiedDelay)?  $default,) {final _that = this;
-switch (_that) {
-case _UpdateParams() when $default != null:
-return $default(_that.tun,_that.mixedPort,_that.allowLan,_that.findProcessMode,_that.mode,_that.logLevel,_that.ipv6,_that.tcpConcurrent,_that.externalController,_that.unifiedDelay);case _:
-  return null;
-
-}
+  @override
+  @pragma('vm:prefer-inline')
+  $TunCopyWith<$Res> get tun {
+    return $TunCopyWith<$Res>(_value.tun, (value) {
+      return _then(_value.copyWith(tun: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$UpdateParamsImplCopyWith<$Res>
+    implements $UpdateParamsCopyWith<$Res> {
+  factory _$$UpdateParamsImplCopyWith(
+          _$UpdateParamsImpl value, $Res Function(_$UpdateParamsImpl) then) =
+      __$$UpdateParamsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {Tun tun,
+      @JsonKey(name: 'mixed-port') int mixedPort,
+      @JsonKey(name: 'allow-lan') bool allowLan,
+      @JsonKey(name: 'find-process-mode') FindProcessMode findProcessMode,
+      Mode mode,
+      @JsonKey(name: 'log-level') LogLevel logLevel,
+      bool ipv6,
+      @JsonKey(name: 'tcp-concurrent') bool tcpConcurrent,
+      @JsonKey(name: 'external-controller')
+      ExternalControllerStatus externalController,
+      @JsonKey(name: 'unified-delay') bool unifiedDelay});
+
+  @override
+  $TunCopyWith<$Res> get tun;
+}
+
+/// @nodoc
+class __$$UpdateParamsImplCopyWithImpl<$Res>
+    extends _$UpdateParamsCopyWithImpl<$Res, _$UpdateParamsImpl>
+    implements _$$UpdateParamsImplCopyWith<$Res> {
+  __$$UpdateParamsImplCopyWithImpl(
+      _$UpdateParamsImpl _value, $Res Function(_$UpdateParamsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tun = null,
+    Object? mixedPort = null,
+    Object? allowLan = null,
+    Object? findProcessMode = null,
+    Object? mode = null,
+    Object? logLevel = null,
+    Object? ipv6 = null,
+    Object? tcpConcurrent = null,
+    Object? externalController = null,
+    Object? unifiedDelay = null,
+  }) {
+    return _then(_$UpdateParamsImpl(
+      tun: null == tun
+          ? _value.tun
+          : tun // ignore: cast_nullable_to_non_nullable
+              as Tun,
+      mixedPort: null == mixedPort
+          ? _value.mixedPort
+          : mixedPort // ignore: cast_nullable_to_non_nullable
+              as int,
+      allowLan: null == allowLan
+          ? _value.allowLan
+          : allowLan // ignore: cast_nullable_to_non_nullable
+              as bool,
+      findProcessMode: null == findProcessMode
+          ? _value.findProcessMode
+          : findProcessMode // ignore: cast_nullable_to_non_nullable
+              as FindProcessMode,
+      mode: null == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as Mode,
+      logLevel: null == logLevel
+          ? _value.logLevel
+          : logLevel // ignore: cast_nullable_to_non_nullable
+              as LogLevel,
+      ipv6: null == ipv6
+          ? _value.ipv6
+          : ipv6 // ignore: cast_nullable_to_non_nullable
+              as bool,
+      tcpConcurrent: null == tcpConcurrent
+          ? _value.tcpConcurrent
+          : tcpConcurrent // ignore: cast_nullable_to_non_nullable
+              as bool,
+      externalController: null == externalController
+          ? _value.externalController
+          : externalController // ignore: cast_nullable_to_non_nullable
+              as ExternalControllerStatus,
+      unifiedDelay: null == unifiedDelay
+          ? _value.unifiedDelay
+          : unifiedDelay // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$UpdateParamsImpl implements _UpdateParams {
+  const _$UpdateParamsImpl(
+      {required this.tun,
+      @JsonKey(name: 'mixed-port') required this.mixedPort,
+      @JsonKey(name: 'allow-lan') required this.allowLan,
+      @JsonKey(name: 'find-process-mode') required this.findProcessMode,
+      required this.mode,
+      @JsonKey(name: 'log-level') required this.logLevel,
+      required this.ipv6,
+      @JsonKey(name: 'tcp-concurrent') required this.tcpConcurrent,
+      @JsonKey(name: 'external-controller') required this.externalController,
+      @JsonKey(name: 'unified-delay') required this.unifiedDelay});
 
-class _UpdateParams implements UpdateParams {
-  const _UpdateParams({required this.tun, @JsonKey(name: 'mixed-port') required this.mixedPort, @JsonKey(name: 'allow-lan') required this.allowLan, @JsonKey(name: 'find-process-mode') required this.findProcessMode, required this.mode, @JsonKey(name: 'log-level') required this.logLevel, required this.ipv6, @JsonKey(name: 'tcp-concurrent') required this.tcpConcurrent, @JsonKey(name: 'external-controller') required this.externalController, @JsonKey(name: 'unified-delay') required this.unifiedDelay});
-  factory _UpdateParams.fromJson(Map<String, dynamic> json) => _$UpdateParamsFromJson(json);
+  factory _$UpdateParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdateParamsImplFromJson(json);
 
-@override final  Tun tun;
-@override@JsonKey(name: 'mixed-port') final  int mixedPort;
-@override@JsonKey(name: 'allow-lan') final  bool allowLan;
-@override@JsonKey(name: 'find-process-mode') final  FindProcessMode findProcessMode;
-@override final  Mode mode;
-@override@JsonKey(name: 'log-level') final  LogLevel logLevel;
-@override final  bool ipv6;
-@override@JsonKey(name: 'tcp-concurrent') final  bool tcpConcurrent;
-@override@JsonKey(name: 'external-controller') final  ExternalControllerStatus externalController;
-@override@JsonKey(name: 'unified-delay') final  bool unifiedDelay;
+  @override
+  final Tun tun;
+  @override
+  @JsonKey(name: 'mixed-port')
+  final int mixedPort;
+  @override
+  @JsonKey(name: 'allow-lan')
+  final bool allowLan;
+  @override
+  @JsonKey(name: 'find-process-mode')
+  final FindProcessMode findProcessMode;
+  @override
+  final Mode mode;
+  @override
+  @JsonKey(name: 'log-level')
+  final LogLevel logLevel;
+  @override
+  final bool ipv6;
+  @override
+  @JsonKey(name: 'tcp-concurrent')
+  final bool tcpConcurrent;
+  @override
+  @JsonKey(name: 'external-controller')
+  final ExternalControllerStatus externalController;
+  @override
+  @JsonKey(name: 'unified-delay')
+  final bool unifiedDelay;
 
-/// Create a copy of UpdateParams
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$UpdateParamsCopyWith<_UpdateParams> get copyWith => __$UpdateParamsCopyWithImpl<_UpdateParams>(this, _$identity);
+  @override
+  String toString() {
+    return 'UpdateParams(tun: $tun, mixedPort: $mixedPort, allowLan: $allowLan, findProcessMode: $findProcessMode, mode: $mode, logLevel: $logLevel, ipv6: $ipv6, tcpConcurrent: $tcpConcurrent, externalController: $externalController, unifiedDelay: $unifiedDelay)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$UpdateParamsToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateParamsImpl &&
+            (identical(other.tun, tun) || other.tun == tun) &&
+            (identical(other.mixedPort, mixedPort) ||
+                other.mixedPort == mixedPort) &&
+            (identical(other.allowLan, allowLan) ||
+                other.allowLan == allowLan) &&
+            (identical(other.findProcessMode, findProcessMode) ||
+                other.findProcessMode == findProcessMode) &&
+            (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.logLevel, logLevel) ||
+                other.logLevel == logLevel) &&
+            (identical(other.ipv6, ipv6) || other.ipv6 == ipv6) &&
+            (identical(other.tcpConcurrent, tcpConcurrent) ||
+                other.tcpConcurrent == tcpConcurrent) &&
+            (identical(other.externalController, externalController) ||
+                other.externalController == externalController) &&
+            (identical(other.unifiedDelay, unifiedDelay) ||
+                other.unifiedDelay == unifiedDelay));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      tun,
+      mixedPort,
+      allowLan,
+      findProcessMode,
+      mode,
+      logLevel,
+      ipv6,
+      tcpConcurrent,
+      externalController,
+      unifiedDelay);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateParamsImplCopyWith<_$UpdateParamsImpl> get copyWith =>
+      __$$UpdateParamsImplCopyWithImpl<_$UpdateParamsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UpdateParamsImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateParams&&(identical(other.tun, tun) || other.tun == tun)&&(identical(other.mixedPort, mixedPort) || other.mixedPort == mixedPort)&&(identical(other.allowLan, allowLan) || other.allowLan == allowLan)&&(identical(other.findProcessMode, findProcessMode) || other.findProcessMode == findProcessMode)&&(identical(other.mode, mode) || other.mode == mode)&&(identical(other.logLevel, logLevel) || other.logLevel == logLevel)&&(identical(other.ipv6, ipv6) || other.ipv6 == ipv6)&&(identical(other.tcpConcurrent, tcpConcurrent) || other.tcpConcurrent == tcpConcurrent)&&(identical(other.externalController, externalController) || other.externalController == externalController)&&(identical(other.unifiedDelay, unifiedDelay) || other.unifiedDelay == unifiedDelay));
+abstract class _UpdateParams implements UpdateParams {
+  const factory _UpdateParams(
+          {required final Tun tun,
+          @JsonKey(name: 'mixed-port') required final int mixedPort,
+          @JsonKey(name: 'allow-lan') required final bool allowLan,
+          @JsonKey(name: 'find-process-mode')
+          required final FindProcessMode findProcessMode,
+          required final Mode mode,
+          @JsonKey(name: 'log-level') required final LogLevel logLevel,
+          required final bool ipv6,
+          @JsonKey(name: 'tcp-concurrent') required final bool tcpConcurrent,
+          @JsonKey(name: 'external-controller')
+          required final ExternalControllerStatus externalController,
+          @JsonKey(name: 'unified-delay') required final bool unifiedDelay}) =
+      _$UpdateParamsImpl;
+
+  factory _UpdateParams.fromJson(Map<String, dynamic> json) =
+      _$UpdateParamsImpl.fromJson;
+
+  @override
+  Tun get tun;
+  @override
+  @JsonKey(name: 'mixed-port')
+  int get mixedPort;
+  @override
+  @JsonKey(name: 'allow-lan')
+  bool get allowLan;
+  @override
+  @JsonKey(name: 'find-process-mode')
+  FindProcessMode get findProcessMode;
+  @override
+  Mode get mode;
+  @override
+  @JsonKey(name: 'log-level')
+  LogLevel get logLevel;
+  @override
+  bool get ipv6;
+  @override
+  @JsonKey(name: 'tcp-concurrent')
+  bool get tcpConcurrent;
+  @override
+  @JsonKey(name: 'external-controller')
+  ExternalControllerStatus get externalController;
+  @override
+  @JsonKey(name: 'unified-delay')
+  bool get unifiedDelay;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateParamsImplCopyWith<_$UpdateParamsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,tun,mixedPort,allowLan,findProcessMode,mode,logLevel,ipv6,tcpConcurrent,externalController,unifiedDelay);
-
-@override
-String toString() {
-  return 'UpdateParams(tun: $tun, mixedPort: $mixedPort, allowLan: $allowLan, findProcessMode: $findProcessMode, mode: $mode, logLevel: $logLevel, ipv6: $ipv6, tcpConcurrent: $tcpConcurrent, externalController: $externalController, unifiedDelay: $unifiedDelay)';
+VpnOptions _$VpnOptionsFromJson(Map<String, dynamic> json) {
+  return _VpnOptions.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$UpdateParamsCopyWith<$Res> implements $UpdateParamsCopyWith<$Res> {
-  factory _$UpdateParamsCopyWith(_UpdateParams value, $Res Function(_UpdateParams) _then) = __$UpdateParamsCopyWithImpl;
-@override @useResult
-$Res call({
- Tun tun,@JsonKey(name: 'mixed-port') int mixedPort,@JsonKey(name: 'allow-lan') bool allowLan,@JsonKey(name: 'find-process-mode') FindProcessMode findProcessMode, Mode mode,@JsonKey(name: 'log-level') LogLevel logLevel, bool ipv6,@JsonKey(name: 'tcp-concurrent') bool tcpConcurrent,@JsonKey(name: 'external-controller') ExternalControllerStatus externalController,@JsonKey(name: 'unified-delay') bool unifiedDelay
-});
-
-
-@override $TunCopyWith<$Res> get tun;
-
-}
-/// @nodoc
-class __$UpdateParamsCopyWithImpl<$Res>
-    implements _$UpdateParamsCopyWith<$Res> {
-  __$UpdateParamsCopyWithImpl(this._self, this._then);
-
-  final _UpdateParams _self;
-  final $Res Function(_UpdateParams) _then;
-
-/// Create a copy of UpdateParams
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? tun = null,Object? mixedPort = null,Object? allowLan = null,Object? findProcessMode = null,Object? mode = null,Object? logLevel = null,Object? ipv6 = null,Object? tcpConcurrent = null,Object? externalController = null,Object? unifiedDelay = null,}) {
-  return _then(_UpdateParams(
-tun: null == tun ? _self.tun : tun // ignore: cast_nullable_to_non_nullable
-as Tun,mixedPort: null == mixedPort ? _self.mixedPort : mixedPort // ignore: cast_nullable_to_non_nullable
-as int,allowLan: null == allowLan ? _self.allowLan : allowLan // ignore: cast_nullable_to_non_nullable
-as bool,findProcessMode: null == findProcessMode ? _self.findProcessMode : findProcessMode // ignore: cast_nullable_to_non_nullable
-as FindProcessMode,mode: null == mode ? _self.mode : mode // ignore: cast_nullable_to_non_nullable
-as Mode,logLevel: null == logLevel ? _self.logLevel : logLevel // ignore: cast_nullable_to_non_nullable
-as LogLevel,ipv6: null == ipv6 ? _self.ipv6 : ipv6 // ignore: cast_nullable_to_non_nullable
-as bool,tcpConcurrent: null == tcpConcurrent ? _self.tcpConcurrent : tcpConcurrent // ignore: cast_nullable_to_non_nullable
-as bool,externalController: null == externalController ? _self.externalController : externalController // ignore: cast_nullable_to_non_nullable
-as ExternalControllerStatus,unifiedDelay: null == unifiedDelay ? _self.unifiedDelay : unifiedDelay // ignore: cast_nullable_to_non_nullable
-as bool,
-  ));
-}
-
-/// Create a copy of UpdateParams
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$TunCopyWith<$Res> get tun {
-  
-  return $TunCopyWith<$Res>(_self.tun, (value) {
-    return _then(_self.copyWith(tun: value));
-  });
-}
-}
-
 
 /// @nodoc
 mixin _$VpnOptions {
+  bool get enable => throw _privateConstructorUsedError;
+  int get port => throw _privateConstructorUsedError;
+  bool get ipv6 => throw _privateConstructorUsedError;
+  bool get dnsHijacking => throw _privateConstructorUsedError;
+  AccessControl get accessControl => throw _privateConstructorUsedError;
+  bool get allowBypass => throw _privateConstructorUsedError;
+  bool get systemProxy => throw _privateConstructorUsedError;
+  List<String> get bypassDomain => throw _privateConstructorUsedError;
+  String get stack => throw _privateConstructorUsedError;
+  List<String> get routeAddress => throw _privateConstructorUsedError;
 
- bool get enable; int get port; bool get ipv6; bool get dnsHijacking; AccessControl get accessControl; bool get allowBypass; bool get systemProxy; List<String> get bypassDomain; String get stack; List<String> get routeAddress;
-/// Create a copy of VpnOptions
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$VpnOptionsCopyWith<VpnOptions> get copyWith => _$VpnOptionsCopyWithImpl<VpnOptions>(this as VpnOptions, _$identity);
-
-  /// Serializes this VpnOptions to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is VpnOptions&&(identical(other.enable, enable) || other.enable == enable)&&(identical(other.port, port) || other.port == port)&&(identical(other.ipv6, ipv6) || other.ipv6 == ipv6)&&(identical(other.dnsHijacking, dnsHijacking) || other.dnsHijacking == dnsHijacking)&&(identical(other.accessControl, accessControl) || other.accessControl == accessControl)&&(identical(other.allowBypass, allowBypass) || other.allowBypass == allowBypass)&&(identical(other.systemProxy, systemProxy) || other.systemProxy == systemProxy)&&const DeepCollectionEquality().equals(other.bypassDomain, bypassDomain)&&(identical(other.stack, stack) || other.stack == stack)&&const DeepCollectionEquality().equals(other.routeAddress, routeAddress));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,enable,port,ipv6,dnsHijacking,accessControl,allowBypass,systemProxy,const DeepCollectionEquality().hash(bypassDomain),stack,const DeepCollectionEquality().hash(routeAddress));
-
-@override
-String toString() {
-  return 'VpnOptions(enable: $enable, port: $port, ipv6: $ipv6, dnsHijacking: $dnsHijacking, accessControl: $accessControl, allowBypass: $allowBypass, systemProxy: $systemProxy, bypassDomain: $bypassDomain, stack: $stack, routeAddress: $routeAddress)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $VpnOptionsCopyWith<VpnOptions> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $VpnOptionsCopyWith<$Res>  {
-  factory $VpnOptionsCopyWith(VpnOptions value, $Res Function(VpnOptions) _then) = _$VpnOptionsCopyWithImpl;
-@useResult
-$Res call({
- bool enable, int port, bool ipv6, bool dnsHijacking, AccessControl accessControl, bool allowBypass, bool systemProxy, List<String> bypassDomain, String stack, List<String> routeAddress
-});
+abstract class $VpnOptionsCopyWith<$Res> {
+  factory $VpnOptionsCopyWith(
+          VpnOptions value, $Res Function(VpnOptions) then) =
+      _$VpnOptionsCopyWithImpl<$Res, VpnOptions>;
+  @useResult
+  $Res call(
+      {bool enable,
+      int port,
+      bool ipv6,
+      bool dnsHijacking,
+      AccessControl accessControl,
+      bool allowBypass,
+      bool systemProxy,
+      List<String> bypassDomain,
+      String stack,
+      List<String> routeAddress});
 
-
-$AccessControlCopyWith<$Res> get accessControl;
-
+  $AccessControlCopyWith<$Res> get accessControl;
 }
+
 /// @nodoc
-class _$VpnOptionsCopyWithImpl<$Res>
+class _$VpnOptionsCopyWithImpl<$Res, $Val extends VpnOptions>
     implements $VpnOptionsCopyWith<$Res> {
-  _$VpnOptionsCopyWithImpl(this._self, this._then);
+  _$VpnOptionsCopyWithImpl(this._value, this._then);
 
-  final VpnOptions _self;
-  final $Res Function(VpnOptions) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of VpnOptions
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? enable = null,Object? port = null,Object? ipv6 = null,Object? dnsHijacking = null,Object? accessControl = null,Object? allowBypass = null,Object? systemProxy = null,Object? bypassDomain = null,Object? stack = null,Object? routeAddress = null,}) {
-  return _then(_self.copyWith(
-enable: null == enable ? _self.enable : enable // ignore: cast_nullable_to_non_nullable
-as bool,port: null == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
-as int,ipv6: null == ipv6 ? _self.ipv6 : ipv6 // ignore: cast_nullable_to_non_nullable
-as bool,dnsHijacking: null == dnsHijacking ? _self.dnsHijacking : dnsHijacking // ignore: cast_nullable_to_non_nullable
-as bool,accessControl: null == accessControl ? _self.accessControl : accessControl // ignore: cast_nullable_to_non_nullable
-as AccessControl,allowBypass: null == allowBypass ? _self.allowBypass : allowBypass // ignore: cast_nullable_to_non_nullable
-as bool,systemProxy: null == systemProxy ? _self.systemProxy : systemProxy // ignore: cast_nullable_to_non_nullable
-as bool,bypassDomain: null == bypassDomain ? _self.bypassDomain : bypassDomain // ignore: cast_nullable_to_non_nullable
-as List<String>,stack: null == stack ? _self.stack : stack // ignore: cast_nullable_to_non_nullable
-as String,routeAddress: null == routeAddress ? _self.routeAddress : routeAddress // ignore: cast_nullable_to_non_nullable
-as List<String>,
-  ));
-}
-/// Create a copy of VpnOptions
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AccessControlCopyWith<$Res> get accessControl {
-  
-  return $AccessControlCopyWith<$Res>(_self.accessControl, (value) {
-    return _then(_self.copyWith(accessControl: value));
-  });
-}
-}
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? enable = null,
+    Object? port = null,
+    Object? ipv6 = null,
+    Object? dnsHijacking = null,
+    Object? accessControl = null,
+    Object? allowBypass = null,
+    Object? systemProxy = null,
+    Object? bypassDomain = null,
+    Object? stack = null,
+    Object? routeAddress = null,
+  }) {
+    return _then(_value.copyWith(
+      enable: null == enable
+          ? _value.enable
+          : enable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      port: null == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int,
+      ipv6: null == ipv6
+          ? _value.ipv6
+          : ipv6 // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dnsHijacking: null == dnsHijacking
+          ? _value.dnsHijacking
+          : dnsHijacking // ignore: cast_nullable_to_non_nullable
+              as bool,
+      accessControl: null == accessControl
+          ? _value.accessControl
+          : accessControl // ignore: cast_nullable_to_non_nullable
+              as AccessControl,
+      allowBypass: null == allowBypass
+          ? _value.allowBypass
+          : allowBypass // ignore: cast_nullable_to_non_nullable
+              as bool,
+      systemProxy: null == systemProxy
+          ? _value.systemProxy
+          : systemProxy // ignore: cast_nullable_to_non_nullable
+              as bool,
+      bypassDomain: null == bypassDomain
+          ? _value.bypassDomain
+          : bypassDomain // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      stack: null == stack
+          ? _value.stack
+          : stack // ignore: cast_nullable_to_non_nullable
+              as String,
+      routeAddress: null == routeAddress
+          ? _value.routeAddress
+          : routeAddress // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [VpnOptions].
-extension VpnOptionsPatterns on VpnOptions {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _VpnOptions value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _VpnOptions() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _VpnOptions value)  $default,){
-final _that = this;
-switch (_that) {
-case _VpnOptions():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _VpnOptions value)?  $default,){
-final _that = this;
-switch (_that) {
-case _VpnOptions() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool enable,  int port,  bool ipv6,  bool dnsHijacking,  AccessControl accessControl,  bool allowBypass,  bool systemProxy,  List<String> bypassDomain,  String stack,  List<String> routeAddress)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _VpnOptions() when $default != null:
-return $default(_that.enable,_that.port,_that.ipv6,_that.dnsHijacking,_that.accessControl,_that.allowBypass,_that.systemProxy,_that.bypassDomain,_that.stack,_that.routeAddress);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool enable,  int port,  bool ipv6,  bool dnsHijacking,  AccessControl accessControl,  bool allowBypass,  bool systemProxy,  List<String> bypassDomain,  String stack,  List<String> routeAddress)  $default,) {final _that = this;
-switch (_that) {
-case _VpnOptions():
-return $default(_that.enable,_that.port,_that.ipv6,_that.dnsHijacking,_that.accessControl,_that.allowBypass,_that.systemProxy,_that.bypassDomain,_that.stack,_that.routeAddress);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool enable,  int port,  bool ipv6,  bool dnsHijacking,  AccessControl accessControl,  bool allowBypass,  bool systemProxy,  List<String> bypassDomain,  String stack,  List<String> routeAddress)?  $default,) {final _that = this;
-switch (_that) {
-case _VpnOptions() when $default != null:
-return $default(_that.enable,_that.port,_that.ipv6,_that.dnsHijacking,_that.accessControl,_that.allowBypass,_that.systemProxy,_that.bypassDomain,_that.stack,_that.routeAddress);case _:
-  return null;
-
-}
+  @override
+  @pragma('vm:prefer-inline')
+  $AccessControlCopyWith<$Res> get accessControl {
+    return $AccessControlCopyWith<$Res>(_value.accessControl, (value) {
+      return _then(_value.copyWith(accessControl: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$VpnOptionsImplCopyWith<$Res>
+    implements $VpnOptionsCopyWith<$Res> {
+  factory _$$VpnOptionsImplCopyWith(
+          _$VpnOptionsImpl value, $Res Function(_$VpnOptionsImpl) then) =
+      __$$VpnOptionsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool enable,
+      int port,
+      bool ipv6,
+      bool dnsHijacking,
+      AccessControl accessControl,
+      bool allowBypass,
+      bool systemProxy,
+      List<String> bypassDomain,
+      String stack,
+      List<String> routeAddress});
+
+  @override
+  $AccessControlCopyWith<$Res> get accessControl;
+}
+
+/// @nodoc
+class __$$VpnOptionsImplCopyWithImpl<$Res>
+    extends _$VpnOptionsCopyWithImpl<$Res, _$VpnOptionsImpl>
+    implements _$$VpnOptionsImplCopyWith<$Res> {
+  __$$VpnOptionsImplCopyWithImpl(
+      _$VpnOptionsImpl _value, $Res Function(_$VpnOptionsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? enable = null,
+    Object? port = null,
+    Object? ipv6 = null,
+    Object? dnsHijacking = null,
+    Object? accessControl = null,
+    Object? allowBypass = null,
+    Object? systemProxy = null,
+    Object? bypassDomain = null,
+    Object? stack = null,
+    Object? routeAddress = null,
+  }) {
+    return _then(_$VpnOptionsImpl(
+      enable: null == enable
+          ? _value.enable
+          : enable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      port: null == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int,
+      ipv6: null == ipv6
+          ? _value.ipv6
+          : ipv6 // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dnsHijacking: null == dnsHijacking
+          ? _value.dnsHijacking
+          : dnsHijacking // ignore: cast_nullable_to_non_nullable
+              as bool,
+      accessControl: null == accessControl
+          ? _value.accessControl
+          : accessControl // ignore: cast_nullable_to_non_nullable
+              as AccessControl,
+      allowBypass: null == allowBypass
+          ? _value.allowBypass
+          : allowBypass // ignore: cast_nullable_to_non_nullable
+              as bool,
+      systemProxy: null == systemProxy
+          ? _value.systemProxy
+          : systemProxy // ignore: cast_nullable_to_non_nullable
+              as bool,
+      bypassDomain: null == bypassDomain
+          ? _value._bypassDomain
+          : bypassDomain // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      stack: null == stack
+          ? _value.stack
+          : stack // ignore: cast_nullable_to_non_nullable
+              as String,
+      routeAddress: null == routeAddress
+          ? _value._routeAddress
+          : routeAddress // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$VpnOptionsImpl implements _VpnOptions {
+  const _$VpnOptionsImpl(
+      {required this.enable,
+      required this.port,
+      required this.ipv6,
+      required this.dnsHijacking,
+      required this.accessControl,
+      required this.allowBypass,
+      required this.systemProxy,
+      required final List<String> bypassDomain,
+      required this.stack,
+      final List<String> routeAddress = const []})
+      : _bypassDomain = bypassDomain,
+        _routeAddress = routeAddress;
 
-class _VpnOptions implements VpnOptions {
-  const _VpnOptions({required this.enable, required this.port, required this.ipv6, required this.dnsHijacking, required this.accessControl, required this.allowBypass, required this.systemProxy, required final  List<String> bypassDomain, required this.stack, final  List<String> routeAddress = const []}): _bypassDomain = bypassDomain,_routeAddress = routeAddress;
-  factory _VpnOptions.fromJson(Map<String, dynamic> json) => _$VpnOptionsFromJson(json);
+  factory _$VpnOptionsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VpnOptionsImplFromJson(json);
 
-@override final  bool enable;
-@override final  int port;
-@override final  bool ipv6;
-@override final  bool dnsHijacking;
-@override final  AccessControl accessControl;
-@override final  bool allowBypass;
-@override final  bool systemProxy;
- final  List<String> _bypassDomain;
-@override List<String> get bypassDomain {
-  if (_bypassDomain is EqualUnmodifiableListView) return _bypassDomain;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_bypassDomain);
+  @override
+  final bool enable;
+  @override
+  final int port;
+  @override
+  final bool ipv6;
+  @override
+  final bool dnsHijacking;
+  @override
+  final AccessControl accessControl;
+  @override
+  final bool allowBypass;
+  @override
+  final bool systemProxy;
+  final List<String> _bypassDomain;
+  @override
+  List<String> get bypassDomain {
+    if (_bypassDomain is EqualUnmodifiableListView) return _bypassDomain;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bypassDomain);
+  }
+
+  @override
+  final String stack;
+  final List<String> _routeAddress;
+  @override
+  @JsonKey()
+  List<String> get routeAddress {
+    if (_routeAddress is EqualUnmodifiableListView) return _routeAddress;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_routeAddress);
+  }
+
+  @override
+  String toString() {
+    return 'VpnOptions(enable: $enable, port: $port, ipv6: $ipv6, dnsHijacking: $dnsHijacking, accessControl: $accessControl, allowBypass: $allowBypass, systemProxy: $systemProxy, bypassDomain: $bypassDomain, stack: $stack, routeAddress: $routeAddress)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VpnOptionsImpl &&
+            (identical(other.enable, enable) || other.enable == enable) &&
+            (identical(other.port, port) || other.port == port) &&
+            (identical(other.ipv6, ipv6) || other.ipv6 == ipv6) &&
+            (identical(other.dnsHijacking, dnsHijacking) ||
+                other.dnsHijacking == dnsHijacking) &&
+            (identical(other.accessControl, accessControl) ||
+                other.accessControl == accessControl) &&
+            (identical(other.allowBypass, allowBypass) ||
+                other.allowBypass == allowBypass) &&
+            (identical(other.systemProxy, systemProxy) ||
+                other.systemProxy == systemProxy) &&
+            const DeepCollectionEquality()
+                .equals(other._bypassDomain, _bypassDomain) &&
+            (identical(other.stack, stack) || other.stack == stack) &&
+            const DeepCollectionEquality()
+                .equals(other._routeAddress, _routeAddress));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      enable,
+      port,
+      ipv6,
+      dnsHijacking,
+      accessControl,
+      allowBypass,
+      systemProxy,
+      const DeepCollectionEquality().hash(_bypassDomain),
+      stack,
+      const DeepCollectionEquality().hash(_routeAddress));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VpnOptionsImplCopyWith<_$VpnOptionsImpl> get copyWith =>
+      __$$VpnOptionsImplCopyWithImpl<_$VpnOptionsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$VpnOptionsImplToJson(
+      this,
+    );
+  }
 }
 
-@override final  String stack;
- final  List<String> _routeAddress;
-@override@JsonKey() List<String> get routeAddress {
-  if (_routeAddress is EqualUnmodifiableListView) return _routeAddress;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_routeAddress);
+abstract class _VpnOptions implements VpnOptions {
+  const factory _VpnOptions(
+      {required final bool enable,
+      required final int port,
+      required final bool ipv6,
+      required final bool dnsHijacking,
+      required final AccessControl accessControl,
+      required final bool allowBypass,
+      required final bool systemProxy,
+      required final List<String> bypassDomain,
+      required final String stack,
+      final List<String> routeAddress}) = _$VpnOptionsImpl;
+
+  factory _VpnOptions.fromJson(Map<String, dynamic> json) =
+      _$VpnOptionsImpl.fromJson;
+
+  @override
+  bool get enable;
+  @override
+  int get port;
+  @override
+  bool get ipv6;
+  @override
+  bool get dnsHijacking;
+  @override
+  AccessControl get accessControl;
+  @override
+  bool get allowBypass;
+  @override
+  bool get systemProxy;
+  @override
+  List<String> get bypassDomain;
+  @override
+  String get stack;
+  @override
+  List<String> get routeAddress;
+  @override
+  @JsonKey(ignore: true)
+  _$$VpnOptionsImplCopyWith<_$VpnOptionsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-
-/// Create a copy of VpnOptions
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$VpnOptionsCopyWith<_VpnOptions> get copyWith => __$VpnOptionsCopyWithImpl<_VpnOptions>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$VpnOptionsToJson(this, );
+InitParams _$InitParamsFromJson(Map<String, dynamic> json) {
+  return _InitParams.fromJson(json);
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _VpnOptions&&(identical(other.enable, enable) || other.enable == enable)&&(identical(other.port, port) || other.port == port)&&(identical(other.ipv6, ipv6) || other.ipv6 == ipv6)&&(identical(other.dnsHijacking, dnsHijacking) || other.dnsHijacking == dnsHijacking)&&(identical(other.accessControl, accessControl) || other.accessControl == accessControl)&&(identical(other.allowBypass, allowBypass) || other.allowBypass == allowBypass)&&(identical(other.systemProxy, systemProxy) || other.systemProxy == systemProxy)&&const DeepCollectionEquality().equals(other._bypassDomain, _bypassDomain)&&(identical(other.stack, stack) || other.stack == stack)&&const DeepCollectionEquality().equals(other._routeAddress, _routeAddress));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,enable,port,ipv6,dnsHijacking,accessControl,allowBypass,systemProxy,const DeepCollectionEquality().hash(_bypassDomain),stack,const DeepCollectionEquality().hash(_routeAddress));
-
-@override
-String toString() {
-  return 'VpnOptions(enable: $enable, port: $port, ipv6: $ipv6, dnsHijacking: $dnsHijacking, accessControl: $accessControl, allowBypass: $allowBypass, systemProxy: $systemProxy, bypassDomain: $bypassDomain, stack: $stack, routeAddress: $routeAddress)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$VpnOptionsCopyWith<$Res> implements $VpnOptionsCopyWith<$Res> {
-  factory _$VpnOptionsCopyWith(_VpnOptions value, $Res Function(_VpnOptions) _then) = __$VpnOptionsCopyWithImpl;
-@override @useResult
-$Res call({
- bool enable, int port, bool ipv6, bool dnsHijacking, AccessControl accessControl, bool allowBypass, bool systemProxy, List<String> bypassDomain, String stack, List<String> routeAddress
-});
-
-
-@override $AccessControlCopyWith<$Res> get accessControl;
-
-}
-/// @nodoc
-class __$VpnOptionsCopyWithImpl<$Res>
-    implements _$VpnOptionsCopyWith<$Res> {
-  __$VpnOptionsCopyWithImpl(this._self, this._then);
-
-  final _VpnOptions _self;
-  final $Res Function(_VpnOptions) _then;
-
-/// Create a copy of VpnOptions
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? enable = null,Object? port = null,Object? ipv6 = null,Object? dnsHijacking = null,Object? accessControl = null,Object? allowBypass = null,Object? systemProxy = null,Object? bypassDomain = null,Object? stack = null,Object? routeAddress = null,}) {
-  return _then(_VpnOptions(
-enable: null == enable ? _self.enable : enable // ignore: cast_nullable_to_non_nullable
-as bool,port: null == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
-as int,ipv6: null == ipv6 ? _self.ipv6 : ipv6 // ignore: cast_nullable_to_non_nullable
-as bool,dnsHijacking: null == dnsHijacking ? _self.dnsHijacking : dnsHijacking // ignore: cast_nullable_to_non_nullable
-as bool,accessControl: null == accessControl ? _self.accessControl : accessControl // ignore: cast_nullable_to_non_nullable
-as AccessControl,allowBypass: null == allowBypass ? _self.allowBypass : allowBypass // ignore: cast_nullable_to_non_nullable
-as bool,systemProxy: null == systemProxy ? _self.systemProxy : systemProxy // ignore: cast_nullable_to_non_nullable
-as bool,bypassDomain: null == bypassDomain ? _self._bypassDomain : bypassDomain // ignore: cast_nullable_to_non_nullable
-as List<String>,stack: null == stack ? _self.stack : stack // ignore: cast_nullable_to_non_nullable
-as String,routeAddress: null == routeAddress ? _self._routeAddress : routeAddress // ignore: cast_nullable_to_non_nullable
-as List<String>,
-  ));
-}
-
-/// Create a copy of VpnOptions
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AccessControlCopyWith<$Res> get accessControl {
-  
-  return $AccessControlCopyWith<$Res>(_self.accessControl, (value) {
-    return _then(_self.copyWith(accessControl: value));
-  });
-}
-}
-
 
 /// @nodoc
 mixin _$InitParams {
+  @JsonKey(name: 'home-dir')
+  String get homeDir => throw _privateConstructorUsedError;
+  int get version => throw _privateConstructorUsedError;
 
-@JsonKey(name: 'home-dir') String get homeDir; int get version;
-/// Create a copy of InitParams
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InitParamsCopyWith<InitParams> get copyWith => _$InitParamsCopyWithImpl<InitParams>(this as InitParams, _$identity);
-
-  /// Serializes this InitParams to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InitParams&&(identical(other.homeDir, homeDir) || other.homeDir == homeDir)&&(identical(other.version, version) || other.version == version));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,homeDir,version);
-
-@override
-String toString() {
-  return 'InitParams(homeDir: $homeDir, version: $version)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InitParamsCopyWith<InitParams> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $InitParamsCopyWith<$Res>  {
-  factory $InitParamsCopyWith(InitParams value, $Res Function(InitParams) _then) = _$InitParamsCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: 'home-dir') String homeDir, int version
-});
-
-
-
-
+abstract class $InitParamsCopyWith<$Res> {
+  factory $InitParamsCopyWith(
+          InitParams value, $Res Function(InitParams) then) =
+      _$InitParamsCopyWithImpl<$Res, InitParams>;
+  @useResult
+  $Res call({@JsonKey(name: 'home-dir') String homeDir, int version});
 }
+
 /// @nodoc
-class _$InitParamsCopyWithImpl<$Res>
+class _$InitParamsCopyWithImpl<$Res, $Val extends InitParams>
     implements $InitParamsCopyWith<$Res> {
-  _$InitParamsCopyWithImpl(this._self, this._then);
+  _$InitParamsCopyWithImpl(this._value, this._then);
 
-  final InitParams _self;
-  final $Res Function(InitParams) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of InitParams
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? homeDir = null,Object? version = null,}) {
-  return _then(_self.copyWith(
-homeDir: null == homeDir ? _self.homeDir : homeDir // ignore: cast_nullable_to_non_nullable
-as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? homeDir = null,
+    Object? version = null,
+  }) {
+    return _then(_value.copyWith(
+      homeDir: null == homeDir
+          ? _value.homeDir
+          : homeDir // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$InitParamsImplCopyWith<$Res>
+    implements $InitParamsCopyWith<$Res> {
+  factory _$$InitParamsImplCopyWith(
+          _$InitParamsImpl value, $Res Function(_$InitParamsImpl) then) =
+      __$$InitParamsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'home-dir') String homeDir, int version});
 }
 
+/// @nodoc
+class __$$InitParamsImplCopyWithImpl<$Res>
+    extends _$InitParamsCopyWithImpl<$Res, _$InitParamsImpl>
+    implements _$$InitParamsImplCopyWith<$Res> {
+  __$$InitParamsImplCopyWithImpl(
+      _$InitParamsImpl _value, $Res Function(_$InitParamsImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [InitParams].
-extension InitParamsPatterns on InitParams {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InitParams value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _InitParams() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InitParams value)  $default,){
-final _that = this;
-switch (_that) {
-case _InitParams():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InitParams value)?  $default,){
-final _that = this;
-switch (_that) {
-case _InitParams() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'home-dir')  String homeDir,  int version)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _InitParams() when $default != null:
-return $default(_that.homeDir,_that.version);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'home-dir')  String homeDir,  int version)  $default,) {final _that = this;
-switch (_that) {
-case _InitParams():
-return $default(_that.homeDir,_that.version);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'home-dir')  String homeDir,  int version)?  $default,) {final _that = this;
-switch (_that) {
-case _InitParams() when $default != null:
-return $default(_that.homeDir,_that.version);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? homeDir = null,
+    Object? version = null,
+  }) {
+    return _then(_$InitParamsImpl(
+      homeDir: null == homeDir
+          ? _value.homeDir
+          : homeDir // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$InitParamsImpl implements _InitParams {
+  const _$InitParamsImpl(
+      {@JsonKey(name: 'home-dir') required this.homeDir,
+      required this.version});
 
-class _InitParams implements InitParams {
-  const _InitParams({@JsonKey(name: 'home-dir') required this.homeDir, required this.version});
-  factory _InitParams.fromJson(Map<String, dynamic> json) => _$InitParamsFromJson(json);
+  factory _$InitParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InitParamsImplFromJson(json);
 
-@override@JsonKey(name: 'home-dir') final  String homeDir;
-@override final  int version;
+  @override
+  @JsonKey(name: 'home-dir')
+  final String homeDir;
+  @override
+  final int version;
 
-/// Create a copy of InitParams
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$InitParamsCopyWith<_InitParams> get copyWith => __$InitParamsCopyWithImpl<_InitParams>(this, _$identity);
+  @override
+  String toString() {
+    return 'InitParams(homeDir: $homeDir, version: $version)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$InitParamsToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitParamsImpl &&
+            (identical(other.homeDir, homeDir) || other.homeDir == homeDir) &&
+            (identical(other.version, version) || other.version == version));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, homeDir, version);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitParamsImplCopyWith<_$InitParamsImpl> get copyWith =>
+      __$$InitParamsImplCopyWithImpl<_$InitParamsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InitParamsImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InitParams&&(identical(other.homeDir, homeDir) || other.homeDir == homeDir)&&(identical(other.version, version) || other.version == version));
+abstract class _InitParams implements InitParams {
+  const factory _InitParams(
+      {@JsonKey(name: 'home-dir') required final String homeDir,
+      required final int version}) = _$InitParamsImpl;
+
+  factory _InitParams.fromJson(Map<String, dynamic> json) =
+      _$InitParamsImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'home-dir')
+  String get homeDir;
+  @override
+  int get version;
+  @override
+  @JsonKey(ignore: true)
+  _$$InitParamsImplCopyWith<_$InitParamsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,homeDir,version);
-
-@override
-String toString() {
-  return 'InitParams(homeDir: $homeDir, version: $version)';
+ChangeProxyParams _$ChangeProxyParamsFromJson(Map<String, dynamic> json) {
+  return _ChangeProxyParams.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$InitParamsCopyWith<$Res> implements $InitParamsCopyWith<$Res> {
-  factory _$InitParamsCopyWith(_InitParams value, $Res Function(_InitParams) _then) = __$InitParamsCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(name: 'home-dir') String homeDir, int version
-});
-
-
-
-
-}
-/// @nodoc
-class __$InitParamsCopyWithImpl<$Res>
-    implements _$InitParamsCopyWith<$Res> {
-  __$InitParamsCopyWithImpl(this._self, this._then);
-
-  final _InitParams _self;
-  final $Res Function(_InitParams) _then;
-
-/// Create a copy of InitParams
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? homeDir = null,Object? version = null,}) {
-  return _then(_InitParams(
-homeDir: null == homeDir ? _self.homeDir : homeDir // ignore: cast_nullable_to_non_nullable
-as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$ChangeProxyParams {
+  @JsonKey(name: 'group-name')
+  String get groupName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'proxy-name')
+  String get proxyName => throw _privateConstructorUsedError;
 
-@JsonKey(name: 'group-name') String get groupName;@JsonKey(name: 'proxy-name') String get proxyName;
-/// Create a copy of ChangeProxyParams
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ChangeProxyParamsCopyWith<ChangeProxyParams> get copyWith => _$ChangeProxyParamsCopyWithImpl<ChangeProxyParams>(this as ChangeProxyParams, _$identity);
-
-  /// Serializes this ChangeProxyParams to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangeProxyParams&&(identical(other.groupName, groupName) || other.groupName == groupName)&&(identical(other.proxyName, proxyName) || other.proxyName == proxyName));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,groupName,proxyName);
-
-@override
-String toString() {
-  return 'ChangeProxyParams(groupName: $groupName, proxyName: $proxyName)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ChangeProxyParamsCopyWith<ChangeProxyParams> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ChangeProxyParamsCopyWith<$Res>  {
-  factory $ChangeProxyParamsCopyWith(ChangeProxyParams value, $Res Function(ChangeProxyParams) _then) = _$ChangeProxyParamsCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: 'group-name') String groupName,@JsonKey(name: 'proxy-name') String proxyName
-});
-
-
-
-
+abstract class $ChangeProxyParamsCopyWith<$Res> {
+  factory $ChangeProxyParamsCopyWith(
+          ChangeProxyParams value, $Res Function(ChangeProxyParams) then) =
+      _$ChangeProxyParamsCopyWithImpl<$Res, ChangeProxyParams>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'group-name') String groupName,
+      @JsonKey(name: 'proxy-name') String proxyName});
 }
+
 /// @nodoc
-class _$ChangeProxyParamsCopyWithImpl<$Res>
+class _$ChangeProxyParamsCopyWithImpl<$Res, $Val extends ChangeProxyParams>
     implements $ChangeProxyParamsCopyWith<$Res> {
-  _$ChangeProxyParamsCopyWithImpl(this._self, this._then);
+  _$ChangeProxyParamsCopyWithImpl(this._value, this._then);
 
-  final ChangeProxyParams _self;
-  final $Res Function(ChangeProxyParams) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ChangeProxyParams
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? groupName = null,Object? proxyName = null,}) {
-  return _then(_self.copyWith(
-groupName: null == groupName ? _self.groupName : groupName // ignore: cast_nullable_to_non_nullable
-as String,proxyName: null == proxyName ? _self.proxyName : proxyName // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? groupName = null,
+    Object? proxyName = null,
+  }) {
+    return _then(_value.copyWith(
+      groupName: null == groupName
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
+              as String,
+      proxyName: null == proxyName
+          ? _value.proxyName
+          : proxyName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$ChangeProxyParamsImplCopyWith<$Res>
+    implements $ChangeProxyParamsCopyWith<$Res> {
+  factory _$$ChangeProxyParamsImplCopyWith(_$ChangeProxyParamsImpl value,
+          $Res Function(_$ChangeProxyParamsImpl) then) =
+      __$$ChangeProxyParamsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'group-name') String groupName,
+      @JsonKey(name: 'proxy-name') String proxyName});
 }
 
+/// @nodoc
+class __$$ChangeProxyParamsImplCopyWithImpl<$Res>
+    extends _$ChangeProxyParamsCopyWithImpl<$Res, _$ChangeProxyParamsImpl>
+    implements _$$ChangeProxyParamsImplCopyWith<$Res> {
+  __$$ChangeProxyParamsImplCopyWithImpl(_$ChangeProxyParamsImpl _value,
+      $Res Function(_$ChangeProxyParamsImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [ChangeProxyParams].
-extension ChangeProxyParamsPatterns on ChangeProxyParams {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChangeProxyParams value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ChangeProxyParams() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChangeProxyParams value)  $default,){
-final _that = this;
-switch (_that) {
-case _ChangeProxyParams():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChangeProxyParams value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ChangeProxyParams() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'group-name')  String groupName, @JsonKey(name: 'proxy-name')  String proxyName)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ChangeProxyParams() when $default != null:
-return $default(_that.groupName,_that.proxyName);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'group-name')  String groupName, @JsonKey(name: 'proxy-name')  String proxyName)  $default,) {final _that = this;
-switch (_that) {
-case _ChangeProxyParams():
-return $default(_that.groupName,_that.proxyName);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'group-name')  String groupName, @JsonKey(name: 'proxy-name')  String proxyName)?  $default,) {final _that = this;
-switch (_that) {
-case _ChangeProxyParams() when $default != null:
-return $default(_that.groupName,_that.proxyName);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? groupName = null,
+    Object? proxyName = null,
+  }) {
+    return _then(_$ChangeProxyParamsImpl(
+      groupName: null == groupName
+          ? _value.groupName
+          : groupName // ignore: cast_nullable_to_non_nullable
+              as String,
+      proxyName: null == proxyName
+          ? _value.proxyName
+          : proxyName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$ChangeProxyParamsImpl implements _ChangeProxyParams {
+  const _$ChangeProxyParamsImpl(
+      {@JsonKey(name: 'group-name') required this.groupName,
+      @JsonKey(name: 'proxy-name') required this.proxyName});
 
-class _ChangeProxyParams implements ChangeProxyParams {
-  const _ChangeProxyParams({@JsonKey(name: 'group-name') required this.groupName, @JsonKey(name: 'proxy-name') required this.proxyName});
-  factory _ChangeProxyParams.fromJson(Map<String, dynamic> json) => _$ChangeProxyParamsFromJson(json);
+  factory _$ChangeProxyParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChangeProxyParamsImplFromJson(json);
 
-@override@JsonKey(name: 'group-name') final  String groupName;
-@override@JsonKey(name: 'proxy-name') final  String proxyName;
+  @override
+  @JsonKey(name: 'group-name')
+  final String groupName;
+  @override
+  @JsonKey(name: 'proxy-name')
+  final String proxyName;
 
-/// Create a copy of ChangeProxyParams
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ChangeProxyParamsCopyWith<_ChangeProxyParams> get copyWith => __$ChangeProxyParamsCopyWithImpl<_ChangeProxyParams>(this, _$identity);
+  @override
+  String toString() {
+    return 'ChangeProxyParams(groupName: $groupName, proxyName: $proxyName)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ChangeProxyParamsToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeProxyParamsImpl &&
+            (identical(other.groupName, groupName) ||
+                other.groupName == groupName) &&
+            (identical(other.proxyName, proxyName) ||
+                other.proxyName == proxyName));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, groupName, proxyName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeProxyParamsImplCopyWith<_$ChangeProxyParamsImpl> get copyWith =>
+      __$$ChangeProxyParamsImplCopyWithImpl<_$ChangeProxyParamsImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChangeProxyParamsImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChangeProxyParams&&(identical(other.groupName, groupName) || other.groupName == groupName)&&(identical(other.proxyName, proxyName) || other.proxyName == proxyName));
+abstract class _ChangeProxyParams implements ChangeProxyParams {
+  const factory _ChangeProxyParams(
+          {@JsonKey(name: 'group-name') required final String groupName,
+          @JsonKey(name: 'proxy-name') required final String proxyName}) =
+      _$ChangeProxyParamsImpl;
+
+  factory _ChangeProxyParams.fromJson(Map<String, dynamic> json) =
+      _$ChangeProxyParamsImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'group-name')
+  String get groupName;
+  @override
+  @JsonKey(name: 'proxy-name')
+  String get proxyName;
+  @override
+  @JsonKey(ignore: true)
+  _$$ChangeProxyParamsImplCopyWith<_$ChangeProxyParamsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,groupName,proxyName);
-
-@override
-String toString() {
-  return 'ChangeProxyParams(groupName: $groupName, proxyName: $proxyName)';
+UpdateGeoDataParams _$UpdateGeoDataParamsFromJson(Map<String, dynamic> json) {
+  return _UpdateGeoDataParams.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ChangeProxyParamsCopyWith<$Res> implements $ChangeProxyParamsCopyWith<$Res> {
-  factory _$ChangeProxyParamsCopyWith(_ChangeProxyParams value, $Res Function(_ChangeProxyParams) _then) = __$ChangeProxyParamsCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(name: 'group-name') String groupName,@JsonKey(name: 'proxy-name') String proxyName
-});
-
-
-
-
-}
-/// @nodoc
-class __$ChangeProxyParamsCopyWithImpl<$Res>
-    implements _$ChangeProxyParamsCopyWith<$Res> {
-  __$ChangeProxyParamsCopyWithImpl(this._self, this._then);
-
-  final _ChangeProxyParams _self;
-  final $Res Function(_ChangeProxyParams) _then;
-
-/// Create a copy of ChangeProxyParams
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? groupName = null,Object? proxyName = null,}) {
-  return _then(_ChangeProxyParams(
-groupName: null == groupName ? _self.groupName : groupName // ignore: cast_nullable_to_non_nullable
-as String,proxyName: null == proxyName ? _self.proxyName : proxyName // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$UpdateGeoDataParams {
+  @JsonKey(name: 'geo-type')
+  String get geoType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'geo-name')
+  String get geoName => throw _privateConstructorUsedError;
 
-@JsonKey(name: 'geo-type') String get geoType;@JsonKey(name: 'geo-name') String get geoName;
-/// Create a copy of UpdateGeoDataParams
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UpdateGeoDataParamsCopyWith<UpdateGeoDataParams> get copyWith => _$UpdateGeoDataParamsCopyWithImpl<UpdateGeoDataParams>(this as UpdateGeoDataParams, _$identity);
-
-  /// Serializes this UpdateGeoDataParams to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateGeoDataParams&&(identical(other.geoType, geoType) || other.geoType == geoType)&&(identical(other.geoName, geoName) || other.geoName == geoName));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,geoType,geoName);
-
-@override
-String toString() {
-  return 'UpdateGeoDataParams(geoType: $geoType, geoName: $geoName)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UpdateGeoDataParamsCopyWith<UpdateGeoDataParams> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UpdateGeoDataParamsCopyWith<$Res>  {
-  factory $UpdateGeoDataParamsCopyWith(UpdateGeoDataParams value, $Res Function(UpdateGeoDataParams) _then) = _$UpdateGeoDataParamsCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: 'geo-type') String geoType,@JsonKey(name: 'geo-name') String geoName
-});
-
-
-
-
+abstract class $UpdateGeoDataParamsCopyWith<$Res> {
+  factory $UpdateGeoDataParamsCopyWith(
+          UpdateGeoDataParams value, $Res Function(UpdateGeoDataParams) then) =
+      _$UpdateGeoDataParamsCopyWithImpl<$Res, UpdateGeoDataParams>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'geo-type') String geoType,
+      @JsonKey(name: 'geo-name') String geoName});
 }
+
 /// @nodoc
-class _$UpdateGeoDataParamsCopyWithImpl<$Res>
+class _$UpdateGeoDataParamsCopyWithImpl<$Res, $Val extends UpdateGeoDataParams>
     implements $UpdateGeoDataParamsCopyWith<$Res> {
-  _$UpdateGeoDataParamsCopyWithImpl(this._self, this._then);
+  _$UpdateGeoDataParamsCopyWithImpl(this._value, this._then);
 
-  final UpdateGeoDataParams _self;
-  final $Res Function(UpdateGeoDataParams) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of UpdateGeoDataParams
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? geoType = null,Object? geoName = null,}) {
-  return _then(_self.copyWith(
-geoType: null == geoType ? _self.geoType : geoType // ignore: cast_nullable_to_non_nullable
-as String,geoName: null == geoName ? _self.geoName : geoName // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? geoType = null,
+    Object? geoName = null,
+  }) {
+    return _then(_value.copyWith(
+      geoType: null == geoType
+          ? _value.geoType
+          : geoType // ignore: cast_nullable_to_non_nullable
+              as String,
+      geoName: null == geoName
+          ? _value.geoName
+          : geoName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$UpdateGeoDataParamsImplCopyWith<$Res>
+    implements $UpdateGeoDataParamsCopyWith<$Res> {
+  factory _$$UpdateGeoDataParamsImplCopyWith(_$UpdateGeoDataParamsImpl value,
+          $Res Function(_$UpdateGeoDataParamsImpl) then) =
+      __$$UpdateGeoDataParamsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'geo-type') String geoType,
+      @JsonKey(name: 'geo-name') String geoName});
 }
 
+/// @nodoc
+class __$$UpdateGeoDataParamsImplCopyWithImpl<$Res>
+    extends _$UpdateGeoDataParamsCopyWithImpl<$Res, _$UpdateGeoDataParamsImpl>
+    implements _$$UpdateGeoDataParamsImplCopyWith<$Res> {
+  __$$UpdateGeoDataParamsImplCopyWithImpl(_$UpdateGeoDataParamsImpl _value,
+      $Res Function(_$UpdateGeoDataParamsImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [UpdateGeoDataParams].
-extension UpdateGeoDataParamsPatterns on UpdateGeoDataParams {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UpdateGeoDataParams value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _UpdateGeoDataParams() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UpdateGeoDataParams value)  $default,){
-final _that = this;
-switch (_that) {
-case _UpdateGeoDataParams():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UpdateGeoDataParams value)?  $default,){
-final _that = this;
-switch (_that) {
-case _UpdateGeoDataParams() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'geo-type')  String geoType, @JsonKey(name: 'geo-name')  String geoName)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _UpdateGeoDataParams() when $default != null:
-return $default(_that.geoType,_that.geoName);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'geo-type')  String geoType, @JsonKey(name: 'geo-name')  String geoName)  $default,) {final _that = this;
-switch (_that) {
-case _UpdateGeoDataParams():
-return $default(_that.geoType,_that.geoName);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'geo-type')  String geoType, @JsonKey(name: 'geo-name')  String geoName)?  $default,) {final _that = this;
-switch (_that) {
-case _UpdateGeoDataParams() when $default != null:
-return $default(_that.geoType,_that.geoName);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? geoType = null,
+    Object? geoName = null,
+  }) {
+    return _then(_$UpdateGeoDataParamsImpl(
+      geoType: null == geoType
+          ? _value.geoType
+          : geoType // ignore: cast_nullable_to_non_nullable
+              as String,
+      geoName: null == geoName
+          ? _value.geoName
+          : geoName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$UpdateGeoDataParamsImpl implements _UpdateGeoDataParams {
+  const _$UpdateGeoDataParamsImpl(
+      {@JsonKey(name: 'geo-type') required this.geoType,
+      @JsonKey(name: 'geo-name') required this.geoName});
 
-class _UpdateGeoDataParams implements UpdateGeoDataParams {
-  const _UpdateGeoDataParams({@JsonKey(name: 'geo-type') required this.geoType, @JsonKey(name: 'geo-name') required this.geoName});
-  factory _UpdateGeoDataParams.fromJson(Map<String, dynamic> json) => _$UpdateGeoDataParamsFromJson(json);
+  factory _$UpdateGeoDataParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdateGeoDataParamsImplFromJson(json);
 
-@override@JsonKey(name: 'geo-type') final  String geoType;
-@override@JsonKey(name: 'geo-name') final  String geoName;
+  @override
+  @JsonKey(name: 'geo-type')
+  final String geoType;
+  @override
+  @JsonKey(name: 'geo-name')
+  final String geoName;
 
-/// Create a copy of UpdateGeoDataParams
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$UpdateGeoDataParamsCopyWith<_UpdateGeoDataParams> get copyWith => __$UpdateGeoDataParamsCopyWithImpl<_UpdateGeoDataParams>(this, _$identity);
+  @override
+  String toString() {
+    return 'UpdateGeoDataParams(geoType: $geoType, geoName: $geoName)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$UpdateGeoDataParamsToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateGeoDataParamsImpl &&
+            (identical(other.geoType, geoType) || other.geoType == geoType) &&
+            (identical(other.geoName, geoName) || other.geoName == geoName));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, geoType, geoName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateGeoDataParamsImplCopyWith<_$UpdateGeoDataParamsImpl> get copyWith =>
+      __$$UpdateGeoDataParamsImplCopyWithImpl<_$UpdateGeoDataParamsImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UpdateGeoDataParamsImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateGeoDataParams&&(identical(other.geoType, geoType) || other.geoType == geoType)&&(identical(other.geoName, geoName) || other.geoName == geoName));
+abstract class _UpdateGeoDataParams implements UpdateGeoDataParams {
+  const factory _UpdateGeoDataParams(
+          {@JsonKey(name: 'geo-type') required final String geoType,
+          @JsonKey(name: 'geo-name') required final String geoName}) =
+      _$UpdateGeoDataParamsImpl;
+
+  factory _UpdateGeoDataParams.fromJson(Map<String, dynamic> json) =
+      _$UpdateGeoDataParamsImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'geo-type')
+  String get geoType;
+  @override
+  @JsonKey(name: 'geo-name')
+  String get geoName;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateGeoDataParamsImplCopyWith<_$UpdateGeoDataParamsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,geoType,geoName);
-
-@override
-String toString() {
-  return 'UpdateGeoDataParams(geoType: $geoType, geoName: $geoName)';
+CoreEvent _$CoreEventFromJson(Map<String, dynamic> json) {
+  return _CoreEvent.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$UpdateGeoDataParamsCopyWith<$Res> implements $UpdateGeoDataParamsCopyWith<$Res> {
-  factory _$UpdateGeoDataParamsCopyWith(_UpdateGeoDataParams value, $Res Function(_UpdateGeoDataParams) _then) = __$UpdateGeoDataParamsCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(name: 'geo-type') String geoType,@JsonKey(name: 'geo-name') String geoName
-});
-
-
-
-
-}
-/// @nodoc
-class __$UpdateGeoDataParamsCopyWithImpl<$Res>
-    implements _$UpdateGeoDataParamsCopyWith<$Res> {
-  __$UpdateGeoDataParamsCopyWithImpl(this._self, this._then);
-
-  final _UpdateGeoDataParams _self;
-  final $Res Function(_UpdateGeoDataParams) _then;
-
-/// Create a copy of UpdateGeoDataParams
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? geoType = null,Object? geoName = null,}) {
-  return _then(_UpdateGeoDataParams(
-geoType: null == geoType ? _self.geoType : geoType // ignore: cast_nullable_to_non_nullable
-as String,geoName: null == geoName ? _self.geoName : geoName // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$CoreEvent {
+  CoreEventType get type => throw _privateConstructorUsedError;
+  dynamic get data => throw _privateConstructorUsedError;
 
- CoreEventType get type; dynamic get data;
-/// Create a copy of CoreEvent
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$CoreEventCopyWith<CoreEvent> get copyWith => _$CoreEventCopyWithImpl<CoreEvent>(this as CoreEvent, _$identity);
-
-  /// Serializes this CoreEvent to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CoreEvent&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,type,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'CoreEvent(type: $type, data: $data)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CoreEventCopyWith<CoreEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $CoreEventCopyWith<$Res>  {
-  factory $CoreEventCopyWith(CoreEvent value, $Res Function(CoreEvent) _then) = _$CoreEventCopyWithImpl;
-@useResult
-$Res call({
- CoreEventType type, dynamic data
-});
-
-
-
-
+abstract class $CoreEventCopyWith<$Res> {
+  factory $CoreEventCopyWith(CoreEvent value, $Res Function(CoreEvent) then) =
+      _$CoreEventCopyWithImpl<$Res, CoreEvent>;
+  @useResult
+  $Res call({CoreEventType type, dynamic data});
 }
+
 /// @nodoc
-class _$CoreEventCopyWithImpl<$Res>
+class _$CoreEventCopyWithImpl<$Res, $Val extends CoreEvent>
     implements $CoreEventCopyWith<$Res> {
-  _$CoreEventCopyWithImpl(this._self, this._then);
+  _$CoreEventCopyWithImpl(this._value, this._then);
 
-  final CoreEvent _self;
-  final $Res Function(CoreEvent) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of CoreEvent
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? type = null,Object? data = freezed,}) {
-  return _then(_self.copyWith(
-type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as CoreEventType,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? data = freezed,
+  }) {
+    return _then(_value.copyWith(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as CoreEventType,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$CoreEventImplCopyWith<$Res>
+    implements $CoreEventCopyWith<$Res> {
+  factory _$$CoreEventImplCopyWith(
+          _$CoreEventImpl value, $Res Function(_$CoreEventImpl) then) =
+      __$$CoreEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({CoreEventType type, dynamic data});
 }
 
+/// @nodoc
+class __$$CoreEventImplCopyWithImpl<$Res>
+    extends _$CoreEventCopyWithImpl<$Res, _$CoreEventImpl>
+    implements _$$CoreEventImplCopyWith<$Res> {
+  __$$CoreEventImplCopyWithImpl(
+      _$CoreEventImpl _value, $Res Function(_$CoreEventImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [CoreEvent].
-extension CoreEventPatterns on CoreEvent {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CoreEvent value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _CoreEvent() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CoreEvent value)  $default,){
-final _that = this;
-switch (_that) {
-case _CoreEvent():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CoreEvent value)?  $default,){
-final _that = this;
-switch (_that) {
-case _CoreEvent() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( CoreEventType type,  dynamic data)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _CoreEvent() when $default != null:
-return $default(_that.type,_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( CoreEventType type,  dynamic data)  $default,) {final _that = this;
-switch (_that) {
-case _CoreEvent():
-return $default(_that.type,_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( CoreEventType type,  dynamic data)?  $default,) {final _that = this;
-switch (_that) {
-case _CoreEvent() when $default != null:
-return $default(_that.type,_that.data);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? data = freezed,
+  }) {
+    return _then(_$CoreEventImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as CoreEventType,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$CoreEventImpl implements _CoreEvent {
+  const _$CoreEventImpl({required this.type, this.data});
 
-class _CoreEvent implements CoreEvent {
-  const _CoreEvent({required this.type, this.data});
-  factory _CoreEvent.fromJson(Map<String, dynamic> json) => _$CoreEventFromJson(json);
+  factory _$CoreEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CoreEventImplFromJson(json);
 
-@override final  CoreEventType type;
-@override final  dynamic data;
+  @override
+  final CoreEventType type;
+  @override
+  final dynamic data;
 
-/// Create a copy of CoreEvent
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$CoreEventCopyWith<_CoreEvent> get copyWith => __$CoreEventCopyWithImpl<_CoreEvent>(this, _$identity);
+  @override
+  String toString() {
+    return 'CoreEvent(type: $type, data: $data)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$CoreEventToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CoreEventImpl &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, type, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CoreEventImplCopyWith<_$CoreEventImpl> get copyWith =>
+      __$$CoreEventImplCopyWithImpl<_$CoreEventImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CoreEventImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CoreEvent&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.data, data));
+abstract class _CoreEvent implements CoreEvent {
+  const factory _CoreEvent(
+      {required final CoreEventType type,
+      final dynamic data}) = _$CoreEventImpl;
+
+  factory _CoreEvent.fromJson(Map<String, dynamic> json) =
+      _$CoreEventImpl.fromJson;
+
+  @override
+  CoreEventType get type;
+  @override
+  dynamic get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$CoreEventImplCopyWith<_$CoreEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,type,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'CoreEvent(type: $type, data: $data)';
+InvokeMessage _$InvokeMessageFromJson(Map<String, dynamic> json) {
+  return _InvokeMessage.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$CoreEventCopyWith<$Res> implements $CoreEventCopyWith<$Res> {
-  factory _$CoreEventCopyWith(_CoreEvent value, $Res Function(_CoreEvent) _then) = __$CoreEventCopyWithImpl;
-@override @useResult
-$Res call({
- CoreEventType type, dynamic data
-});
-
-
-
-
-}
-/// @nodoc
-class __$CoreEventCopyWithImpl<$Res>
-    implements _$CoreEventCopyWith<$Res> {
-  __$CoreEventCopyWithImpl(this._self, this._then);
-
-  final _CoreEvent _self;
-  final $Res Function(_CoreEvent) _then;
-
-/// Create a copy of CoreEvent
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? type = null,Object? data = freezed,}) {
-  return _then(_CoreEvent(
-type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as CoreEventType,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$InvokeMessage {
+  InvokeMessageType get type => throw _privateConstructorUsedError;
+  dynamic get data => throw _privateConstructorUsedError;
 
- InvokeMessageType get type; dynamic get data;
-/// Create a copy of InvokeMessage
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InvokeMessageCopyWith<InvokeMessage> get copyWith => _$InvokeMessageCopyWithImpl<InvokeMessage>(this as InvokeMessage, _$identity);
-
-  /// Serializes this InvokeMessage to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeMessage&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,type,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'InvokeMessage(type: $type, data: $data)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvokeMessageCopyWith<InvokeMessage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $InvokeMessageCopyWith<$Res>  {
-  factory $InvokeMessageCopyWith(InvokeMessage value, $Res Function(InvokeMessage) _then) = _$InvokeMessageCopyWithImpl;
-@useResult
-$Res call({
- InvokeMessageType type, dynamic data
-});
-
-
-
-
+abstract class $InvokeMessageCopyWith<$Res> {
+  factory $InvokeMessageCopyWith(
+          InvokeMessage value, $Res Function(InvokeMessage) then) =
+      _$InvokeMessageCopyWithImpl<$Res, InvokeMessage>;
+  @useResult
+  $Res call({InvokeMessageType type, dynamic data});
 }
+
 /// @nodoc
-class _$InvokeMessageCopyWithImpl<$Res>
+class _$InvokeMessageCopyWithImpl<$Res, $Val extends InvokeMessage>
     implements $InvokeMessageCopyWith<$Res> {
-  _$InvokeMessageCopyWithImpl(this._self, this._then);
+  _$InvokeMessageCopyWithImpl(this._value, this._then);
 
-  final InvokeMessage _self;
-  final $Res Function(InvokeMessage) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of InvokeMessage
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? type = null,Object? data = freezed,}) {
-  return _then(_self.copyWith(
-type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as InvokeMessageType,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? data = freezed,
+  }) {
+    return _then(_value.copyWith(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InvokeMessageType,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$InvokeMessageImplCopyWith<$Res>
+    implements $InvokeMessageCopyWith<$Res> {
+  factory _$$InvokeMessageImplCopyWith(
+          _$InvokeMessageImpl value, $Res Function(_$InvokeMessageImpl) then) =
+      __$$InvokeMessageImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({InvokeMessageType type, dynamic data});
 }
 
+/// @nodoc
+class __$$InvokeMessageImplCopyWithImpl<$Res>
+    extends _$InvokeMessageCopyWithImpl<$Res, _$InvokeMessageImpl>
+    implements _$$InvokeMessageImplCopyWith<$Res> {
+  __$$InvokeMessageImplCopyWithImpl(
+      _$InvokeMessageImpl _value, $Res Function(_$InvokeMessageImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [InvokeMessage].
-extension InvokeMessagePatterns on InvokeMessage {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InvokeMessage value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _InvokeMessage() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InvokeMessage value)  $default,){
-final _that = this;
-switch (_that) {
-case _InvokeMessage():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InvokeMessage value)?  $default,){
-final _that = this;
-switch (_that) {
-case _InvokeMessage() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( InvokeMessageType type,  dynamic data)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _InvokeMessage() when $default != null:
-return $default(_that.type,_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( InvokeMessageType type,  dynamic data)  $default,) {final _that = this;
-switch (_that) {
-case _InvokeMessage():
-return $default(_that.type,_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( InvokeMessageType type,  dynamic data)?  $default,) {final _that = this;
-switch (_that) {
-case _InvokeMessage() when $default != null:
-return $default(_that.type,_that.data);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? data = freezed,
+  }) {
+    return _then(_$InvokeMessageImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InvokeMessageType,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$InvokeMessageImpl implements _InvokeMessage {
+  const _$InvokeMessageImpl({required this.type, this.data});
 
-class _InvokeMessage implements InvokeMessage {
-  const _InvokeMessage({required this.type, this.data});
-  factory _InvokeMessage.fromJson(Map<String, dynamic> json) => _$InvokeMessageFromJson(json);
+  factory _$InvokeMessageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InvokeMessageImplFromJson(json);
 
-@override final  InvokeMessageType type;
-@override final  dynamic data;
+  @override
+  final InvokeMessageType type;
+  @override
+  final dynamic data;
 
-/// Create a copy of InvokeMessage
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$InvokeMessageCopyWith<_InvokeMessage> get copyWith => __$InvokeMessageCopyWithImpl<_InvokeMessage>(this, _$identity);
+  @override
+  String toString() {
+    return 'InvokeMessage(type: $type, data: $data)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$InvokeMessageToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvokeMessageImpl &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, type, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvokeMessageImplCopyWith<_$InvokeMessageImpl> get copyWith =>
+      __$$InvokeMessageImplCopyWithImpl<_$InvokeMessageImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InvokeMessageImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InvokeMessage&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.data, data));
+abstract class _InvokeMessage implements InvokeMessage {
+  const factory _InvokeMessage(
+      {required final InvokeMessageType type,
+      final dynamic data}) = _$InvokeMessageImpl;
+
+  factory _InvokeMessage.fromJson(Map<String, dynamic> json) =
+      _$InvokeMessageImpl.fromJson;
+
+  @override
+  InvokeMessageType get type;
+  @override
+  dynamic get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$InvokeMessageImplCopyWith<_$InvokeMessageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,type,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'InvokeMessage(type: $type, data: $data)';
+Delay _$DelayFromJson(Map<String, dynamic> json) {
+  return _Delay.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$InvokeMessageCopyWith<$Res> implements $InvokeMessageCopyWith<$Res> {
-  factory _$InvokeMessageCopyWith(_InvokeMessage value, $Res Function(_InvokeMessage) _then) = __$InvokeMessageCopyWithImpl;
-@override @useResult
-$Res call({
- InvokeMessageType type, dynamic data
-});
-
-
-
-
-}
-/// @nodoc
-class __$InvokeMessageCopyWithImpl<$Res>
-    implements _$InvokeMessageCopyWith<$Res> {
-  __$InvokeMessageCopyWithImpl(this._self, this._then);
-
-  final _InvokeMessage _self;
-  final $Res Function(_InvokeMessage) _then;
-
-/// Create a copy of InvokeMessage
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? type = null,Object? data = freezed,}) {
-  return _then(_InvokeMessage(
-type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as InvokeMessageType,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$Delay {
+  String get name => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+  int? get value => throw _privateConstructorUsedError;
 
- String get name; String get url; int? get value;
-/// Create a copy of Delay
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$DelayCopyWith<Delay> get copyWith => _$DelayCopyWithImpl<Delay>(this as Delay, _$identity);
-
-  /// Serializes this Delay to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Delay&&(identical(other.name, name) || other.name == name)&&(identical(other.url, url) || other.url == url)&&(identical(other.value, value) || other.value == value));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,url,value);
-
-@override
-String toString() {
-  return 'Delay(name: $name, url: $url, value: $value)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DelayCopyWith<Delay> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $DelayCopyWith<$Res>  {
-  factory $DelayCopyWith(Delay value, $Res Function(Delay) _then) = _$DelayCopyWithImpl;
-@useResult
-$Res call({
- String name, String url, int? value
-});
-
-
-
-
+abstract class $DelayCopyWith<$Res> {
+  factory $DelayCopyWith(Delay value, $Res Function(Delay) then) =
+      _$DelayCopyWithImpl<$Res, Delay>;
+  @useResult
+  $Res call({String name, String url, int? value});
 }
+
 /// @nodoc
-class _$DelayCopyWithImpl<$Res>
+class _$DelayCopyWithImpl<$Res, $Val extends Delay>
     implements $DelayCopyWith<$Res> {
-  _$DelayCopyWithImpl(this._self, this._then);
+  _$DelayCopyWithImpl(this._value, this._then);
 
-  final Delay _self;
-  final $Res Function(Delay) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of Delay
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? url = null,Object? value = freezed,}) {
-  return _then(_self.copyWith(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as int?,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? url = null,
+    Object? value = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$DelayImplCopyWith<$Res> implements $DelayCopyWith<$Res> {
+  factory _$$DelayImplCopyWith(
+          _$DelayImpl value, $Res Function(_$DelayImpl) then) =
+      __$$DelayImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String url, int? value});
 }
 
+/// @nodoc
+class __$$DelayImplCopyWithImpl<$Res>
+    extends _$DelayCopyWithImpl<$Res, _$DelayImpl>
+    implements _$$DelayImplCopyWith<$Res> {
+  __$$DelayImplCopyWithImpl(
+      _$DelayImpl _value, $Res Function(_$DelayImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [Delay].
-extension DelayPatterns on Delay {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Delay value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _Delay() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Delay value)  $default,){
-final _that = this;
-switch (_that) {
-case _Delay():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Delay value)?  $default,){
-final _that = this;
-switch (_that) {
-case _Delay() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name,  String url,  int? value)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _Delay() when $default != null:
-return $default(_that.name,_that.url,_that.value);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name,  String url,  int? value)  $default,) {final _that = this;
-switch (_that) {
-case _Delay():
-return $default(_that.name,_that.url,_that.value);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name,  String url,  int? value)?  $default,) {final _that = this;
-switch (_that) {
-case _Delay() when $default != null:
-return $default(_that.name,_that.url,_that.value);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? url = null,
+    Object? value = freezed,
+  }) {
+    return _then(_$DelayImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$DelayImpl implements _Delay {
+  const _$DelayImpl({required this.name, required this.url, this.value});
 
-class _Delay implements Delay {
-  const _Delay({required this.name, required this.url, this.value});
-  factory _Delay.fromJson(Map<String, dynamic> json) => _$DelayFromJson(json);
+  factory _$DelayImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DelayImplFromJson(json);
 
-@override final  String name;
-@override final  String url;
-@override final  int? value;
+  @override
+  final String name;
+  @override
+  final String url;
+  @override
+  final int? value;
 
-/// Create a copy of Delay
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$DelayCopyWith<_Delay> get copyWith => __$DelayCopyWithImpl<_Delay>(this, _$identity);
+  @override
+  String toString() {
+    return 'Delay(name: $name, url: $url, value: $value)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$DelayToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DelayImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, url, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DelayImplCopyWith<_$DelayImpl> get copyWith =>
+      __$$DelayImplCopyWithImpl<_$DelayImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DelayImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Delay&&(identical(other.name, name) || other.name == name)&&(identical(other.url, url) || other.url == url)&&(identical(other.value, value) || other.value == value));
+abstract class _Delay implements Delay {
+  const factory _Delay(
+      {required final String name,
+      required final String url,
+      final int? value}) = _$DelayImpl;
+
+  factory _Delay.fromJson(Map<String, dynamic> json) = _$DelayImpl.fromJson;
+
+  @override
+  String get name;
+  @override
+  String get url;
+  @override
+  int? get value;
+  @override
+  @JsonKey(ignore: true)
+  _$$DelayImplCopyWith<_$DelayImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,url,value);
-
-@override
-String toString() {
-  return 'Delay(name: $name, url: $url, value: $value)';
+Now _$NowFromJson(Map<String, dynamic> json) {
+  return _Now.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$DelayCopyWith<$Res> implements $DelayCopyWith<$Res> {
-  factory _$DelayCopyWith(_Delay value, $Res Function(_Delay) _then) = __$DelayCopyWithImpl;
-@override @useResult
-$Res call({
- String name, String url, int? value
-});
-
-
-
-
-}
-/// @nodoc
-class __$DelayCopyWithImpl<$Res>
-    implements _$DelayCopyWith<$Res> {
-  __$DelayCopyWithImpl(this._self, this._then);
-
-  final _Delay _self;
-  final $Res Function(_Delay) _then;
-
-/// Create a copy of Delay
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? url = null,Object? value = freezed,}) {
-  return _then(_Delay(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String,value: freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as int?,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$Now {
+  String get name => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
- String get name; String get value;
-/// Create a copy of Now
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$NowCopyWith<Now> get copyWith => _$NowCopyWithImpl<Now>(this as Now, _$identity);
-
-  /// Serializes this Now to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Now&&(identical(other.name, name) || other.name == name)&&(identical(other.value, value) || other.value == value));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,value);
-
-@override
-String toString() {
-  return 'Now(name: $name, value: $value)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NowCopyWith<Now> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $NowCopyWith<$Res>  {
-  factory $NowCopyWith(Now value, $Res Function(Now) _then) = _$NowCopyWithImpl;
-@useResult
-$Res call({
- String name, String value
-});
-
-
-
-
+abstract class $NowCopyWith<$Res> {
+  factory $NowCopyWith(Now value, $Res Function(Now) then) =
+      _$NowCopyWithImpl<$Res, Now>;
+  @useResult
+  $Res call({String name, String value});
 }
+
 /// @nodoc
-class _$NowCopyWithImpl<$Res>
-    implements $NowCopyWith<$Res> {
-  _$NowCopyWithImpl(this._self, this._then);
+class _$NowCopyWithImpl<$Res, $Val extends Now> implements $NowCopyWith<$Res> {
+  _$NowCopyWithImpl(this._value, this._then);
 
-  final Now _self;
-  final $Res Function(Now) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of Now
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? value = null,}) {
-  return _then(_self.copyWith(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$NowImplCopyWith<$Res> implements $NowCopyWith<$Res> {
+  factory _$$NowImplCopyWith(_$NowImpl value, $Res Function(_$NowImpl) then) =
+      __$$NowImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String value});
 }
 
+/// @nodoc
+class __$$NowImplCopyWithImpl<$Res> extends _$NowCopyWithImpl<$Res, _$NowImpl>
+    implements _$$NowImplCopyWith<$Res> {
+  __$$NowImplCopyWithImpl(_$NowImpl _value, $Res Function(_$NowImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [Now].
-extension NowPatterns on Now {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Now value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _Now() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Now value)  $default,){
-final _that = this;
-switch (_that) {
-case _Now():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Now value)?  $default,){
-final _that = this;
-switch (_that) {
-case _Now() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name,  String value)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _Now() when $default != null:
-return $default(_that.name,_that.value);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name,  String value)  $default,) {final _that = this;
-switch (_that) {
-case _Now():
-return $default(_that.name,_that.value);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name,  String value)?  $default,) {final _that = this;
-switch (_that) {
-case _Now() when $default != null:
-return $default(_that.name,_that.value);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_$NowImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$NowImpl implements _Now {
+  const _$NowImpl({required this.name, required this.value});
 
-class _Now implements Now {
-  const _Now({required this.name, required this.value});
-  factory _Now.fromJson(Map<String, dynamic> json) => _$NowFromJson(json);
+  factory _$NowImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NowImplFromJson(json);
 
-@override final  String name;
-@override final  String value;
+  @override
+  final String name;
+  @override
+  final String value;
 
-/// Create a copy of Now
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$NowCopyWith<_Now> get copyWith => __$NowCopyWithImpl<_Now>(this, _$identity);
+  @override
+  String toString() {
+    return 'Now(name: $name, value: $value)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$NowToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NowImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NowImplCopyWith<_$NowImpl> get copyWith =>
+      __$$NowImplCopyWithImpl<_$NowImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NowImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Now&&(identical(other.name, name) || other.name == name)&&(identical(other.value, value) || other.value == value));
+abstract class _Now implements Now {
+  const factory _Now(
+      {required final String name, required final String value}) = _$NowImpl;
+
+  factory _Now.fromJson(Map<String, dynamic> json) = _$NowImpl.fromJson;
+
+  @override
+  String get name;
+  @override
+  String get value;
+  @override
+  @JsonKey(ignore: true)
+  _$$NowImplCopyWith<_$NowImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,value);
-
-@override
-String toString() {
-  return 'Now(name: $name, value: $value)';
+ProviderSubscriptionInfo _$ProviderSubscriptionInfoFromJson(
+    Map<String, dynamic> json) {
+  return _ProviderSubscriptionInfo.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$NowCopyWith<$Res> implements $NowCopyWith<$Res> {
-  factory _$NowCopyWith(_Now value, $Res Function(_Now) _then) = __$NowCopyWithImpl;
-@override @useResult
-$Res call({
- String name, String value
-});
-
-
-
-
-}
-/// @nodoc
-class __$NowCopyWithImpl<$Res>
-    implements _$NowCopyWith<$Res> {
-  __$NowCopyWithImpl(this._self, this._then);
-
-  final _Now _self;
-  final $Res Function(_Now) _then;
-
-/// Create a copy of Now
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? value = null,}) {
-  return _then(_Now(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$ProviderSubscriptionInfo {
+  @JsonKey(name: 'UPLOAD')
+  int get upload => throw _privateConstructorUsedError;
+  @JsonKey(name: 'DOWNLOAD')
+  int get download => throw _privateConstructorUsedError;
+  @JsonKey(name: 'TOTAL')
+  int get total => throw _privateConstructorUsedError;
+  @JsonKey(name: 'EXPIRE')
+  int get expire => throw _privateConstructorUsedError;
 
-@JsonKey(name: 'UPLOAD') int get upload;@JsonKey(name: 'DOWNLOAD') int get download;@JsonKey(name: 'TOTAL') int get total;@JsonKey(name: 'EXPIRE') int get expire;
-/// Create a copy of ProviderSubscriptionInfo
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ProviderSubscriptionInfoCopyWith<ProviderSubscriptionInfo> get copyWith => _$ProviderSubscriptionInfoCopyWithImpl<ProviderSubscriptionInfo>(this as ProviderSubscriptionInfo, _$identity);
-
-  /// Serializes this ProviderSubscriptionInfo to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProviderSubscriptionInfo&&(identical(other.upload, upload) || other.upload == upload)&&(identical(other.download, download) || other.download == download)&&(identical(other.total, total) || other.total == total)&&(identical(other.expire, expire) || other.expire == expire));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,upload,download,total,expire);
-
-@override
-String toString() {
-  return 'ProviderSubscriptionInfo(upload: $upload, download: $download, total: $total, expire: $expire)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ProviderSubscriptionInfoCopyWith<ProviderSubscriptionInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ProviderSubscriptionInfoCopyWith<$Res>  {
-  factory $ProviderSubscriptionInfoCopyWith(ProviderSubscriptionInfo value, $Res Function(ProviderSubscriptionInfo) _then) = _$ProviderSubscriptionInfoCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: 'UPLOAD') int upload,@JsonKey(name: 'DOWNLOAD') int download,@JsonKey(name: 'TOTAL') int total,@JsonKey(name: 'EXPIRE') int expire
-});
-
-
-
-
+abstract class $ProviderSubscriptionInfoCopyWith<$Res> {
+  factory $ProviderSubscriptionInfoCopyWith(ProviderSubscriptionInfo value,
+          $Res Function(ProviderSubscriptionInfo) then) =
+      _$ProviderSubscriptionInfoCopyWithImpl<$Res, ProviderSubscriptionInfo>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'UPLOAD') int upload,
+      @JsonKey(name: 'DOWNLOAD') int download,
+      @JsonKey(name: 'TOTAL') int total,
+      @JsonKey(name: 'EXPIRE') int expire});
 }
+
 /// @nodoc
-class _$ProviderSubscriptionInfoCopyWithImpl<$Res>
+class _$ProviderSubscriptionInfoCopyWithImpl<$Res,
+        $Val extends ProviderSubscriptionInfo>
     implements $ProviderSubscriptionInfoCopyWith<$Res> {
-  _$ProviderSubscriptionInfoCopyWithImpl(this._self, this._then);
+  _$ProviderSubscriptionInfoCopyWithImpl(this._value, this._then);
 
-  final ProviderSubscriptionInfo _self;
-  final $Res Function(ProviderSubscriptionInfo) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ProviderSubscriptionInfo
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? upload = null,Object? download = null,Object? total = null,Object? expire = null,}) {
-  return _then(_self.copyWith(
-upload: null == upload ? _self.upload : upload // ignore: cast_nullable_to_non_nullable
-as int,download: null == download ? _self.download : download // ignore: cast_nullable_to_non_nullable
-as int,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as int,expire: null == expire ? _self.expire : expire // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? upload = null,
+    Object? download = null,
+    Object? total = null,
+    Object? expire = null,
+  }) {
+    return _then(_value.copyWith(
+      upload: null == upload
+          ? _value.upload
+          : upload // ignore: cast_nullable_to_non_nullable
+              as int,
+      download: null == download
+          ? _value.download
+          : download // ignore: cast_nullable_to_non_nullable
+              as int,
+      total: null == total
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      expire: null == expire
+          ? _value.expire
+          : expire // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$ProviderSubscriptionInfoImplCopyWith<$Res>
+    implements $ProviderSubscriptionInfoCopyWith<$Res> {
+  factory _$$ProviderSubscriptionInfoImplCopyWith(
+          _$ProviderSubscriptionInfoImpl value,
+          $Res Function(_$ProviderSubscriptionInfoImpl) then) =
+      __$$ProviderSubscriptionInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'UPLOAD') int upload,
+      @JsonKey(name: 'DOWNLOAD') int download,
+      @JsonKey(name: 'TOTAL') int total,
+      @JsonKey(name: 'EXPIRE') int expire});
 }
 
+/// @nodoc
+class __$$ProviderSubscriptionInfoImplCopyWithImpl<$Res>
+    extends _$ProviderSubscriptionInfoCopyWithImpl<$Res,
+        _$ProviderSubscriptionInfoImpl>
+    implements _$$ProviderSubscriptionInfoImplCopyWith<$Res> {
+  __$$ProviderSubscriptionInfoImplCopyWithImpl(
+      _$ProviderSubscriptionInfoImpl _value,
+      $Res Function(_$ProviderSubscriptionInfoImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [ProviderSubscriptionInfo].
-extension ProviderSubscriptionInfoPatterns on ProviderSubscriptionInfo {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ProviderSubscriptionInfo value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ProviderSubscriptionInfo() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ProviderSubscriptionInfo value)  $default,){
-final _that = this;
-switch (_that) {
-case _ProviderSubscriptionInfo():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ProviderSubscriptionInfo value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ProviderSubscriptionInfo() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'UPLOAD')  int upload, @JsonKey(name: 'DOWNLOAD')  int download, @JsonKey(name: 'TOTAL')  int total, @JsonKey(name: 'EXPIRE')  int expire)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ProviderSubscriptionInfo() when $default != null:
-return $default(_that.upload,_that.download,_that.total,_that.expire);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'UPLOAD')  int upload, @JsonKey(name: 'DOWNLOAD')  int download, @JsonKey(name: 'TOTAL')  int total, @JsonKey(name: 'EXPIRE')  int expire)  $default,) {final _that = this;
-switch (_that) {
-case _ProviderSubscriptionInfo():
-return $default(_that.upload,_that.download,_that.total,_that.expire);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'UPLOAD')  int upload, @JsonKey(name: 'DOWNLOAD')  int download, @JsonKey(name: 'TOTAL')  int total, @JsonKey(name: 'EXPIRE')  int expire)?  $default,) {final _that = this;
-switch (_that) {
-case _ProviderSubscriptionInfo() when $default != null:
-return $default(_that.upload,_that.download,_that.total,_that.expire);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? upload = null,
+    Object? download = null,
+    Object? total = null,
+    Object? expire = null,
+  }) {
+    return _then(_$ProviderSubscriptionInfoImpl(
+      upload: null == upload
+          ? _value.upload
+          : upload // ignore: cast_nullable_to_non_nullable
+              as int,
+      download: null == download
+          ? _value.download
+          : download // ignore: cast_nullable_to_non_nullable
+              as int,
+      total: null == total
+          ? _value.total
+          : total // ignore: cast_nullable_to_non_nullable
+              as int,
+      expire: null == expire
+          ? _value.expire
+          : expire // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$ProviderSubscriptionInfoImpl implements _ProviderSubscriptionInfo {
+  const _$ProviderSubscriptionInfoImpl(
+      {@JsonKey(name: 'UPLOAD') this.upload = 0,
+      @JsonKey(name: 'DOWNLOAD') this.download = 0,
+      @JsonKey(name: 'TOTAL') this.total = 0,
+      @JsonKey(name: 'EXPIRE') this.expire = 0});
 
-class _ProviderSubscriptionInfo implements ProviderSubscriptionInfo {
-  const _ProviderSubscriptionInfo({@JsonKey(name: 'UPLOAD') this.upload = 0, @JsonKey(name: 'DOWNLOAD') this.download = 0, @JsonKey(name: 'TOTAL') this.total = 0, @JsonKey(name: 'EXPIRE') this.expire = 0});
-  factory _ProviderSubscriptionInfo.fromJson(Map<String, dynamic> json) => _$ProviderSubscriptionInfoFromJson(json);
+  factory _$ProviderSubscriptionInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProviderSubscriptionInfoImplFromJson(json);
 
-@override@JsonKey(name: 'UPLOAD') final  int upload;
-@override@JsonKey(name: 'DOWNLOAD') final  int download;
-@override@JsonKey(name: 'TOTAL') final  int total;
-@override@JsonKey(name: 'EXPIRE') final  int expire;
+  @override
+  @JsonKey(name: 'UPLOAD')
+  final int upload;
+  @override
+  @JsonKey(name: 'DOWNLOAD')
+  final int download;
+  @override
+  @JsonKey(name: 'TOTAL')
+  final int total;
+  @override
+  @JsonKey(name: 'EXPIRE')
+  final int expire;
 
-/// Create a copy of ProviderSubscriptionInfo
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ProviderSubscriptionInfoCopyWith<_ProviderSubscriptionInfo> get copyWith => __$ProviderSubscriptionInfoCopyWithImpl<_ProviderSubscriptionInfo>(this, _$identity);
+  @override
+  String toString() {
+    return 'ProviderSubscriptionInfo(upload: $upload, download: $download, total: $total, expire: $expire)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ProviderSubscriptionInfoToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProviderSubscriptionInfoImpl &&
+            (identical(other.upload, upload) || other.upload == upload) &&
+            (identical(other.download, download) ||
+                other.download == download) &&
+            (identical(other.total, total) || other.total == total) &&
+            (identical(other.expire, expire) || other.expire == expire));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, upload, download, total, expire);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProviderSubscriptionInfoImplCopyWith<_$ProviderSubscriptionInfoImpl>
+      get copyWith => __$$ProviderSubscriptionInfoImplCopyWithImpl<
+          _$ProviderSubscriptionInfoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ProviderSubscriptionInfoImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProviderSubscriptionInfo&&(identical(other.upload, upload) || other.upload == upload)&&(identical(other.download, download) || other.download == download)&&(identical(other.total, total) || other.total == total)&&(identical(other.expire, expire) || other.expire == expire));
+abstract class _ProviderSubscriptionInfo implements ProviderSubscriptionInfo {
+  const factory _ProviderSubscriptionInfo(
+          {@JsonKey(name: 'UPLOAD') final int upload,
+          @JsonKey(name: 'DOWNLOAD') final int download,
+          @JsonKey(name: 'TOTAL') final int total,
+          @JsonKey(name: 'EXPIRE') final int expire}) =
+      _$ProviderSubscriptionInfoImpl;
+
+  factory _ProviderSubscriptionInfo.fromJson(Map<String, dynamic> json) =
+      _$ProviderSubscriptionInfoImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'UPLOAD')
+  int get upload;
+  @override
+  @JsonKey(name: 'DOWNLOAD')
+  int get download;
+  @override
+  @JsonKey(name: 'TOTAL')
+  int get total;
+  @override
+  @JsonKey(name: 'EXPIRE')
+  int get expire;
+  @override
+  @JsonKey(ignore: true)
+  _$$ProviderSubscriptionInfoImplCopyWith<_$ProviderSubscriptionInfoImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,upload,download,total,expire);
-
-@override
-String toString() {
-  return 'ProviderSubscriptionInfo(upload: $upload, download: $download, total: $total, expire: $expire)';
+ExternalProvider _$ExternalProviderFromJson(Map<String, dynamic> json) {
+  return _ExternalProvider.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ProviderSubscriptionInfoCopyWith<$Res> implements $ProviderSubscriptionInfoCopyWith<$Res> {
-  factory _$ProviderSubscriptionInfoCopyWith(_ProviderSubscriptionInfo value, $Res Function(_ProviderSubscriptionInfo) _then) = __$ProviderSubscriptionInfoCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(name: 'UPLOAD') int upload,@JsonKey(name: 'DOWNLOAD') int download,@JsonKey(name: 'TOTAL') int total,@JsonKey(name: 'EXPIRE') int expire
-});
-
-
-
-
-}
-/// @nodoc
-class __$ProviderSubscriptionInfoCopyWithImpl<$Res>
-    implements _$ProviderSubscriptionInfoCopyWith<$Res> {
-  __$ProviderSubscriptionInfoCopyWithImpl(this._self, this._then);
-
-  final _ProviderSubscriptionInfo _self;
-  final $Res Function(_ProviderSubscriptionInfo) _then;
-
-/// Create a copy of ProviderSubscriptionInfo
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? upload = null,Object? download = null,Object? total = null,Object? expire = null,}) {
-  return _then(_ProviderSubscriptionInfo(
-upload: null == upload ? _self.upload : upload // ignore: cast_nullable_to_non_nullable
-as int,download: null == download ? _self.download : download // ignore: cast_nullable_to_non_nullable
-as int,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as int,expire: null == expire ? _self.expire : expire // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$ExternalProvider {
+  String get name => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  String? get path => throw _privateConstructorUsedError;
+  int get count => throw _privateConstructorUsedError;
+  @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)
+  SubscriptionInfo? get subscriptionInfo => throw _privateConstructorUsedError;
+  bool get isUpdating => throw _privateConstructorUsedError;
+  @JsonKey(name: 'vehicle-type')
+  String get vehicleType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'update-at')
+  DateTime get updateAt => throw _privateConstructorUsedError;
 
- String get name; String get type; String? get path; int get count;@JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore) SubscriptionInfo? get subscriptionInfo; bool get isUpdating;@JsonKey(name: 'vehicle-type') String get vehicleType;@JsonKey(name: 'update-at') DateTime get updateAt;
-/// Create a copy of ExternalProvider
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ExternalProviderCopyWith<ExternalProvider> get copyWith => _$ExternalProviderCopyWithImpl<ExternalProvider>(this as ExternalProvider, _$identity);
-
-  /// Serializes this ExternalProvider to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExternalProvider&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.path, path) || other.path == path)&&(identical(other.count, count) || other.count == count)&&(identical(other.subscriptionInfo, subscriptionInfo) || other.subscriptionInfo == subscriptionInfo)&&(identical(other.isUpdating, isUpdating) || other.isUpdating == isUpdating)&&(identical(other.vehicleType, vehicleType) || other.vehicleType == vehicleType)&&(identical(other.updateAt, updateAt) || other.updateAt == updateAt));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,type,path,count,subscriptionInfo,isUpdating,vehicleType,updateAt);
-
-@override
-String toString() {
-  return 'ExternalProvider(name: $name, type: $type, path: $path, count: $count, subscriptionInfo: $subscriptionInfo, isUpdating: $isUpdating, vehicleType: $vehicleType, updateAt: $updateAt)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ExternalProviderCopyWith<ExternalProvider> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ExternalProviderCopyWith<$Res>  {
-  factory $ExternalProviderCopyWith(ExternalProvider value, $Res Function(ExternalProvider) _then) = _$ExternalProviderCopyWithImpl;
-@useResult
-$Res call({
- String name, String type, String? path, int count,@JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore) SubscriptionInfo? subscriptionInfo, bool isUpdating,@JsonKey(name: 'vehicle-type') String vehicleType,@JsonKey(name: 'update-at') DateTime updateAt
-});
+abstract class $ExternalProviderCopyWith<$Res> {
+  factory $ExternalProviderCopyWith(
+          ExternalProvider value, $Res Function(ExternalProvider) then) =
+      _$ExternalProviderCopyWithImpl<$Res, ExternalProvider>;
+  @useResult
+  $Res call(
+      {String name,
+      String type,
+      String? path,
+      int count,
+      @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)
+      SubscriptionInfo? subscriptionInfo,
+      bool isUpdating,
+      @JsonKey(name: 'vehicle-type') String vehicleType,
+      @JsonKey(name: 'update-at') DateTime updateAt});
 
-
-$SubscriptionInfoCopyWith<$Res>? get subscriptionInfo;
-
+  $SubscriptionInfoCopyWith<$Res>? get subscriptionInfo;
 }
+
 /// @nodoc
-class _$ExternalProviderCopyWithImpl<$Res>
+class _$ExternalProviderCopyWithImpl<$Res, $Val extends ExternalProvider>
     implements $ExternalProviderCopyWith<$Res> {
-  _$ExternalProviderCopyWithImpl(this._self, this._then);
+  _$ExternalProviderCopyWithImpl(this._value, this._then);
 
-  final ExternalProvider _self;
-  final $Res Function(ExternalProvider) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ExternalProvider
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? type = null,Object? path = freezed,Object? count = null,Object? subscriptionInfo = freezed,Object? isUpdating = null,Object? vehicleType = null,Object? updateAt = null,}) {
-  return _then(_self.copyWith(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,path: freezed == path ? _self.path : path // ignore: cast_nullable_to_non_nullable
-as String?,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
-as int,subscriptionInfo: freezed == subscriptionInfo ? _self.subscriptionInfo : subscriptionInfo // ignore: cast_nullable_to_non_nullable
-as SubscriptionInfo?,isUpdating: null == isUpdating ? _self.isUpdating : isUpdating // ignore: cast_nullable_to_non_nullable
-as bool,vehicleType: null == vehicleType ? _self.vehicleType : vehicleType // ignore: cast_nullable_to_non_nullable
-as String,updateAt: null == updateAt ? _self.updateAt : updateAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
-  ));
-}
-/// Create a copy of ExternalProvider
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$SubscriptionInfoCopyWith<$Res>? get subscriptionInfo {
-    if (_self.subscriptionInfo == null) {
-    return null;
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? type = null,
+    Object? path = freezed,
+    Object? count = null,
+    Object? subscriptionInfo = freezed,
+    Object? isUpdating = null,
+    Object? vehicleType = null,
+    Object? updateAt = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      path: freezed == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String?,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      subscriptionInfo: freezed == subscriptionInfo
+          ? _value.subscriptionInfo
+          : subscriptionInfo // ignore: cast_nullable_to_non_nullable
+              as SubscriptionInfo?,
+      isUpdating: null == isUpdating
+          ? _value.isUpdating
+          : isUpdating // ignore: cast_nullable_to_non_nullable
+              as bool,
+      vehicleType: null == vehicleType
+          ? _value.vehicleType
+          : vehicleType // ignore: cast_nullable_to_non_nullable
+              as String,
+      updateAt: null == updateAt
+          ? _value.updateAt
+          : updateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ) as $Val);
   }
 
-  return $SubscriptionInfoCopyWith<$Res>(_self.subscriptionInfo!, (value) {
-    return _then(_self.copyWith(subscriptionInfo: value));
-  });
-}
-}
+  @override
+  @pragma('vm:prefer-inline')
+  $SubscriptionInfoCopyWith<$Res>? get subscriptionInfo {
+    if (_value.subscriptionInfo == null) {
+      return null;
+    }
 
-
-/// Adds pattern-matching-related methods to [ExternalProvider].
-extension ExternalProviderPatterns on ExternalProvider {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ExternalProvider value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ExternalProvider() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ExternalProvider value)  $default,){
-final _that = this;
-switch (_that) {
-case _ExternalProvider():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ExternalProvider value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ExternalProvider() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name,  String type,  String? path,  int count, @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)  SubscriptionInfo? subscriptionInfo,  bool isUpdating, @JsonKey(name: 'vehicle-type')  String vehicleType, @JsonKey(name: 'update-at')  DateTime updateAt)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ExternalProvider() when $default != null:
-return $default(_that.name,_that.type,_that.path,_that.count,_that.subscriptionInfo,_that.isUpdating,_that.vehicleType,_that.updateAt);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name,  String type,  String? path,  int count, @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)  SubscriptionInfo? subscriptionInfo,  bool isUpdating, @JsonKey(name: 'vehicle-type')  String vehicleType, @JsonKey(name: 'update-at')  DateTime updateAt)  $default,) {final _that = this;
-switch (_that) {
-case _ExternalProvider():
-return $default(_that.name,_that.type,_that.path,_that.count,_that.subscriptionInfo,_that.isUpdating,_that.vehicleType,_that.updateAt);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name,  String type,  String? path,  int count, @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)  SubscriptionInfo? subscriptionInfo,  bool isUpdating, @JsonKey(name: 'vehicle-type')  String vehicleType, @JsonKey(name: 'update-at')  DateTime updateAt)?  $default,) {final _that = this;
-switch (_that) {
-case _ExternalProvider() when $default != null:
-return $default(_that.name,_that.type,_that.path,_that.count,_that.subscriptionInfo,_that.isUpdating,_that.vehicleType,_that.updateAt);case _:
-  return null;
-
-}
+    return $SubscriptionInfoCopyWith<$Res>(_value.subscriptionInfo!, (value) {
+      return _then(_value.copyWith(subscriptionInfo: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$ExternalProviderImplCopyWith<$Res>
+    implements $ExternalProviderCopyWith<$Res> {
+  factory _$$ExternalProviderImplCopyWith(_$ExternalProviderImpl value,
+          $Res Function(_$ExternalProviderImpl) then) =
+      __$$ExternalProviderImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String name,
+      String type,
+      String? path,
+      int count,
+      @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)
+      SubscriptionInfo? subscriptionInfo,
+      bool isUpdating,
+      @JsonKey(name: 'vehicle-type') String vehicleType,
+      @JsonKey(name: 'update-at') DateTime updateAt});
+
+  @override
+  $SubscriptionInfoCopyWith<$Res>? get subscriptionInfo;
+}
+
+/// @nodoc
+class __$$ExternalProviderImplCopyWithImpl<$Res>
+    extends _$ExternalProviderCopyWithImpl<$Res, _$ExternalProviderImpl>
+    implements _$$ExternalProviderImplCopyWith<$Res> {
+  __$$ExternalProviderImplCopyWithImpl(_$ExternalProviderImpl _value,
+      $Res Function(_$ExternalProviderImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? type = null,
+    Object? path = freezed,
+    Object? count = null,
+    Object? subscriptionInfo = freezed,
+    Object? isUpdating = null,
+    Object? vehicleType = null,
+    Object? updateAt = null,
+  }) {
+    return _then(_$ExternalProviderImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      path: freezed == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String?,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      subscriptionInfo: freezed == subscriptionInfo
+          ? _value.subscriptionInfo
+          : subscriptionInfo // ignore: cast_nullable_to_non_nullable
+              as SubscriptionInfo?,
+      isUpdating: null == isUpdating
+          ? _value.isUpdating
+          : isUpdating // ignore: cast_nullable_to_non_nullable
+              as bool,
+      vehicleType: null == vehicleType
+          ? _value.vehicleType
+          : vehicleType // ignore: cast_nullable_to_non_nullable
+              as String,
+      updateAt: null == updateAt
+          ? _value.updateAt
+          : updateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$ExternalProviderImpl implements _ExternalProvider {
+  const _$ExternalProviderImpl(
+      {required this.name,
+      required this.type,
+      this.path,
+      required this.count,
+      @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)
+      this.subscriptionInfo,
+      this.isUpdating = false,
+      @JsonKey(name: 'vehicle-type') required this.vehicleType,
+      @JsonKey(name: 'update-at') required this.updateAt});
 
-class _ExternalProvider implements ExternalProvider {
-  const _ExternalProvider({required this.name, required this.type, this.path, required this.count, @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore) this.subscriptionInfo, this.isUpdating = false, @JsonKey(name: 'vehicle-type') required this.vehicleType, @JsonKey(name: 'update-at') required this.updateAt});
-  factory _ExternalProvider.fromJson(Map<String, dynamic> json) => _$ExternalProviderFromJson(json);
+  factory _$ExternalProviderImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ExternalProviderImplFromJson(json);
 
-@override final  String name;
-@override final  String type;
-@override final  String? path;
-@override final  int count;
-@override@JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore) final  SubscriptionInfo? subscriptionInfo;
-@override@JsonKey() final  bool isUpdating;
-@override@JsonKey(name: 'vehicle-type') final  String vehicleType;
-@override@JsonKey(name: 'update-at') final  DateTime updateAt;
+  @override
+  final String name;
+  @override
+  final String type;
+  @override
+  final String? path;
+  @override
+  final int count;
+  @override
+  @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)
+  final SubscriptionInfo? subscriptionInfo;
+  @override
+  @JsonKey()
+  final bool isUpdating;
+  @override
+  @JsonKey(name: 'vehicle-type')
+  final String vehicleType;
+  @override
+  @JsonKey(name: 'update-at')
+  final DateTime updateAt;
 
-/// Create a copy of ExternalProvider
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ExternalProviderCopyWith<_ExternalProvider> get copyWith => __$ExternalProviderCopyWithImpl<_ExternalProvider>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$ExternalProviderToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExternalProvider&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.path, path) || other.path == path)&&(identical(other.count, count) || other.count == count)&&(identical(other.subscriptionInfo, subscriptionInfo) || other.subscriptionInfo == subscriptionInfo)&&(identical(other.isUpdating, isUpdating) || other.isUpdating == isUpdating)&&(identical(other.vehicleType, vehicleType) || other.vehicleType == vehicleType)&&(identical(other.updateAt, updateAt) || other.updateAt == updateAt));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,type,path,count,subscriptionInfo,isUpdating,vehicleType,updateAt);
-
-@override
-String toString() {
-  return 'ExternalProvider(name: $name, type: $type, path: $path, count: $count, subscriptionInfo: $subscriptionInfo, isUpdating: $isUpdating, vehicleType: $vehicleType, updateAt: $updateAt)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ExternalProviderCopyWith<$Res> implements $ExternalProviderCopyWith<$Res> {
-  factory _$ExternalProviderCopyWith(_ExternalProvider value, $Res Function(_ExternalProvider) _then) = __$ExternalProviderCopyWithImpl;
-@override @useResult
-$Res call({
- String name, String type, String? path, int count,@JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore) SubscriptionInfo? subscriptionInfo, bool isUpdating,@JsonKey(name: 'vehicle-type') String vehicleType,@JsonKey(name: 'update-at') DateTime updateAt
-});
-
-
-@override $SubscriptionInfoCopyWith<$Res>? get subscriptionInfo;
-
-}
-/// @nodoc
-class __$ExternalProviderCopyWithImpl<$Res>
-    implements _$ExternalProviderCopyWith<$Res> {
-  __$ExternalProviderCopyWithImpl(this._self, this._then);
-
-  final _ExternalProvider _self;
-  final $Res Function(_ExternalProvider) _then;
-
-/// Create a copy of ExternalProvider
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? type = null,Object? path = freezed,Object? count = null,Object? subscriptionInfo = freezed,Object? isUpdating = null,Object? vehicleType = null,Object? updateAt = null,}) {
-  return _then(_ExternalProvider(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,path: freezed == path ? _self.path : path // ignore: cast_nullable_to_non_nullable
-as String?,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
-as int,subscriptionInfo: freezed == subscriptionInfo ? _self.subscriptionInfo : subscriptionInfo // ignore: cast_nullable_to_non_nullable
-as SubscriptionInfo?,isUpdating: null == isUpdating ? _self.isUpdating : isUpdating // ignore: cast_nullable_to_non_nullable
-as bool,vehicleType: null == vehicleType ? _self.vehicleType : vehicleType // ignore: cast_nullable_to_non_nullable
-as String,updateAt: null == updateAt ? _self.updateAt : updateAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
-  ));
-}
-
-/// Create a copy of ExternalProvider
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$SubscriptionInfoCopyWith<$Res>? get subscriptionInfo {
-    if (_self.subscriptionInfo == null) {
-    return null;
+  @override
+  String toString() {
+    return 'ExternalProvider(name: $name, type: $type, path: $path, count: $count, subscriptionInfo: $subscriptionInfo, isUpdating: $isUpdating, vehicleType: $vehicleType, updateAt: $updateAt)';
   }
 
-  return $SubscriptionInfoCopyWith<$Res>(_self.subscriptionInfo!, (value) {
-    return _then(_self.copyWith(subscriptionInfo: value));
-  });
-}
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ExternalProviderImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.subscriptionInfo, subscriptionInfo) ||
+                other.subscriptionInfo == subscriptionInfo) &&
+            (identical(other.isUpdating, isUpdating) ||
+                other.isUpdating == isUpdating) &&
+            (identical(other.vehicleType, vehicleType) ||
+                other.vehicleType == vehicleType) &&
+            (identical(other.updateAt, updateAt) ||
+                other.updateAt == updateAt));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, type, path, count,
+      subscriptionInfo, isUpdating, vehicleType, updateAt);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ExternalProviderImplCopyWith<_$ExternalProviderImpl> get copyWith =>
+      __$$ExternalProviderImplCopyWithImpl<_$ExternalProviderImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ExternalProviderImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _ExternalProvider implements ExternalProvider {
+  const factory _ExternalProvider(
+      {required final String name,
+      required final String type,
+      final String? path,
+      required final int count,
+      @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)
+      final SubscriptionInfo? subscriptionInfo,
+      final bool isUpdating,
+      @JsonKey(name: 'vehicle-type') required final String vehicleType,
+      @JsonKey(name: 'update-at')
+      required final DateTime updateAt}) = _$ExternalProviderImpl;
+
+  factory _ExternalProvider.fromJson(Map<String, dynamic> json) =
+      _$ExternalProviderImpl.fromJson;
+
+  @override
+  String get name;
+  @override
+  String get type;
+  @override
+  String? get path;
+  @override
+  int get count;
+  @override
+  @JsonKey(name: 'subscription-info', fromJson: subscriptionInfoFormCore)
+  SubscriptionInfo? get subscriptionInfo;
+  @override
+  bool get isUpdating;
+  @override
+  @JsonKey(name: 'vehicle-type')
+  String get vehicleType;
+  @override
+  @JsonKey(name: 'update-at')
+  DateTime get updateAt;
+  @override
+  @JsonKey(ignore: true)
+  _$$ExternalProviderImplCopyWith<_$ExternalProviderImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Action _$ActionFromJson(Map<String, dynamic> json) {
+  return _Action.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Action {
+  ActionMethod get method => throw _privateConstructorUsedError;
+  dynamic get data => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
- ActionMethod get method; dynamic get data; String get id;
-/// Create a copy of Action
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ActionCopyWith<Action> get copyWith => _$ActionCopyWithImpl<Action>(this as Action, _$identity);
-
-  /// Serializes this Action to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Action&&(identical(other.method, method) || other.method == method)&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.id, id) || other.id == id));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,method,const DeepCollectionEquality().hash(data),id);
-
-@override
-String toString() {
-  return 'Action(method: $method, data: $data, id: $id)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActionCopyWith<Action> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActionCopyWith<$Res>  {
-  factory $ActionCopyWith(Action value, $Res Function(Action) _then) = _$ActionCopyWithImpl;
-@useResult
-$Res call({
- ActionMethod method, dynamic data, String id
-});
-
-
-
-
+abstract class $ActionCopyWith<$Res> {
+  factory $ActionCopyWith(Action value, $Res Function(Action) then) =
+      _$ActionCopyWithImpl<$Res, Action>;
+  @useResult
+  $Res call({ActionMethod method, dynamic data, String id});
 }
+
 /// @nodoc
-class _$ActionCopyWithImpl<$Res>
+class _$ActionCopyWithImpl<$Res, $Val extends Action>
     implements $ActionCopyWith<$Res> {
-  _$ActionCopyWithImpl(this._self, this._then);
+  _$ActionCopyWithImpl(this._value, this._then);
 
-  final Action _self;
-  final $Res Function(Action) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of Action
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? method = null,Object? data = freezed,Object? id = null,}) {
-  return _then(_self.copyWith(
-method: null == method ? _self.method : method // ignore: cast_nullable_to_non_nullable
-as ActionMethod,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? method = null,
+    Object? data = freezed,
+    Object? id = null,
+  }) {
+    return _then(_value.copyWith(
+      method: null == method
+          ? _value.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as ActionMethod,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$ActionImplCopyWith<$Res> implements $ActionCopyWith<$Res> {
+  factory _$$ActionImplCopyWith(
+          _$ActionImpl value, $Res Function(_$ActionImpl) then) =
+      __$$ActionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionMethod method, dynamic data, String id});
 }
 
+/// @nodoc
+class __$$ActionImplCopyWithImpl<$Res>
+    extends _$ActionCopyWithImpl<$Res, _$ActionImpl>
+    implements _$$ActionImplCopyWith<$Res> {
+  __$$ActionImplCopyWithImpl(
+      _$ActionImpl _value, $Res Function(_$ActionImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [Action].
-extension ActionPatterns on Action {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Action value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _Action() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Action value)  $default,){
-final _that = this;
-switch (_that) {
-case _Action():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Action value)?  $default,){
-final _that = this;
-switch (_that) {
-case _Action() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ActionMethod method,  dynamic data,  String id)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _Action() when $default != null:
-return $default(_that.method,_that.data,_that.id);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ActionMethod method,  dynamic data,  String id)  $default,) {final _that = this;
-switch (_that) {
-case _Action():
-return $default(_that.method,_that.data,_that.id);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ActionMethod method,  dynamic data,  String id)?  $default,) {final _that = this;
-switch (_that) {
-case _Action() when $default != null:
-return $default(_that.method,_that.data,_that.id);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? method = null,
+    Object? data = freezed,
+    Object? id = null,
+  }) {
+    return _then(_$ActionImpl(
+      method: null == method
+          ? _value.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as ActionMethod,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$ActionImpl implements _Action {
+  const _$ActionImpl(
+      {required this.method, required this.data, required this.id});
 
-class _Action implements Action {
-  const _Action({required this.method, required this.data, required this.id});
-  factory _Action.fromJson(Map<String, dynamic> json) => _$ActionFromJson(json);
+  factory _$ActionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActionImplFromJson(json);
 
-@override final  ActionMethod method;
-@override final  dynamic data;
-@override final  String id;
+  @override
+  final ActionMethod method;
+  @override
+  final dynamic data;
+  @override
+  final String id;
 
-/// Create a copy of Action
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ActionCopyWith<_Action> get copyWith => __$ActionCopyWithImpl<_Action>(this, _$identity);
+  @override
+  String toString() {
+    return 'Action(method: $method, data: $data, id: $id)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ActionToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ActionImpl &&
+            (identical(other.method, method) || other.method == method) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, method, const DeepCollectionEquality().hash(data), id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
+      __$$ActionImplCopyWithImpl<_$ActionImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ActionImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Action&&(identical(other.method, method) || other.method == method)&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.id, id) || other.id == id));
+abstract class _Action implements Action {
+  const factory _Action(
+      {required final ActionMethod method,
+      required final dynamic data,
+      required final String id}) = _$ActionImpl;
+
+  factory _Action.fromJson(Map<String, dynamic> json) = _$ActionImpl.fromJson;
+
+  @override
+  ActionMethod get method;
+  @override
+  dynamic get data;
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,method,const DeepCollectionEquality().hash(data),id);
-
-@override
-String toString() {
-  return 'Action(method: $method, data: $data, id: $id)';
+ActionResult _$ActionResultFromJson(Map<String, dynamic> json) {
+  return _ActionResult.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ActionCopyWith<$Res> implements $ActionCopyWith<$Res> {
-  factory _$ActionCopyWith(_Action value, $Res Function(_Action) _then) = __$ActionCopyWithImpl;
-@override @useResult
-$Res call({
- ActionMethod method, dynamic data, String id
-});
-
-
-
-
-}
-/// @nodoc
-class __$ActionCopyWithImpl<$Res>
-    implements _$ActionCopyWith<$Res> {
-  __$ActionCopyWithImpl(this._self, this._then);
-
-  final _Action _self;
-  final $Res Function(_Action) _then;
-
-/// Create a copy of Action
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? method = null,Object? data = freezed,Object? id = null,}) {
-  return _then(_Action(
-method: null == method ? _self.method : method // ignore: cast_nullable_to_non_nullable
-as ActionMethod,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$ActionResult {
+  ActionMethod get method => throw _privateConstructorUsedError;
+  dynamic get data => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  ResultType get code => throw _privateConstructorUsedError;
 
- ActionMethod get method; dynamic get data; String? get id; ResultType get code;
-/// Create a copy of ActionResult
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ActionResultCopyWith<ActionResult> get copyWith => _$ActionResultCopyWithImpl<ActionResult>(this as ActionResult, _$identity);
-
-  /// Serializes this ActionResult to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActionResult&&(identical(other.method, method) || other.method == method)&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.id, id) || other.id == id)&&(identical(other.code, code) || other.code == code));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,method,const DeepCollectionEquality().hash(data),id,code);
-
-@override
-String toString() {
-  return 'ActionResult(method: $method, data: $data, id: $id, code: $code)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActionResultCopyWith<ActionResult> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActionResultCopyWith<$Res>  {
-  factory $ActionResultCopyWith(ActionResult value, $Res Function(ActionResult) _then) = _$ActionResultCopyWithImpl;
-@useResult
-$Res call({
- ActionMethod method, dynamic data, String? id, ResultType code
-});
-
-
-
-
+abstract class $ActionResultCopyWith<$Res> {
+  factory $ActionResultCopyWith(
+          ActionResult value, $Res Function(ActionResult) then) =
+      _$ActionResultCopyWithImpl<$Res, ActionResult>;
+  @useResult
+  $Res call({ActionMethod method, dynamic data, String? id, ResultType code});
 }
+
 /// @nodoc
-class _$ActionResultCopyWithImpl<$Res>
+class _$ActionResultCopyWithImpl<$Res, $Val extends ActionResult>
     implements $ActionResultCopyWith<$Res> {
-  _$ActionResultCopyWithImpl(this._self, this._then);
+  _$ActionResultCopyWithImpl(this._value, this._then);
 
-  final ActionResult _self;
-  final $Res Function(ActionResult) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ActionResult
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? method = null,Object? data = freezed,Object? id = freezed,Object? code = null,}) {
-  return _then(_self.copyWith(
-method: null == method ? _self.method : method // ignore: cast_nullable_to_non_nullable
-as ActionMethod,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
-as ResultType,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? method = null,
+    Object? data = freezed,
+    Object? id = freezed,
+    Object? code = null,
+  }) {
+    return _then(_value.copyWith(
+      method: null == method
+          ? _value.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as ActionMethod,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as ResultType,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$ActionResultImplCopyWith<$Res>
+    implements $ActionResultCopyWith<$Res> {
+  factory _$$ActionResultImplCopyWith(
+          _$ActionResultImpl value, $Res Function(_$ActionResultImpl) then) =
+      __$$ActionResultImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionMethod method, dynamic data, String? id, ResultType code});
 }
 
+/// @nodoc
+class __$$ActionResultImplCopyWithImpl<$Res>
+    extends _$ActionResultCopyWithImpl<$Res, _$ActionResultImpl>
+    implements _$$ActionResultImplCopyWith<$Res> {
+  __$$ActionResultImplCopyWithImpl(
+      _$ActionResultImpl _value, $Res Function(_$ActionResultImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [ActionResult].
-extension ActionResultPatterns on ActionResult {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ActionResult value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ActionResult() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ActionResult value)  $default,){
-final _that = this;
-switch (_that) {
-case _ActionResult():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ActionResult value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ActionResult() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ActionMethod method,  dynamic data,  String? id,  ResultType code)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ActionResult() when $default != null:
-return $default(_that.method,_that.data,_that.id,_that.code);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ActionMethod method,  dynamic data,  String? id,  ResultType code)  $default,) {final _that = this;
-switch (_that) {
-case _ActionResult():
-return $default(_that.method,_that.data,_that.id,_that.code);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ActionMethod method,  dynamic data,  String? id,  ResultType code)?  $default,) {final _that = this;
-switch (_that) {
-case _ActionResult() when $default != null:
-return $default(_that.method,_that.data,_that.id,_that.code);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? method = null,
+    Object? data = freezed,
+    Object? id = freezed,
+    Object? code = null,
+  }) {
+    return _then(_$ActionResultImpl(
+      method: null == method
+          ? _value.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as ActionMethod,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as ResultType,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$ActionResultImpl implements _ActionResult {
+  const _$ActionResultImpl(
+      {required this.method,
+      required this.data,
+      this.id,
+      this.code = ResultType.success});
 
-class _ActionResult implements ActionResult {
-  const _ActionResult({required this.method, required this.data, this.id, this.code = ResultType.success});
-  factory _ActionResult.fromJson(Map<String, dynamic> json) => _$ActionResultFromJson(json);
+  factory _$ActionResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActionResultImplFromJson(json);
 
-@override final  ActionMethod method;
-@override final  dynamic data;
-@override final  String? id;
-@override@JsonKey() final  ResultType code;
+  @override
+  final ActionMethod method;
+  @override
+  final dynamic data;
+  @override
+  final String? id;
+  @override
+  @JsonKey()
+  final ResultType code;
 
-/// Create a copy of ActionResult
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ActionResultCopyWith<_ActionResult> get copyWith => __$ActionResultCopyWithImpl<_ActionResult>(this, _$identity);
+  @override
+  String toString() {
+    return 'ActionResult(method: $method, data: $data, id: $id, code: $code)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ActionResultToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ActionResultImpl &&
+            (identical(other.method, method) || other.method == method) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, method, const DeepCollectionEquality().hash(data), id, code);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ActionResultImplCopyWith<_$ActionResultImpl> get copyWith =>
+      __$$ActionResultImplCopyWithImpl<_$ActionResultImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ActionResultImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ActionResult&&(identical(other.method, method) || other.method == method)&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.id, id) || other.id == id)&&(identical(other.code, code) || other.code == code));
+abstract class _ActionResult implements ActionResult {
+  const factory _ActionResult(
+      {required final ActionMethod method,
+      required final dynamic data,
+      final String? id,
+      final ResultType code}) = _$ActionResultImpl;
+
+  factory _ActionResult.fromJson(Map<String, dynamic> json) =
+      _$ActionResultImpl.fromJson;
+
+  @override
+  ActionMethod get method;
+  @override
+  dynamic get data;
+  @override
+  String? get id;
+  @override
+  ResultType get code;
+  @override
+  @JsonKey(ignore: true)
+  _$$ActionResultImplCopyWith<_$ActionResultImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,method,const DeepCollectionEquality().hash(data),id,code);
-
-@override
-String toString() {
-  return 'ActionResult(method: $method, data: $data, id: $id, code: $code)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ActionResultCopyWith<$Res> implements $ActionResultCopyWith<$Res> {
-  factory _$ActionResultCopyWith(_ActionResult value, $Res Function(_ActionResult) _then) = __$ActionResultCopyWithImpl;
-@override @useResult
-$Res call({
- ActionMethod method, dynamic data, String? id, ResultType code
-});
-
-
-
-
-}
-/// @nodoc
-class __$ActionResultCopyWithImpl<$Res>
-    implements _$ActionResultCopyWith<$Res> {
-  __$ActionResultCopyWithImpl(this._self, this._then);
-
-  final _ActionResult _self;
-  final $Res Function(_ActionResult) _then;
-
-/// Create a copy of ActionResult
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? method = null,Object? data = freezed,Object? id = freezed,Object? code = null,}) {
-  return _then(_ActionResult(
-method: null == method ? _self.method : method // ignore: cast_nullable_to_non_nullable
-as ActionMethod,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String?,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
-as ResultType,
-  ));
-}
-
-
-}
-
-// dart format on

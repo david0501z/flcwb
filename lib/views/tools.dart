@@ -92,7 +92,7 @@ class _ToolViewState extends ConsumerState<ToolsView> {
     );
     final items = [
       Consumer(
-        builder: (_, ref, _) {
+        builder: (context, ref, child) {
           final state = ref.watch(moreToolsSelectorStateProvider);
           if (state.navigationItems.isEmpty) {
             return Container();
@@ -113,7 +113,7 @@ class _ToolViewState extends ConsumerState<ToolsView> {
       body: ListView.builder(
         key: toolsStoreKey,
         itemCount: items.length,
-        itemBuilder: (_, index) => items[index],
+        itemBuilder: (context, index) => items[index],
         padding: const EdgeInsets.only(bottom: 20),
       ),
     );

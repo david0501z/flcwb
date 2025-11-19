@@ -1,3 +1,4 @@
+// @dart=3.0
 // ignore_for_file: constant_identifier_names
 
 import 'dart:io';
@@ -321,6 +322,7 @@ enum GeodataLoader { standard, memconservative }
 
 enum PageLabel {
   dashboard,
+  browser,
   proxies,
   profiles,
   tools,

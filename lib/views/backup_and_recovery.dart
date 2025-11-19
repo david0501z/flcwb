@@ -270,7 +270,7 @@ class BackupAndRecovery extends ConsumerWidget {
         ),
         ListHeader(title: appLocalizations.options),
         Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final recoveryStrategy = ref.watch(
               appSettingProvider.select((state) => state.recoveryStrategy),
             );
@@ -359,7 +359,7 @@ class _WebDAVFormDialogState extends ConsumerState<WebDAVFormDialog> {
 
   void _submit() {
     if (!_formKey.currentState!.validate()) return;
-    ref.read(appDAVSettingProvider.notifier).value = DAV(
+    ref.read(appDAVSettingProvider.notifier).state = DAV(
       uri: uriController.text,
       user: userController.text,
       password: passwordController.text,
@@ -368,7 +368,7 @@ class _WebDAVFormDialogState extends ConsumerState<WebDAVFormDialog> {
   }
 
   void _delete() {
-    ref.read(appDAVSettingProvider.notifier).value = null;
+    ref.read(appDAVSettingProvider.notifier).state = null;
     Navigator.pop(context);
   }
 
@@ -425,7 +425,7 @@ class _WebDAVFormDialogState extends ConsumerState<WebDAVFormDialog> {
             ),
             ValueListenableBuilder(
               valueListenable: _obscureController,
-              builder: (_, obscure, _) {
+              builder: (context, obscure, child) {
                 return TextFormField(
                   controller: passwordController,
                   obscureText: obscure,

@@ -48,7 +48,7 @@ class _NetworkSpeedState extends State<NetworkSpeed> {
           iconData: Icons.speed_sharp,
         ),
         child: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final traffics = ref.watch(trafficsProvider).list;
             return Stack(
               children: [

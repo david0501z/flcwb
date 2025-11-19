@@ -50,21 +50,45 @@ class CoreController {
         if (isExists) {
           continue;
         }
-        final data = await rootBundle.load('assets/data/$geoFileName');
-        List<int> bytes = data.buffer.asUint8List();
-        await geoFile.writeAsBytes(bytes, flush: true);
+        try {
+          final data = await rootBundle.load('assets/data/$geoFileName');
+          List<int> bytes = data.buffer.asUint8List();
+          await geoFile.writeAsBytes(bytes, flush: true);
+        } catch (bundleError) {
+          commonPrint.log('Failed to load geo file from assets: $geoFileName, error: $bundleError', logLevel: LogLevel.warning);
+        }
       }
     } catch (e) {
-      exit(0);
+      commonPrint.log('Failed to initialize geo files: $e', logLevel: LogLevel.error);
+      // 不要退出应用，而是记录错误并继续
     }
   }
 
   Future<bool> init(int version) async {
     await initGeo();
     final homeDirPath = await appPath.homeDirPath;
-    return await _interface.init(
-      InitParams(homeDir: homeDirPath, version: version),
-    );
+    
+    // 确保配置目录存在
+    final homeDir = Directory(homeDirPath);
+    if (!await homeDir.exists()) {
+      await homeDir.create(recursive: true);
+    }
+    
+    // 确保配置文件存在，如果不存在则创建默认配置
+    final configFile = File(join(homeDirPath, 'config.json'));
+    if (!await configFile.exists()) {
+      await configFile.writeAsString('{}');
+    }
+    
+    try {
+      return await _interface.init(
+        InitParams(homeDir: homeDirPath, version: version),
+      );
+    } catch (e) {
+      // 如果初始化失败，可能是由于路径问题，记录错误但不阻止应用启动
+      commonPrint.log('Core initialization failed: $e', logLevel: LogLevel.error);
+      return false;
+    }
   }
 
   Future<void> shutdown() async {
@@ -115,29 +139,78 @@ class CoreController {
     final proxies = await _interface.getProxies();
     return Isolate.run<List<Group>>(() {
       if (proxies.isEmpty) return [];
+      
+      // 添加调试日志以便排查问题
+      commonPrint.log('Available proxies keys: ${proxies.keys.toList()}');
+      
+      // 检查 GLOBAL 组是否存在
+      if (!proxies.containsKey(UsedProxy.GLOBAL.name)) {
+        commonPrint.log('GLOBAL proxy group not found, available groups: ${proxies.keys.toList()}', logLevel: LogLevel.warning);
+        return [];
+      }
+      
+      final globalGroup = proxies[UsedProxy.GLOBAL.name];
+      if (globalGroup == null || globalGroup['all'] == null) {
+        commonPrint.log('GLOBAL group is null or has no proxies', logLevel: LogLevel.warning);
+        return [];
+      }
+      
+      final globalAll = globalGroup['all'] as List?;
+      if (globalAll == null || globalAll.isEmpty) {
+        commonPrint.log('GLOBAL group has no proxy items', logLevel: LogLevel.warning);
+        return [];
+      }
+      
       final groupNames = [
         UsedProxy.GLOBAL.name,
-        ...(proxies[UsedProxy.GLOBAL.name]['all'] as List).where((e) {
+        ...globalAll.where((e) {
           final proxy = proxies[e] ?? {};
-          return GroupTypeExtension.valueList.contains(proxy['type']);
+          final isValidType = GroupTypeExtension.valueList.contains(proxy['type']);
+          if (!isValidType) {
+            commonPrint.log('Skipping proxy $e due to invalid type: ${proxy['type']}');
+          }
+          return isValidType;
         }),
       ];
+      
+      commonPrint.log('Filtered group names: $groupNames');
+      
       final groupsRaw = groupNames.map((groupName) {
         final group = proxies[groupName];
-        group['all'] = ((group['all'] ?? []) as List)
+        if (group == null) {
+          commonPrint.log('Group $groupName is null, skipping', logLevel: LogLevel.warning);
+          return null;
+        }
+        
+        final allProxies = ((group['all'] ?? []) as List)
             .map((name) => proxies[name])
             .where((proxy) => proxy != null)
             .toList();
+            
+        group['all'] = allProxies;
         return group;
-      }).toList();
-      final groups = groupsRaw.map((e) => Group.fromJson(e)).toList();
-      return computeSort(
-        groups: groups,
-        sortType: sortType,
-        delayMap: delayMap,
-        selectedMap: selectedMap,
-        defaultTestUrl: defaultTestUrl,
-      );
+      }).where((group) => group != null).toList();
+      
+      if (groupsRaw.isEmpty) {
+        commonPrint.log('No valid groups found after processing', logLevel: LogLevel.warning);
+        return [];
+      }
+      
+      try {
+        final groups = groupsRaw.map((e) => Group.fromJson(e)).toList();
+        commonPrint.log('Successfully parsed ${groups.length} groups');
+        
+        return computeSort(
+          groups: groups,
+          sortType: sortType,
+          delayMap: delayMap,
+          selectedMap: selectedMap,
+          defaultTestUrl: defaultTestUrl,
+        );
+      } catch (e) {
+        commonPrint.log('Error parsing groups: $e', logLevel: LogLevel.error);
+        return [];
+      }
     });
   }
 

@@ -16,7 +16,7 @@ class Preferences {
   Preferences._internal() {
     SharedPreferences.getInstance()
         .then((value) => sharedPreferencesCompleter.complete(value))
-        .onError((_, _) => sharedPreferencesCompleter.complete(null));
+        .onError((error, stack) => sharedPreferencesCompleter.complete(null));
   }
 
   factory Preferences() {

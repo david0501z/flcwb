@@ -34,6 +34,8 @@ on Mobile:
 
 ✨ Support subscription link, Dark mode
 
+🌐 Built-in browser with proxy support, tab management, and navigation controls
+
 ## Use
 
 ### Linux

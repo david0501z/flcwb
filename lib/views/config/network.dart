@@ -210,7 +210,7 @@ class BypassDomainItem extends StatelessWidget {
         blur: false,
         actions: [
           Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               return IconButton(
                 onPressed: () async {
                   final res = await globalState.showMessage(
@@ -235,7 +235,7 @@ class BypassDomainItem extends StatelessWidget {
         ],
         title: appLocalizations.bypassDomain,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final bypassDomain = ref.watch(
               networkSettingProvider.select((state) => state.bypassDomain),
             );
@@ -330,7 +330,7 @@ class RouteAddressItem extends ConsumerWidget {
         maxWidth: 360,
         title: appLocalizations.routeAddress,
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final routeAddress = ref.watch(
               patchClashConfigProvider.select(
                 (state) => state.tun.routeAddress,

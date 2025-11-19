@@ -211,7 +211,7 @@ class HostsItem extends StatelessWidget {
         blur: false,
         title: 'Hosts',
         widget: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final hosts = ref.watch(
               patchClashConfigProvider.select((state) => state.hosts),
             );
@@ -589,8 +589,8 @@ class _PortDialogState extends ConsumerState<_PortDialog> {
             curve: Curves.easeOutQuad,
             alignment: Alignment.topCenter,
             child: Column(
-              spacing: 24,
               children: [
+                const SizedBox(height: 24),
                 TextFormField(
                   keyboardType: TextInputType.url,
                   maxLines: 1,

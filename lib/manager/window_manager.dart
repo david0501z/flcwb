@@ -194,7 +194,7 @@ class _WindowHeaderState extends State<WindowHeader> {
           },
           icon: ValueListenableBuilder(
             valueListenable: isPinNotifier,
-            builder: (_, value, _) {
+            builder: (context, value, child) {
               return value
                   ? const Icon(Icons.push_pin)
                   : const Icon(Icons.push_pin_outlined);
@@ -213,7 +213,7 @@ class _WindowHeaderState extends State<WindowHeader> {
           },
           icon: ValueListenableBuilder(
             valueListenable: isMaximizedNotifier,
-            builder: (_, value, _) {
+            builder: (context, value, child) {
               return value
                   ? const Icon(Icons.filter_none, size: 20)
                   : const Icon(Icons.crop_square);
@@ -273,7 +273,7 @@ class AppIcon extends StatelessWidget {
     return Container(
       decoration: ShapeDecoration(
         color: context.colorScheme.surfaceContainerHighest,
-        shape: RoundedSuperellipseBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14),
         ),
       ),

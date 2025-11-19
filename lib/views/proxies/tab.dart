@@ -4,6 +4,7 @@ import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/models/common.dart';
 import 'package:fl_clash/models/config.dart';
+import 'package:fl_clash/models/selector.dart';
 import 'package:fl_clash/providers/providers.dart';
 import 'package:fl_clash/state.dart';
 import 'package:fl_clash/widgets/widgets.dart';
@@ -38,10 +39,12 @@ class ProxiesTabViewState extends ConsumerState<ProxiesTabView>
       if (prev == next) {
         return;
       }
-      if (!stringListEquality.equals(prev?.a, next.a)) {
+      final nextTyped = next as VM2<List<String>, String?>;
+      final prevTyped = prev as VM2<List<String>, String?>?;
+      if (!stringListEquality.equals(prevTyped?.a, nextTyped.a)) {
         _destroyTabController();
-        final index = next.a.indexWhere((item) => item == next.b);
-        _updateTabController(next.a.length, index);
+        final index = nextTyped.a.indexWhere((item) => item == nextTyped.b);
+        _updateTabController(nextTyped.a.length, index);
       }
     }, fireImmediately: true);
   }
@@ -65,7 +68,7 @@ class ProxiesTabViewState extends ConsumerState<ProxiesTabView>
 
   Widget _buildMoreButton() {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (context, ref, child) {
         final isMobileView = ref.watch(isMobileViewProvider);
         return IconButton(
           onPressed: _showMoreMenu,
@@ -87,7 +90,7 @@ class ProxiesTabViewState extends ConsumerState<ProxiesTabView>
           body: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
             child: Consumer(
-              builder: (_, ref, _) {
+              builder: (context, ref, child) {
                 final state = ref.watch(proxiesTabControllerStateProvider);
                 final groupNames = state.a;
                 final currentGroupName = state.b;

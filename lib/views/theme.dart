@@ -46,10 +46,10 @@ class ThemeView extends StatelessWidget {
     ];
     return ListView.separated(
       itemCount: items.length,
-      itemBuilder: (_, index) {
+      itemBuilder: (context, index) {
         return items[index];
       },
-      separatorBuilder: (_, _) {
+      separatorBuilder: (context, index) {
         return SizedBox(height: 24);
       },
     );
@@ -116,7 +116,7 @@ class _ThemeModeItem extends ConsumerWidget {
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemCount: themeModeItems.length,
-          itemBuilder: (_, index) {
+          itemBuilder: (context, index) {
             final themeModeItem = themeModeItems[index];
             return CommonCard(
               isSelected: themeModeItem.themeMode == themeMode,
@@ -142,7 +142,7 @@ class _ThemeModeItem extends ConsumerWidget {
               ),
             );
           },
-          separatorBuilder: (_, _) {
+          separatorBuilder: (context, index) {
             return const SizedBox(width: 16);
           },
         ),
@@ -320,7 +320,7 @@ class _PrimaryColorItemState extends ConsumerState<_PrimaryColorItem> {
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 16),
           child: LayoutBuilder(
-            builder: (_, constraints) {
+            builder: (context, constraints) {
               final columns = _calcColumns(constraints.maxWidth);
               final itemWidth =
                   (constraints.maxWidth - (columns - 1) * 16) / columns;
@@ -470,7 +470,6 @@ class _TextScaleFactorItem extends ConsumerWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
-            spacing: 32,
             children: [
               Expanded(
                 child: DisabledMask(
@@ -480,7 +479,6 @@ class _TextScaleFactorItem extends ConsumerWidget {
                     child: SliderTheme(
                       data: _SliderDefaultsM3(context),
                       child: Slider(
-                        padding: EdgeInsets.zero,
                         min: minTextScale,
                         max: maxTextScale,
                         value: textScale.scale,
@@ -532,7 +530,7 @@ class _PaletteDialogState extends State<_PaletteDialog> {
         ),
         TextButton(
           onPressed: () {
-            Navigator.of(context).pop(_controller.value.toARGB32());
+            Navigator.of(context).pop(_controller.value.value);
           },
           child: Text(appLocalizations.confirm),
         ),
@@ -548,7 +546,7 @@ class _PaletteDialogState extends State<_PaletteDialog> {
           SizedBox(height: 24),
           ValueListenableBuilder(
             valueListenable: _controller,
-            builder: (_, color, _) {
+            builder: (context, color, child) {
               return PrimaryColorBox(
                 primaryColor: color,
                 child: FilledButton(
@@ -634,13 +632,13 @@ class _SliderDefaultsM3 extends SliderThemeData {
 
   @override
   SliderComponentShape? get valueIndicatorShape =>
-      const RoundedRectSliderValueIndicatorShape();
+      const PaddleSliderValueIndicatorShape();
 
   @override
-  SliderComponentShape? get thumbShape => const HandleThumbShape();
+  SliderComponentShape? get thumbShape => const RoundSliderThumbShape();
 
   @override
-  SliderTrackShape? get trackShape => const GappedSliderTrackShape();
+  SliderTrackShape? get trackShape => const RectangularSliderTrackShape();
 
   @override
   SliderComponentShape? get overlayShape => const RoundSliderOverlayShape();

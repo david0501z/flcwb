@@ -81,7 +81,7 @@ class MessageManagerState extends State<MessageManager> {
         widget.child,
         ValueListenableBuilder(
           valueListenable: _messagesNotifier,
-          builder: (_, messages, _) {
+          builder: (context, messages, child) {
             return Container(
               margin: EdgeInsets.only(
                 top: kToolbarHeight + 12,
@@ -101,7 +101,7 @@ class MessageManagerState extends State<MessageManager> {
                               _cancelMessage(messages.last.id);
                             },
                             child: Card(
-                              shape: const RoundedSuperellipseBorder(
+                              shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(14),
                                 ),

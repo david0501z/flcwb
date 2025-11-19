@@ -1,3 +1,4 @@
+// @dart=3.0
 import 'dart:ui';
 
 import 'package:fl_clash/common/common.dart';
@@ -27,7 +28,7 @@ class _ProfilesViewState extends State<ProfilesView> {
   void _handleShowAddExtendPage() {
     showExtend(
       globalState.navigatorKey.currentState!.context,
-      builder: (_, type) {
+      builder: (context, type) {
         return AdaptiveSheetScaffold(
           type: type,
           body: AddProfileView(
@@ -81,7 +82,7 @@ class _ProfilesViewState extends State<ProfilesView> {
         onPressed: () {
           showExtend(
             context,
-            builder: (_, type) {
+            builder: (context, type) {
               return ScriptsView();
             },
           );
@@ -103,7 +104,7 @@ class _ProfilesViewState extends State<ProfilesView> {
           final profiles = globalState.config.profiles;
           showSheet(
             context: context,
-            builder: (_, type) {
+            builder: (context, type) {
               return ReorderableProfilesSheet(type: type, profiles: profiles);
             },
           );
@@ -129,7 +130,7 @@ class _ProfilesViewState extends State<ProfilesView> {
       floatingActionButton: _buildFAB(),
       actions: _buildActions(),
       body: Consumer(
-        builder: (_, ref, _) {
+        builder: (context, ref, child) {
           final profilesSelectorState = ref.watch(
             profilesSelectorStateProvider,
           );
@@ -162,7 +163,7 @@ class _ProfilesViewState extends State<ProfilesView> {
                         profile: profilesSelectorState.profiles[i],
                         groupValue: profilesSelectorState.currentProfileId,
                         onChanged: (profileId) {
-                          ref.read(currentProfileIdProvider.notifier).value =
+                          ref.read(currentProfileIdProvider.notifier).state =
                               profileId;
                         },
                       ),
@@ -219,7 +220,7 @@ class ProfileItem extends StatelessWidget {
   void _handleShowEditExtendPage(BuildContext context) {
     showExtend(
       context,
-      builder: (_, type) {
+      builder: (context, type) {
         return AdaptiveSheetScaffold(
           type: type,
           body: EditProfileView(profile: profile, context: context),
@@ -423,7 +424,7 @@ class _ReorderableProfilesSheetState extends State<ReorderableProfilesSheet> {
     final profile = profiles[index];
     return AnimatedBuilder(
       animation: animation,
-      builder: (_, Widget? child) {
+      builder: (context, Widget? child) {
         final double animValue = Curves.easeInOut.transform(animation.value);
         final double scale = lerpDouble(1, 1.02, animValue)!;
         return Transform.scale(scale: scale, child: child);
@@ -470,7 +471,7 @@ class _ReorderableProfilesSheetState extends State<ReorderableProfilesSheet> {
               profiles.insert(newIndex, profile);
             });
           },
-          itemBuilder: (_, index) {
+          itemBuilder: (context, index) {
             final profile = profiles[index];
             return Container(
               key: Key(profile.id),

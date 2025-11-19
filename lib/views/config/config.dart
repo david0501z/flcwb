@@ -40,7 +40,7 @@ class _ConfigViewState extends State<ConfigView> {
           blur: false,
           actions: [
             Consumer(
-              builder: (_, ref, _) {
+              builder: (context, ref, child) {
                 return IconButton(
                   onPressed: () async {
                     final res = await globalState.showMessage(
@@ -80,7 +80,7 @@ class _ConfigViewState extends State<ConfigView> {
           title: 'DNS',
           actions: [
             Consumer(
-              builder: (_, ref, _) {
+              builder: (context, ref, child) {
                 return IconButton(
                   onPressed: () async {
                     final res = await globalState.showMessage(

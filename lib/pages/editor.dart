@@ -7,12 +7,9 @@ import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:re_editor/re_editor.dart';
-import 'package:re_highlight/languages/javascript.dart';
-import 'package:re_highlight/languages/yaml.dart';
-import 'package:re_highlight/styles/atom-one-light.dart';
 
-typedef EditingValueChangeBuilder = Widget Function(CodeLineEditingValue value);
+
+// typedef EditingValueChangeBuilder = Widget Function(CodeLineEditingValue value);
 typedef TextEditingValueChangeBuilder = Widget Function(TextEditingValue value);
 
 class EditorPage extends ConsumerStatefulWidget {
@@ -45,16 +42,16 @@ class EditorPage extends ConsumerStatefulWidget {
 }
 
 class _EditorPageState extends ConsumerState<EditorPage> {
-  late CodeLineEditingController _controller;
-  late CodeFindController _findController;
+  late TextEditingController _controller;
+  // late CodeFindController _findController;
   late TextEditingController _titleController;
   final _focusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
-    _controller = CodeLineEditingController.fromText(widget.content);
-    _findController = CodeFindController(_controller);
+    _controller = TextEditingController(text: widget.content);
+    // _findController = CodeFindController(_controller);
     _titleController = TextEditingController(text: widget.title);
     if (system.isDesktop) {
       return;
@@ -65,36 +62,24 @@ class _EditorPageState extends ConsumerState<EditorPage> {
       if (!keys.contains(key)) {
         return KeyEventResult.ignored;
       }
-      if (key == LogicalKeyboardKey.arrowUp) {
-        _controller.moveCursor(AxisDirection.up);
-        return KeyEventResult.handled;
-      } else if (key == LogicalKeyboardKey.arrowDown) {
-        _controller.moveCursor(AxisDirection.down);
-        return KeyEventResult.handled;
-      } else if (key == LogicalKeyboardKey.arrowLeft) {
-        _controller.selection.endIndex;
-        _controller.moveCursor(AxisDirection.left);
-        return KeyEventResult.handled;
-      } else if (key == LogicalKeyboardKey.arrowRight) {
-        _controller.moveCursor(AxisDirection.right);
-        return KeyEventResult.handled;
-      }
+      // Standard TextEditingController doesn't have moveCursor method
+      // This functionality is removed since we're using standard TextField
       return KeyEventResult.ignored;
     });
   }
 
   @override
   void dispose() {
-    _findController.dispose();
+    // _findController.dispose(); // Removed due to re_editor dependency
     _controller.dispose();
     _focusNode.dispose();
     super.dispose();
   }
 
-  Widget _wrapController(EditingValueChangeBuilder builder) {
+  Widget _wrapController(TextEditingValueChangeBuilder builder) {
     return ValueListenableBuilder(
       valueListenable: _controller,
-      builder: (_, value, _) {
+      builder: (context, value, child) {
         return builder(value);
       },
     );
@@ -103,14 +88,14 @@ class _EditorPageState extends ConsumerState<EditorPage> {
   Widget _wrapTitleController(TextEditingValueChangeBuilder builder) {
     return ValueListenableBuilder(
       valueListenable: _titleController,
-      builder: (_, value, _) {
+      builder: (context, value, child) {
         return builder(value);
       },
     );
   }
 
   void _handleSearch() {
-    _findController.findMode();
+    // Find functionality removed due to re_editor dependency
   }
 
   Future<void> _handleImport() async {
@@ -227,12 +212,12 @@ class _EditorPageState extends ConsumerState<EditorPage> {
                     PopupMenuItemData(
                       icon: Icons.undo,
                       label: appLocalizations.undo,
-                      onPressed: _controller.canUndo ? _controller.undo : null,
+                      onPressed: null, // Standard TextEditingController doesn't support undo
                     ),
                     PopupMenuItemData(
                       icon: Icons.redo,
                       label: appLocalizations.redo,
-                      onPressed: _controller.canRedo ? _controller.redo : null,
+                      onPressed: null, // Standard TextEditingController doesn't support redo
                     ),
                   ],
                 ),
@@ -240,52 +225,20 @@ class _EditorPageState extends ConsumerState<EditorPage> {
             ),
           ]),
         ),
-        body: CodeEditor(
-          findController: _findController,
-          findBuilder: (context, controller, readOnly) => FindPanel(
-            controller: controller,
-            readOnly: readOnly,
-            isMobileView: isMobileView,
-          ),
+        body: Container(
           padding: EdgeInsets.only(right: 16),
-          autocompleteSymbols: true,
-          focusNode: _focusNode,
-          scrollbarBuilder: (context, child, details) {
-            return CommonScrollBar(
-              controller: details.controller,
-              child: child,
-            );
-          },
-          toolbarController: ContextMenuControllerImpl(),
-          indicatorBuilder:
-              (context, editingController, chunkController, notifier) {
-                return Row(
-                  children: [
-                    DefaultCodeLineNumber(
-                      controller: editingController,
-                      notifier: notifier,
-                    ),
-                    DefaultCodeChunkIndicator(
-                      width: 20,
-                      controller: chunkController,
-                      notifier: notifier,
-                    ),
-                  ],
-                );
-              },
-          shortcutsActivatorsBuilder: DefaultCodeShortcutsActivatorsBuilder(),
-          controller: _controller,
-          style: CodeEditorStyle(
-            fontSize: context.textTheme.bodyLarge?.fontSize?.ap,
-            fontFamily: FontFamily.jetBrainsMono.value,
-            codeTheme: CodeHighlightTheme(
-              languages: {
-                if (widget.languages.contains(Language.yaml))
-                  'yaml': CodeHighlightThemeMode(mode: langYaml),
-                if (widget.languages.contains(Language.javaScript))
-                  'javascript': CodeHighlightThemeMode(mode: langJavascript),
-              },
-              theme: atomOneLightTheme,
+          child: TextField(
+            controller: _controller,
+            maxLines: null,
+            expands: true,
+            focusNode: _focusNode,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.all(16),
+            ),
+            style: TextStyle(
+              fontSize: context.textTheme.bodyLarge?.fontSize?.ap,
+              fontFamily: FontFamily.jetBrainsMono.value,
             ),
           ),
         ),
@@ -297,14 +250,14 @@ class _EditorPageState extends ConsumerState<EditorPage> {
 const double _kDefaultFindPanelHeight = 52;
 
 class FindPanel extends StatelessWidget implements PreferredSizeWidget {
-  final CodeFindController controller;
+  // final CodeFindController controller;
   final bool readOnly;
   final bool isMobileView;
   final double height;
 
   const FindPanel({
     super.key,
-    required this.controller,
+    // required this.controller,
     required this.readOnly,
     required this.isMobileView,
   }) : height =
@@ -314,127 +267,62 @@ class FindPanel extends StatelessWidget implements PreferredSizeWidget {
            8;
 
   @override
-  Size get preferredSize =>
-      Size(double.infinity, controller.value == null ? 0 : height);
+  Size get preferredSize => Size(double.infinity, 0); // Always return 0 height since find functionality is removed
 
   @override
   Widget build(BuildContext context) {
-    if (controller.value == null) {
-      return const SizedBox(width: 0, height: 0);
-    }
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      margin: EdgeInsets.only(bottom: 8),
-      color: context.colorScheme.surface,
-      alignment: Alignment.centerLeft,
-      height: height,
-      child: _buildFindInputView(context),
-    );
+    // Find functionality removed due to re_editor dependency
+    return const SizedBox(width: 0, height: 0);
   }
 
   Widget _buildFindInputView(BuildContext context) {
-    final CodeFindValue value = controller.value!;
-    final String result;
-    if (value.result == null) {
-      result = appLocalizations.none;
-    } else {
-      result = '${value.result!.index + 1}/${value.result!.matches.length}';
-    }
-    final bar = Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        if (!isMobileView) ...[
-          ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 360),
-            child: _buildFindInput(context, value),
-          ),
-          SizedBox(width: 12),
-        ],
-        Text(result, style: context.textTheme.bodyMedium),
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            spacing: 6,
-            children: [
-              _buildIconButton(
-                onPressed: value.result == null
-                    ? null
-                    : () {
-                        controller.previousMatch();
-                      },
-                icon: Icons.arrow_upward,
-              ),
-              _buildIconButton(
-                onPressed: value.result == null
-                    ? null
-                    : () {
-                        controller.nextMatch();
-                      },
-                icon: Icons.arrow_downward,
-              ),
-              SizedBox(width: 2),
-              IconButton.filledTonal(
-                visualDensity: VisualDensity.compact,
-                onPressed: controller.close,
-                style: IconButton.styleFrom(padding: EdgeInsets.zero),
-                icon: Icon(Icons.close, size: 16),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-    if (isMobileView) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [bar, SizedBox(height: 4), _buildFindInput(context, value)],
-      );
-    }
-    return bar;
+    // Find functionality removed due to re_editor dependency
+    return const SizedBox(width: 0, height: 0);
   }
 
-  Stack _buildFindInput(BuildContext context, CodeFindValue value) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        _buildTextField(
-          context: context,
-          onSubmitted: () {
-            if (value.result == null) {
-              return;
-            }
-            controller.nextMatch();
-            controller.findInputFocusNode.requestFocus();
-          },
-          controller: controller.findInputController,
-          focusNode: controller.findInputFocusNode,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          spacing: 8,
-          children: [
-            _buildCheckText(
-              context: context,
-              text: 'Aa',
-              isSelected: value.option.caseSensitive,
-              onPressed: () {
-                controller.toggleCaseSensitive();
-              },
-            ),
-            _buildCheckText(
-              context: context,
-              text: '.*',
-              isSelected: value.option.regex,
-              onPressed: () {
-                controller.toggleRegex();
-              },
-            ),
-            SizedBox(width: 4),
-          ],
-        ),
-      ],
-    );
-  }
+  // _buildFindInput method removed due to re_editor dependency
+  // Stack _buildFindInput(BuildContext context, CodeFindValue value) {
+  //   return Stack(
+  //     alignment: Alignment.center,
+  //     children: [
+  //       _buildTextField(
+  //         context: context,
+  //         onSubmitted: () {
+  //           if (value.result == null) {
+  //             return;
+  //           }
+  //           controller.nextMatch();
+  //           controller.findInputFocusNode.requestFocus();
+  //         },
+  //         controller: controller.findInputController,
+  //         focusNode: controller.findInputFocusNode,
+  //       ),
+  //       Row(
+  //         mainAxisAlignment: MainAxisAlignment.end,
+  //         spacing: 8,
+  //         children: [
+  //           _buildCheckText(
+  //             context: context,
+  //             text: 'Aa',
+  //             isSelected: value.option.caseSensitive,
+  //             onPressed: () {
+  //               controller.toggleCaseSensitive();
+  //             },
+  //           ),
+  //           _buildCheckText(
+  //             context: context,
+  //             text: '.*',
+  //             isSelected: value.option.regex,
+  //             onPressed: () {
+  //               controller.toggleRegex();
+  //             },
+  //           ),
+  //           SizedBox(width: 4),
+  //         ],
+  //       ),
+  //     ],
+  //   );
+  // }
 
   Widget _buildTextField({
     required BuildContext context,
@@ -493,7 +381,7 @@ class FindPanel extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-class ContextMenuControllerImpl implements SelectionToolbarController {
+class ContextMenuControllerImpl { // implements SelectionToolbarController removed due to re_editor dependency
   OverlayEntry? _overlayEntry;
   bool _isFirstRender = true;
 
@@ -508,7 +396,7 @@ class ContextMenuControllerImpl implements SelectionToolbarController {
     _removeOverLayEntry();
   }
 
-  @override
+  // Context menu functionality removed due to re_editor dependency
   void show({
     required context,
     required controller,
@@ -517,66 +405,11 @@ class ContextMenuControllerImpl implements SelectionToolbarController {
     required layerLink,
     required ValueNotifier<bool> visibility,
   }) {
+    // Context menu functionality removed due to re_editor dependency
     _removeOverLayEntry();
     _overlayEntry ??= OverlayEntry(
-      builder: (context) => CodeEditorTapRegion(
-        child: ValueListenableBuilder(
-          valueListenable: controller,
-          builder: (_, _, child) {
-            final isNotEmpty = controller.selectedText.isNotEmpty;
-            final isAllSelected = controller.isAllSelected;
-            final hasSelected = controller.selectedText.isNotEmpty;
-            List<PopupMenuItemData> menus = [
-              if (isNotEmpty)
-                PopupMenuItemData(
-                  label: appLocalizations.copy,
-                  onPressed: controller.copy,
-                ),
-              PopupMenuItemData(
-                label: appLocalizations.paste,
-                onPressed: controller.paste,
-              ),
-              if (isNotEmpty)
-                PopupMenuItemData(
-                  label: appLocalizations.cut,
-                  onPressed: controller.cut,
-                ),
-              if (hasSelected && !isAllSelected)
-                PopupMenuItemData(
-                  label: appLocalizations.selectAll,
-                  onPressed: controller.selectAll,
-                ),
-            ];
-            if (_isFirstRender) {
-              _isFirstRender = false;
-            } else if (controller.selectedText.isEmpty) {
-              _removeOverLayEntry();
-            }
-            return TextSelectionToolbar(
-              anchorAbove: anchors.primaryAnchor,
-              anchorBelow: anchors.secondaryAnchor ?? Offset.zero,
-              children: menus.asMap().entries.map((
-                MapEntry<int, PopupMenuItemData> entry,
-              ) {
-                return TextSelectionToolbarTextButton(
-                  padding: TextSelectionToolbarTextButton.getPadding(
-                    entry.key,
-                    menus.length,
-                  ),
-                  alignment: AlignmentDirectional.centerStart,
-                  onPressed: () {
-                    if (entry.value.onPressed == null) {
-                      return;
-                    }
-                    entry.value.onPressed!();
-                    _removeOverLayEntry();
-                  },
-                  child: Text(entry.value.label),
-                );
-              }).toList(),
-            );
-          },
-        ),
+      builder: (context) => Container(
+        child: const SizedBox.shrink(),
       ),
     );
     Overlay.of(context).insert(_overlayEntry!);

@@ -57,7 +57,7 @@ class TUNButton extends StatelessWidget {
                 ),
               ),
               Consumer(
-                builder: (_, ref, _) {
+                builder: (context, ref, child) {
                   final enable = ref.watch(
                     patchClashConfigProvider.select(
                       (state) => state.tun.enable,
@@ -131,7 +131,7 @@ class SystemProxyButton extends StatelessWidget {
                 ),
               ),
               Consumer(
-                builder: (_, ref, _) {
+                builder: (context, ref, child) {
                   final systemProxy = ref.watch(
                     networkSettingProvider.select((state) => state.systemProxy),
                   );
@@ -205,7 +205,7 @@ class VpnButton extends StatelessWidget {
                 ),
               ),
               Consumer(
-                builder: (_, ref, _) {
+                builder: (context, ref, child) {
                   final enable = ref.watch(
                     vpnSettingProvider.select((state) => state.enable),
                   );

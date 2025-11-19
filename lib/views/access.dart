@@ -1,3 +1,4 @@
+// @dart=3.0
 import 'dart:async';
 import 'dart:convert';
 
@@ -560,7 +561,7 @@ class _AccessControlPanelState extends ConsumerState<AccessControlPanel> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               final accessControlMode = ref.watch(
                 vpnSettingProvider.select((state) => state.accessControl.mode),
               );
@@ -600,7 +601,7 @@ class _AccessControlPanelState extends ConsumerState<AccessControlPanel> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               final accessSortType = ref.watch(
                 vpnSettingProvider.select((state) => state.accessControl.sort),
               );
@@ -640,7 +641,7 @@ class _AccessControlPanelState extends ConsumerState<AccessControlPanel> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (context, ref, child) {
               final vm2 = ref.watch(
                 vpnSettingProvider.select(
                   (state) => VM2(

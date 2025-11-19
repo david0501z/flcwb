@@ -248,7 +248,7 @@ class CommonScaffoldState extends State<CommonScaffold> {
 
   Widget _buildLoading() {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (context, ref, child) {
         final loading = ref.watch(loadingProvider);
         final isMobileView = ref.watch(isMobileViewProvider);
         return loading && isMobileView
@@ -267,7 +267,7 @@ class CommonScaffoldState extends State<CommonScaffold> {
           widget.appBar ??
               ValueListenableBuilder<AppBarState>(
                 valueListenable: _appBarState,
-                builder: (_, state, _) {
+                builder: (context, state, child) {
                   return _buildAppBarWrap(
                     AppBar(
                       automaticallyImplyLeading: backAction != null
@@ -302,7 +302,7 @@ class CommonScaffoldState extends State<CommonScaffold> {
         children: [
           ValueListenableBuilder(
             valueListenable: _keywordsNotifier,
-            builder: (_, keywords, _) {
+            builder: (context, keywords, child) {
               if (widget.onKeywordsUpdate != null) {
                 WidgetsBinding.instance.addPostFrameCallback((_) {
                   widget.onKeywordsUpdate!(keywords);
@@ -346,7 +346,7 @@ class CommonScaffoldState extends State<CommonScaffold> {
           widget.floatingActionButton ??
           ValueListenableBuilder<Widget?>(
             valueListenable: _floatingActionButton,
-            builder: (_, value, _) {
+            builder: (context, value, child) {
               return value ?? SizedBox();
             },
           ),

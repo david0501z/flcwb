@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/enum/enum.dart';
 import 'package:fl_clash/providers/config.dart';
@@ -16,7 +18,7 @@ class OutboundMode extends StatelessWidget {
     return SizedBox(
       height: height,
       child: Consumer(
-        builder: (_, ref, _) {
+        builder: (context, ref, child) {
           final mode = ref.watch(
             patchClashConfigProvider.select((state) => state.mode),
           );
@@ -34,42 +36,45 @@ class OutboundMode extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.only(top: 12, bottom: 16),
-                child: RadioGroup<Mode>(
-                  groupValue: mode,
-                  onChanged: (value) {
-                    if (value == null) {
-                      return;
-                    }
-                    globalState.appController.changeMode(value);
-                  },
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      for (final item in Mode.values)
-                        Flexible(
-                          fit: FlexFit.tight,
-                          child: ListItem.radio(
-                            dense: true,
-                            horizontalTitleGap: 4,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (final item in Mode.values)
+                      Flexible(
+                        fit: FlexFit.tight,
+                        child: InkWell(
+                          onTap: () {
+                            globalState.appController.changeMode(item);
+                          },
+                          child: Padding(
                             padding: EdgeInsets.only(left: 12.ap, right: 16.ap),
-                            delegate: RadioDelegate(
-                              onTab: () {
-                                globalState.appController.changeMode(item);
-                              },
-                              value: item,
-                            ),
-                            title: Text(
-                              Intl.message(item.name),
-                              style: Theme.of(
-                                context,
-                              ).textTheme.bodyMedium?.toSoftBold,
+                            child: Row(
+                              children: [
+                                Radio<Mode>(
+                                  value: item,
+                                  groupValue: mode,
+                                  onChanged: (value) {
+                                    if (value != null) {
+                                      globalState.appController.changeMode(value);
+                                    }
+                                  },
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    Intl.message(item.name),
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.bodyMedium?.toSoftBold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                    ],
-                  ),
+                      ),
+                  ],
                 ),
               ),
             ),
@@ -88,6 +93,7 @@ class OutboundModeV2 extends StatelessWidget {
       Mode.rule => context.colorScheme.onSecondaryContainer,
       Mode.global => context.colorScheme.onPrimaryContainer,
       Mode.direct => context.colorScheme.onTertiaryContainer,
+      _ => context.colorScheme.onSurface,
     };
   }
 
@@ -99,7 +105,7 @@ class OutboundModeV2 extends StatelessWidget {
       child: CommonCard(
         padding: EdgeInsets.zero,
         child: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final mode = ref.watch(
               patchClashConfigProvider.select((state) => state.mode),
             );
@@ -107,6 +113,7 @@ class OutboundModeV2 extends StatelessWidget {
               Mode.rule => context.colorScheme.secondaryContainer,
               Mode.global => globalState.theme.darken3PrimaryContainer,
               Mode.direct => context.colorScheme.tertiaryContainer,
+              _ => context.colorScheme.surface,
             };
             return LayoutBuilder(
               builder: (_, constraints) {
@@ -126,7 +133,7 @@ class OutboundModeV2 extends StatelessWidget {
                                   clipBehavior: Clip.antiAlias,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(),
-                                  height: height - 8.ap - 24,
+                                  height: math.max(height - 8.ap - 24, 0),
                                   padding: EdgeInsets.all(4),
                                   child: Text(
                                     Intl.message(item.name),

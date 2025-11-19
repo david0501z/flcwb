@@ -36,7 +36,7 @@ class _StartButtonState extends ConsumerState<StartButton>
       next,
     ) {
       if (next != isStart) {
-        isStart = next;
+        isStart = next as bool;
         updateController();
       }
     }, fireImmediately: true);
@@ -118,7 +118,7 @@ class _StartButtonState extends ConsumerState<StartButton>
           );
         },
         child: Consumer(
-          builder: (_, ref, _) {
+          builder: (context, ref, child) {
             final runTime = ref.watch(runTimeProvider);
             final text = utils.getTimeText(runTime);
             return Text(

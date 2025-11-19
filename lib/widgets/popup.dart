@@ -150,7 +150,7 @@ class _CommonPopupBoxState extends State<CommonPopupBox> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (_, _) {
+      builder: (context, constraints) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (_isOpen) {
             _updateOffset();
@@ -271,7 +271,7 @@ class CommonPopupMenu extends StatelessWidget {
           elevation: 12,
           color: context.colorScheme.surfaceContainer,
           clipBehavior: Clip.antiAlias,
-          shape: RoundedSuperellipseBorder(
+          shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(14),
           ),
           child: Column(

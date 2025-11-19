@@ -76,7 +76,7 @@ class AppController {
     await coreController.shutdown();
     await _connectCore();
     await _initCore();
-    _ref.read(initProvider.notifier).value = true;
+    _ref.read(initProvider.notifier).state = true;
     if (_ref.read(isStartProvider)) {
       await globalState.handleStart();
     }
@@ -89,7 +89,7 @@ class AppController {
     globalState.isUserDisconnected = true;
     await _connectCore();
     await _initCore();
-    _ref.read(initProvider.notifier).value = true;
+    _ref.read(initProvider.notifier).state = true;
     if (_ref.read(isStartProvider)) {
       await globalState.handleStart();
     }
@@ -115,8 +115,8 @@ class AppController {
       await globalState.handleStop();
       coreController.resetTraffic();
       _ref.read(trafficsProvider.notifier).clear();
-      _ref.read(totalTrafficProvider.notifier).value = Traffic();
-      _ref.read(runTimeProvider.notifier).value = null;
+      _ref.read(totalTrafficProvider.notifier).state = Traffic();
+      _ref.read(runTimeProvider.notifier).state = null;
       addCheckIpNumDebounce();
     }
   }
@@ -126,9 +126,9 @@ class AppController {
     if (startTime != null) {
       final startTimeStamp = startTime.millisecondsSinceEpoch;
       final nowTimeStamp = DateTime.now().millisecondsSinceEpoch;
-      _ref.read(runTimeProvider.notifier).value = nowTimeStamp - startTimeStamp;
+      _ref.read(runTimeProvider.notifier).state = nowTimeStamp - startTimeStamp;
     } else {
-      _ref.read(runTimeProvider.notifier).value = null;
+      _ref.read(runTimeProvider.notifier).state = null;
     }
   }
 
@@ -138,14 +138,14 @@ class AppController {
     );
     final traffic = await coreController.getTraffic(onlyStatisticsProxy);
     _ref.read(trafficsProvider.notifier).addTraffic(traffic);
-    _ref.read(totalTrafficProvider.notifier).value = await coreController
+    _ref.read(totalTrafficProvider.notifier).state = await coreController
         .getTotalTraffic(onlyStatisticsProxy);
   }
 
   Future<void> addProfile(Profile profile) async {
     _ref.read(profilesProvider.notifier).setProfile(profile);
     if (_ref.read(currentProfileIdProvider) != null) return;
-    _ref.read(currentProfileIdProvider.notifier).value = profile.id;
+    _ref.read(currentProfileIdProvider.notifier).state = profile.id;
   }
 
   Future<void> deleteProfile(String id) async {
@@ -156,23 +156,23 @@ class AppController {
       final currentProfileId = _ref.read(currentProfileIdProvider.notifier);
       if (profiles.isNotEmpty) {
         final updateId = profiles.first.id;
-        currentProfileId.value = updateId;
+        currentProfileId.state = updateId;
       } else {
-        currentProfileId.value = null;
+        currentProfileId.state = null;
         updateStatus(false);
       }
     }
   }
 
   Future<void> updateProviders() async {
-    _ref.read(providersProvider.notifier).value = await coreController
+    _ref.read(providersProvider.notifier).state = await coreController
         .getExternalProviders();
   }
 
   Future<void> updateLocalIp() async {
-    _ref.read(localIpProvider.notifier).value = null;
+    _ref.read(localIpProvider.notifier).state = null;
     await Future.delayed(commonDuration);
-    _ref.read(localIpProvider.notifier).value = await utils.getLocalIpAddress();
+    _ref.read(localIpProvider.notifier).state = await utils.getLocalIpAddress();
   }
 
   Future<void> updateProfile(Profile profile) async {
@@ -197,7 +197,7 @@ class AppController {
   }
 
   void setProfiles(List<Profile> profiles) {
-    _ref.read(profilesProvider.notifier).value = profiles;
+    _ref.read(profilesProvider.notifier).state = profiles;
   }
 
   void addLog(Log log) {
@@ -210,14 +210,14 @@ class AppController {
       (item) => item.action == hotKeyAction.action,
     );
     if (index == -1) {
-      _ref.read(hotKeyActionsProvider.notifier).value = List.from(hotKeyActions)
+      _ref.read(hotKeyActionsProvider.notifier).state = List.from(hotKeyActions)
         ..add(hotKeyAction);
     } else {
-      _ref.read(hotKeyActionsProvider.notifier).value = List.from(hotKeyActions)
+      _ref.read(hotKeyActionsProvider.notifier).state = List.from(hotKeyActions)
         ..[index] = hotKeyAction;
     }
 
-    _ref.read(hotKeyActionsProvider.notifier).value = index == -1
+    _ref.read(hotKeyActionsProvider.notifier).state = index == -1
         ? (List.from(hotKeyActions)..add(hotKeyAction))
         : (List.from(hotKeyActions)..[index] = hotKeyAction);
   }
@@ -294,7 +294,7 @@ class AppController {
           break;
       }
     }
-    _ref.read(realTunEnableProvider.notifier).value = enableTun;
+    _ref.read(realTunEnableProvider.notifier).state = enableTun;
     return Result.success(enableTun);
   }
 
@@ -340,16 +340,16 @@ class AppController {
   }
 
   void handleChangeProfile() {
-    _ref.read(delayDataSourceProvider.notifier).value = {};
+    _ref.read(delayDataSourceProvider.notifier).state = {};
     applyProfile();
-    _ref.read(logsProvider.notifier).value = FixedList(500);
-    _ref.read(requestsProvider.notifier).value = FixedList(500);
+    _ref.read(logsProvider.notifier).state = FixedList(500);
+    _ref.read(requestsProvider.notifier).state = FixedList(500);
     globalState.computeHeightMapCache = {};
   }
 
   void updateBrightness() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _ref.read(systemBrightnessProvider.notifier).value =
+      _ref.read(systemBrightnessProvider.notifier).state =
           WidgetsBinding.instance.platformDispatcher.platformBrightness;
     });
   }
@@ -373,7 +373,7 @@ class AppController {
 
   Future<void> updateGroups() async {
     try {
-      _ref.read(groupsProvider.notifier).value = await retry(
+      _ref.read(groupsProvider.notifier).state = await retry(
         task: () async {
           final sortType = _ref.read(
             proxiesStyleSettingProvider.select((state) => state.sortType),
@@ -395,7 +395,7 @@ class AppController {
         retryIf: (res) => res.isEmpty,
       );
     } catch (_) {
-      _ref.read(groupsProvider.notifier).value = [];
+      _ref.read(groupsProvider.notifier).state = [];
     }
   }
 
@@ -441,11 +441,11 @@ class AppController {
   }
 
   void backBlock() {
-    _ref.read(backBlockProvider.notifier).value = true;
+    _ref.read(backBlockProvider.notifier).state = true;
   }
 
   void unBackBlock() {
-    _ref.read(backBlockProvider.notifier).value = false;
+    _ref.read(backBlockProvider.notifier).state = false;
   }
 
   Future<void> handleExit() async {
@@ -557,24 +557,24 @@ class AppController {
     await _connectCore();
     await _initCore();
     await _initStatus();
-    _ref.read(initProvider.notifier).value = true;
+    _ref.read(initProvider.notifier).state = true;
   }
 
   Future<void> _connectCore() async {
-    _ref.read(coreStatusProvider.notifier).value = CoreStatus.connecting;
+    _ref.read(coreStatusProviderProvider.notifier).update(CoreStatus.connecting);
     final result = await Future.wait([
       coreController.preload(),
       if (!globalState.isService) Future.delayed(Duration(milliseconds: 300)),
     ]);
     final String message = result[0];
     if (message.isNotEmpty) {
-      _ref.read(coreStatusProvider.notifier).value = CoreStatus.disconnected;
+      _ref.read(coreStatusProviderProvider.notifier).update(CoreStatus.disconnected);
       if (context.mounted) {
         context.showNotifier(message);
       }
       return;
     }
-    _ref.read(coreStatusProvider.notifier).value = CoreStatus.connected;
+    _ref.read(coreStatusProviderProvider.notifier).update(CoreStatus.connected);
   }
 
   Future<void> _initStatus() async {
@@ -596,7 +596,7 @@ class AppController {
   }
 
   void toPage(PageLabel pageLabel) {
-    _ref.read(currentPageLabelProvider.notifier).value = pageLabel;
+    _ref.read(currentPageLabelProvider.notifier).state = pageLabel;
   }
 
   void toProfiles() {
@@ -739,7 +739,7 @@ class AppController {
 
   void updateViewSize(Size size) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _ref.read(viewSizeProvider.notifier).value = size;
+      _ref.read(viewSizeProvider.notifier).state = size;
     });
   }
 
@@ -775,7 +775,7 @@ class AppController {
   }
 
   void handleCoreDisconnected() {
-    _ref.read(coreStatusProvider.notifier).value = CoreStatus.disconnected;
+    _ref.read(coreStatusProviderProvider.notifier).update(CoreStatus.disconnected);
   }
 
   Future<List<Package>> getPackages() async {
@@ -783,7 +783,7 @@ class AppController {
       await Future.delayed(commonDuration);
     }
     if (_ref.read(packagesProvider).isEmpty) {
-      _ref.read(packagesProvider.notifier).value =
+      _ref.read(packagesProvider.notifier).state =
           await app?.getPackages() ?? [];
     }
     return _ref.read(packagesProvider);
@@ -927,7 +927,7 @@ class AppController {
     );
     final profiles = config.profiles;
     if (recoveryStrategy == RecoveryStrategy.override) {
-      _ref.read(profilesProvider.notifier).value = profiles;
+      _ref.read(profilesProvider.notifier).state = profiles;
     } else {
       for (final profile in profiles) {
         _ref.read(profilesProvider.notifier).setProfile(profile);
@@ -935,25 +935,25 @@ class AppController {
     }
     final onlyProfiles = recoveryOption == RecoveryOption.onlyProfiles;
     if (!onlyProfiles) {
-      _ref.read(patchClashConfigProvider.notifier).value =
+      _ref.read(patchClashConfigProvider.notifier).state =
           config.patchClashConfig;
-      _ref.read(appSettingProvider.notifier).value = config.appSetting;
-      _ref.read(currentProfileIdProvider.notifier).value =
+      _ref.read(appSettingProvider.notifier).state = config.appSetting;
+      _ref.read(currentProfileIdProvider.notifier).state =
           config.currentProfileId;
-      _ref.read(appDAVSettingProvider.notifier).value = config.dav;
-      _ref.read(themeSettingProvider.notifier).value = config.themeProps;
-      _ref.read(windowSettingProvider.notifier).value = config.windowProps;
-      _ref.read(vpnSettingProvider.notifier).value = config.vpnProps;
-      _ref.read(proxiesStyleSettingProvider.notifier).value =
+      _ref.read(appDAVSettingProvider.notifier).state = config.dav;
+      _ref.read(themeSettingProvider.notifier).state = config.themeProps;
+      _ref.read(windowSettingProvider.notifier).state = config.windowProps;
+      _ref.read(vpnSettingProvider.notifier).state = config.vpnProps;
+      _ref.read(proxiesStyleSettingProvider.notifier).state =
           config.proxiesStyle;
-      _ref.read(overrideDnsProvider.notifier).value = config.overrideDns;
-      _ref.read(networkSettingProvider.notifier).value = config.networkProps;
-      _ref.read(hotKeyActionsProvider.notifier).value = config.hotKeyActions;
-      _ref.read(scriptStateProvider.notifier).value = config.scriptProps;
+      _ref.read(overrideDnsProvider.notifier).state = config.overrideDns;
+      _ref.read(networkSettingProvider.notifier).state = config.networkProps;
+      _ref.read(hotKeyActionsProvider.notifier).state = config.hotKeyActions;
+      _ref.read(scriptStateProvider.notifier).state = config.scriptProps;
     }
     final currentProfile = _ref.read(currentProfileProvider);
     if (currentProfile == null) {
-      _ref.read(currentProfileIdProvider.notifier).value = profiles.first.id;
+      _ref.read(currentProfileIdProvider.notifier).state = profiles.first.id;
     }
   }
 
@@ -966,7 +966,7 @@ class AppController {
     final realSilence = needLoading == true ? true : silence;
     try {
       if (needLoading) {
-        _ref.read(loadingProvider.notifier).value = true;
+        _ref.read(loadingProvider.notifier).state = true;
       }
       final res = await futureFunction();
       return res;
@@ -982,7 +982,7 @@ class AppController {
       }
       return null;
     } finally {
-      _ref.read(loadingProvider.notifier).value = false;
+      _ref.read(loadingProvider.notifier).state = false;
     }
   }
 }

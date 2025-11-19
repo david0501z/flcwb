@@ -134,7 +134,7 @@ class AppSidebarContainer extends ConsumerWidget {
 
   Widget _buildLoading() {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (context, ref, child) {
         final loading = ref.watch(loadingProvider);
         final isMobileView = ref.watch(isMobileViewProvider);
         return loading && !isMobileView
@@ -166,7 +166,7 @@ class AppSidebarContainer extends ConsumerWidget {
 
   void _updateSideBarWidth(WidgetRef ref, double contentWidth) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(sideWidthProvider.notifier).value =
+      ref.read(sideWidthProvider.notifier).state =
           ref.read(viewSizeProvider.select((state) => state.width)) -
           contentWidth;
     });
@@ -207,7 +207,6 @@ class AppSidebarContainer extends ConsumerWidget {
                           children: [
                             Expanded(
                               child: NavigationRail(
-                                scrollable: true,
                                 minExtendedWidth: 200,
                                 backgroundColor: Colors.transparent,
                                 selectedLabelTextStyle: context
