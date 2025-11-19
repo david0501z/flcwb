@@ -12,6 +12,7 @@ env:
 
 jobs:
   build:
+    environment: android sign
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
