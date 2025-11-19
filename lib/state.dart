@@ -17,6 +17,7 @@ import 'package:fl_clash/widgets/dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:flutter_js/flutter_js.dart';
 import 'package:material_color_utilities/palettes/core_palette.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path/path.dart';
@@ -526,10 +527,23 @@ class GlobalState {
   Future<Map<String, dynamic>> handleEvaluate(
     Map<String, dynamic> config,
   ) async {
-    // JavaScript evaluation functionality has been disabled due to removal of flutter_js dependency
-    // The original implementation used getJavascriptRuntime() to execute JavaScript code
-    // which is no longer available
-    return config;
+    try {
+      final jsRuntime = getJavascriptRuntime();
+      // 检查配置中是否有需要评估的JavaScript表达式
+      if (config.containsKey('_eval') && config['_eval'] is String) {
+        final jsResult = jsRuntime.evaluate(config['_eval']);
+        if (jsResult.isError) {
+          throw Exception('JavaScript evaluation error: ${jsResult.stringResult}');
+        }
+        // 合并评估结果到配置中
+        final evalResult = json.decode(jsResult.stringResult);
+        config.addAll(evalResult);
+      }
+      return config;
+    } catch (e) {
+      showNotifier('JavaScript evaluation failed: $e');
+      return config;
+    }
   }
 }
 

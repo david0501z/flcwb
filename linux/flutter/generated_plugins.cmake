@@ -3,10 +3,12 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  dynamic_color
   file_selector_linux
+  flutter_js
   gtk
   hotkey_manager_linux
-  screen_retriever
+  screen_retriever_linux
   tray_manager
   url_launcher_linux
   window_manager
