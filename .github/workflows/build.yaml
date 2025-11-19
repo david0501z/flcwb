@@ -19,6 +19,7 @@ jobs:
         include:
           - platform: android
             os: ubuntu-latest
+            arch: arm64
           #- platform: windows
           #  os: Windows-2022
           #  arch: amd64
@@ -37,6 +38,7 @@ jobs:
           #- platform: linux
           #  os: ubuntu-24.04-arm
            # arch: arm64
+        branch: [main,browser]
 
     steps:
       - name: Setup rust
@@ -51,6 +53,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          ref: ${{matrix.branch}}
 
       - name: Setup Android Signing
         if: startsWith(matrix.platform,'android')
