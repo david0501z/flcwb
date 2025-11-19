@@ -50,21 +50,45 @@ class CoreController {
         if (isExists) {
           continue;
         }
-        final data = await rootBundle.load('assets/data/$geoFileName');
-        List<int> bytes = data.buffer.asUint8List();
-        await geoFile.writeAsBytes(bytes, flush: true);
+        try {
+          final data = await rootBundle.load('assets/data/$geoFileName');
+          List<int> bytes = data.buffer.asUint8List();
+          await geoFile.writeAsBytes(bytes, flush: true);
+        } catch (bundleError) {
+          commonPrint.log('Failed to load geo file from assets: $geoFileName, error: $bundleError', logLevel: LogLevel.warning);
+        }
       }
     } catch (e) {
-      exit(0);
+      commonPrint.log('Failed to initialize geo files: $e', logLevel: LogLevel.error);
+      // 不要退出应用，而是记录错误并继续
     }
   }
 
   Future<bool> init(int version) async {
     await initGeo();
     final homeDirPath = await appPath.homeDirPath;
-    return await _interface.init(
-      InitParams(homeDir: homeDirPath, version: version),
-    );
+    
+    // 确保配置目录存在
+    final homeDir = Directory(homeDirPath);
+    if (!await homeDir.exists()) {
+      await homeDir.create(recursive: true);
+    }
+    
+    // 确保配置文件存在，如果不存在则创建默认配置
+    final configFile = File(join(homeDirPath, 'config.json'));
+    if (!await configFile.exists()) {
+      await configFile.writeAsString('{}');
+    }
+    
+    try {
+      return await _interface.init(
+        InitParams(homeDir: homeDirPath, version: version),
+      );
+    } catch (e) {
+      // 如果初始化失败，可能是由于路径问题，记录错误但不阻止应用启动
+      commonPrint.log('Core initialization failed: $e', logLevel: LogLevel.error);
+      return false;
+    }
   }
 
   Future<void> shutdown() async {
