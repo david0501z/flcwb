@@ -25,7 +25,7 @@ class MakeExeConfig extends MakeConfig {
         : null;
     if (locales == null || locales.isEmpty) {
       locales = [
-        {'lang': 'en'}
+        {'lang': 'en'},
       ];
     }
 

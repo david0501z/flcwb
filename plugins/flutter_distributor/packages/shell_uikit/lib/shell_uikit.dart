@@ -1,3 +1,3 @@
-library shell_uikit;
+library;
 
 export 'src/progress_bar.dart';

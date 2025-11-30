@@ -3,7 +3,7 @@ import 'package:fl_clash/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class BrowserView extends StatefulWidget {
-  const BrowserView({Key? key}) : super(key: key);
+  const BrowserView({super.key});
 
   @override
   State<BrowserView> createState() => _BrowserViewState();

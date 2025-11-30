@@ -6,7 +6,7 @@ class DistributeOptionsBase {
 
   factory DistributeOptionsBase.fromJson(Map<String, dynamic> json) {
     return DistributeOptionsBase(
-      appName: json['app_name']
+      appName: json['app_name'],
     );
   }
 

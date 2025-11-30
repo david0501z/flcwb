@@ -1,4 +1,4 @@
-library shell_executor;
+library;
 
 export 'src/command.dart';
 export 'src/command_error.dart';

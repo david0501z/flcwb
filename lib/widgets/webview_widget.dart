@@ -13,13 +13,13 @@ class WebViewWidget extends ConsumerStatefulWidget {
   final bool enableProxy;
 
   const WebViewWidget({
-    Key? key,
+    super.key,
     required this.initialUrl,
     this.onPageStarted,
     this.onPageFinished,
     this.onUrlChanged,
     this.enableProxy = true,
-  }) : super(key: key);
+  });
 
   @override
   ConsumerState<WebViewWidget> createState() => _WebViewWidgetState();
@@ -120,7 +120,7 @@ class _WebViewWidgetState extends ConsumerState<WebViewWidget> {
                 child: Container(
                   height: 40,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.surfaceVariant,
+                    color: Theme.of(context).colorScheme.surfaceContainerHighest,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: TextField(

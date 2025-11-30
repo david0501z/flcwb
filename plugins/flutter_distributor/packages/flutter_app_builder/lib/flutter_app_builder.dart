@@ -1,4 +1,4 @@
-library flutter_app_builder;
+library;
 
 export 'src/build_config.dart';
 export 'src/build_result.dart';

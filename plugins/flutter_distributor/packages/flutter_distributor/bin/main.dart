@@ -33,11 +33,9 @@ Future<void> main(List<String> args) async {
   ArgResults argResults = runner.parse(args);
   if (argResults.wasParsed('version')) {
     String? currentVersion = await distributor.getCurrentVersion();
-    if (currentVersion != null) {
-      logger.info(currentVersion);
-      return;
+    logger.info(currentVersion);
+    return;
     }
-  }
 
   // if (argResults['version-check']) {
   //   // Check version of flutter_distributor on every run
