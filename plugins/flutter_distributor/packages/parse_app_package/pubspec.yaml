@@ -5,7 +5,7 @@ homepage: https://distributor.leanflutter.dev
 repository: https://github.com/leanflutter/flutter_distributor/tree/main/packages/parse_app_package
 
 environment:
-  sdk: ">=2.16.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   archive: ^3.4.10

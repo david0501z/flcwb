@@ -48,7 +48,7 @@ class FlutterDistributor {
       for (String key in keys) {
         String? value = distributeOptions.variables?[key];
         if ((value ?? '').isNotEmpty) {
-          _globalVariables[key] = value;
+          _globalVariables[key] = value!;
         }
       }
     }
@@ -104,7 +104,7 @@ class FlutterDistributor {
     String? latestVersion =
         await PubDevApi.getLatestVersionFromPackage('flutter_distributor');
 
-    if (currentVersion != null &&
+    if (currentVersion != null && latestVersion != null &&
         currentVersion.compareTo(latestVersion) < 0) {
       String msg = [
         '╔════════════════════════════════════════════════════════════════════════════╗',
@@ -346,14 +346,16 @@ class FlutterDistributor {
 
           if (job.publish != null || job.publishTo != null) {
             String? publishTarget = job.publishTo ?? job.publish?.target;
-            MakeResult makeResult = makeResultList.first;
-            FileSystemEntity artifact = makeResult.artifacts.first;
-            await publish(
-              artifact,
-              [publishTarget],
-              publishArguments: job.publish?.args,
-              variables: variables,
-            );
+            if (publishTarget != null) {
+              MakeResult makeResult = makeResultList.first;
+              FileSystemEntity artifact = makeResult.artifacts.first;
+              await publish(
+                artifact,
+                [publishTarget],
+                publishArguments: job.publish?.args,
+                variables: variables,
+              );
+            }
           }
         }
       }
