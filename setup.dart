@@ -111,21 +111,34 @@ class Build {
     final environment = Platform.environment;
     if (buildItem.target == Target.android) {
       final ndk = environment['ANDROID_NDK'];
-      assert(ndk != null);
+      if (ndk == null) {
+        throw Exception('ANDROID_NDK environment variable is not set. '
+            'Please set the ANDROID_NDK environment variable to the path of your Android NDK installation.');
+      }
       final prebuiltDir = Directory(
-        join(ndk!, 'toolchains', 'llvm', 'prebuilt'),
+        join(ndk, 'toolchains', 'llvm', 'prebuilt'),
       );
+      if (!prebuiltDir.existsSync()) {
+        throw Exception('Android NDK prebuilt directory not found at: ${prebuiltDir.path}');
+      }
       final prebuiltDirList = prebuiltDir
           .listSync()
           .where((file) => !basename(file.path).startsWith('.'))
           .toList();
+      if (prebuiltDirList.isEmpty) {
+        throw Exception('No prebuilt directories found in: ${prebuiltDir.path}');
+      }
       final map = {
         'armeabi-v7a': 'armv7a-linux-androideabi21-clang',
         'arm64-v8a': 'aarch64-linux-android21-clang',
         'x86': 'i686-linux-android21-clang',
         'x86_64': 'x86_64-linux-android21-clang',
       };
-      return join(prebuiltDirList.first.path, 'bin', map[buildItem.archName]);
+      final compilerName = map[buildItem.archName];
+      if (compilerName == null) {
+        throw Exception('Unknown architecture: ${buildItem.archName}');
+      }
+      return join(prebuiltDirList.first.path, 'bin', compilerName);
     }
     return 'gcc';
   }
